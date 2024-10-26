@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Frižider LG GBB72PZDFN",
+    "category": "frižider",
+    "description": "Energetski efikasan frižider sa kapacitetom od 384 litra, LED osvetljenjem i NoFrost tehnologijom.",
+    "price": 65000,
+    "brand": "LG",
+    "availability": "na stanju"
+  },
+  {
+    "id": 2,
+    "name": "Veš Mašina Samsung WW90T554DAW",
+    "category": "veš mašina",
+    "description": "Veš mašina kapaciteta 9kg sa EcoBubble tehnologijom i funkcijom pare za dodatnu higijenu.",
+    "price": 55000,
+    "brand": "Samsung",
+    "availability": "na stanju"
+  },
+  {
+    "id": 3,
+    "name": "Šporet Gorenje ECS6350",
+    "category": "šporet",
+    "description": "Multifunkcionalni električni šporet sa 4 ringle i ventilacionom pećnicom kapaciteta 71l.",
+    "price": 45000,
+    "brand": "Gorenje",
+    "availability": "nije na stanju"
+  },
+  {
+    "id": 4,
+    "name": "Mikrotalasna Rerna Bosch HMT75M421",
+    "category": "mikrotalasna rerna",
+    "description": "Mikrotalasna rerna kapaciteta 17 litara sa 5 nivoa snage i funkcijom automatskog kuvanja.",
+    "price": 12000,
+    "brand": "Bosch",
+    "availability": "na stanju"
+  }
+]
