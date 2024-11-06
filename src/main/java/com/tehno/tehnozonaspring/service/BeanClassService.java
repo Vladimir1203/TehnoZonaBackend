@@ -20,4 +20,8 @@ public class BeanClassService {
     public List<BeanClass> getAllBeans() {
         return beanClassRepository.findAll();
     }
+
+    public String getArtikalNaziv(Long id) {
+        return beanClassRepository.findArtikalNazivById(id);
+    }
 }
