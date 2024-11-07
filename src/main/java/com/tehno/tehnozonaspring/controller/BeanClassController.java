@@ -28,6 +28,6 @@ public class BeanClassController {
 
     @GetMapping("/{id}/naziv")
     public String getArtikalNaziv(@PathVariable Long id) {
-        return beanClassService.getArtikalNaziv(id);
+        return beanClassService.findArtikliNaziviByGrupa(id);
     }
 }

@@ -21,7 +21,7 @@ public class BeanClassService {
         return beanClassRepository.findAll();
     }
 
-    public String getArtikalNaziv(Long id) {
-        return beanClassRepository.findArtikalNazivById(id);
+    public String findArtikliNaziviByGrupa(Long id) {
+        return beanClassRepository.findArtikliNaziviByGrupa(id);
     }
 }
