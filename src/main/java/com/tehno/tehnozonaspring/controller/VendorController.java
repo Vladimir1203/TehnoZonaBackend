@@ -57,4 +57,19 @@ public class VendorController {
         return ResponseEntity.ok(artikli);
     }
 
+    @GetMapping("/glavneGrupe")
+    public ResponseEntity<List<String>> vratiGlavneGrupe() {
+        List<String> glavneGrupe = vendorService.getGlavneGrupe();
+        return ResponseEntity.ok(glavneGrupe);
+    }
+
+    @GetMapping("/glavneGrupe/{glavnaGrupa}/nadgrupe")
+    public ResponseEntity<List<String>> getNadgrupeByGlavnaGrupa(@PathVariable String glavnaGrupa) {
+        List<String> nadgrupe = vendorService.getNadgrupeByGlavnaGrupa(glavnaGrupa);
+        if (nadgrupe.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(nadgrupe);
+    }
+
 }
