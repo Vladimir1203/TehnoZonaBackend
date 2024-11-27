@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-public class BeanClass {
+public class Vendor {
     @Id
     private Long id;
     private String name;
