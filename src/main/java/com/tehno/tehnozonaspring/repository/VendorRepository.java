@@ -49,4 +49,50 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
 """, nativeQuery = true)
     List<String> findLimitedArtikliByVendorId(@Param("id") Long id, @Param("limit") int limit);
 
+    @Query(value = """
+    SELECT unnest(xpath(concat('/artikli/artikal[nadgrupa/text()="', :nadgrupa, '"]'), xml_data))::TEXT AS artikal_xml
+    FROM vendor
+    WHERE id = :id
+""", nativeQuery = true)
+    List<String> findArtikliByNadgrupa(@Param("id") Long id, @Param("nadgrupa") String nadgrupa);
+
+
+    @Query(value = """
+    SELECT DISTINCT grupa_text
+    FROM vendor,
+         LATERAL (
+            SELECT unnest(
+                       xpath('/artikli/artikal/grupa/text()', xml_data)
+                   )::TEXT AS grupa_text
+         ) AS subquery
+""", nativeQuery = true)
+    List<String> findAllGroups();
+
+    @Query(value = """
+    WITH artikli AS (
+        SELECT 
+            unnest(
+                xpath(
+                    concat(
+                        '/artikli/artikal[', 
+                        string_agg(concat('nadgrupa/text()="', nadgrupa, '"'), ' or '), 
+                        ']'
+                    ),
+                    xml_data
+                )
+            )::TEXT AS artikal_xml
+        FROM vendor,
+        unnest(:nadgrupe) AS nadgrupa
+        WHERE vendor.id = :vendorId
+        GROUP BY vendor.id
+    )
+    SELECT DISTINCT artikal_xml
+    FROM artikli;
+    """, nativeQuery = true)
+    List<String> findArtikliByGlavnaGrupa(
+            @Param("vendorId") Long vendorId,
+            @Param("nadgrupe") String[] nadgrupe
+    );
+
+
 }

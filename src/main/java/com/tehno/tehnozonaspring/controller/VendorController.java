@@ -72,4 +72,38 @@ public class VendorController {
         return ResponseEntity.ok(nadgrupe);
     }
 
+    @GetMapping("/{id}/nadgrupa/{nadgrupa}/artikli")
+    public ResponseEntity<List<Artikal>> getArtikliByNadgrupa(
+            @PathVariable Long id,
+            @PathVariable String nadgrupa
+    ) {
+        List<Artikal> artikli = vendorService.getArtikliByNadgrupa(id, nadgrupa);
+        if (artikli == null || artikli.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(artikli);
+    }
+
+    @GetMapping("/grupe")
+    public ResponseEntity<List<String>> getAllGroups() {
+        List<String> groups = vendorService.getAllGroups();
+        if (groups == null || groups.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(groups);
+    }
+
+    @GetMapping("/{id}/glavnaGrupa/{glavnaGrupa}/artikli")
+    public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupa(
+            @PathVariable Long id,
+            @PathVariable String glavnaGrupa
+    ) {
+        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa);
+        if (artikli.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(artikli);
+    }
+
+
 }
