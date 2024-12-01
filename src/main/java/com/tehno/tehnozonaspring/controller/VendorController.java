@@ -126,4 +126,10 @@ public class VendorController {
         return ResponseEntity.ok(groups);
     }
 
+    @GetMapping("/{vendorId}/nadgrupe_sa_svojim_grupama/{glavnaGrupa}")
+    public ResponseEntity<Map<String, List<String>>> vratiSveNadgrupeSaNjihovimGrupama(@PathVariable Long vendorId, @PathVariable String glavnaGrupa) {
+        Map<String, List<String>> groups = vendorService.vratiSveNadgrupeSaNjihovimGrupama(glavnaGrupa);
+        return ResponseEntity.ok(groups);
+    }
+
 }

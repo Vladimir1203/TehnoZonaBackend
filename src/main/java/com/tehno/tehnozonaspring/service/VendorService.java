@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class VendorService {
@@ -200,4 +197,23 @@ public class VendorService {
     public Map<String, List<String>> getAllGroupsAndSubgroups() {
         return groupMap;
     }
+
+    public Map<String, List<String>> vratiSveNadgrupeSaNjihovimGrupama(String glavnaGrupa) {
+        // Pronađi sve nadgrupe koje pripadaju zadatoj glavnoj grupi
+        List<String> nadgrupe = groupMap.getOrDefault(glavnaGrupa.toUpperCase(), List.of());
+
+        // Mapiranje nadgrupa na njihove grupe koristeći vendorRepository metodu
+        Map<String, List<String>> result = new HashMap<>();
+        for (String nadgrupa : nadgrupe) {
+            // Pretpostavljamo da `vendorRepository.findDistinctGroupsByNadgrupa` vraća listu grupa
+            String grupe = getGrupeByNadgrupa(1L, nadgrupa); // Pretpostavljamo da je vendorId=1
+            if (grupe != null && !grupe.isEmpty()) {
+                // Dodaj u rezultat kao listu grupa
+                result.put(nadgrupa, Arrays.asList(grupe.split(","))); // Pretpostavljamo da su grupe odvojene zarezima
+            }
+        }
+
+        return result;
+    }
+
 }
