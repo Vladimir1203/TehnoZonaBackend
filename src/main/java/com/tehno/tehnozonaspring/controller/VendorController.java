@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/vendors/")
@@ -105,5 +106,24 @@ public class VendorController {
         return ResponseEntity.ok(artikli);
     }
 
+    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/artikli")
+    public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupaAndNadgrupa(
+            @PathVariable Long vendorId,
+            @PathVariable String glavnaGrupa,
+            @PathVariable String nadgrupa) {
+        List<Artikal> artikli = null;
+        try {
+            artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(vendorId, glavnaGrupa, nadgrupa);
+            return ResponseEntity.ok(artikli);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.ok(artikli);
+        }
+    }
+
+    @GetMapping("/{vendorId}/glavne_grupe_i_nadgrupe")
+    public ResponseEntity<Map<String, List<String>>> getAllGroupsAndSubgroups(@PathVariable Long vendorId) {
+        Map<String, List<String>> groups = vendorService.getAllGroupsAndSubgroups();
+        return ResponseEntity.ok(groups);
+    }
 
 }

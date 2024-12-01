@@ -170,4 +170,34 @@ public class VendorService {
         return artikli;
     }
 
+    public List<Artikal> getArtikliByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa) {
+
+        // Preuzmi sve nadgrupe koje pripadaju glavnoj grupi
+        String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
+
+        List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupaAndNadgrupa(vendorId, nadgrupe);
+        // Poziv repository sloja
+
+        List<Artikal> artikli = new ArrayList<>();
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Artikal.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            for (String artikalXml : artikalXmlList) {
+                StringReader reader = new StringReader(artikalXml);
+                Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
+                artikli.add(artikal);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Greška prilikom parsiranja artikala", e);
+        }
+
+        return artikli;
+    }
+
+    public Map<String, List<String>> getAllGroupsAndSubgroups() {
+        return groupMap;
+    }
 }
