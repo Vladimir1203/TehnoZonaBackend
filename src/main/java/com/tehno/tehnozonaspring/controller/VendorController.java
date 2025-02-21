@@ -4,9 +4,11 @@ import com.tehno.tehnozonaspring.model.Artikal;
 import com.tehno.tehnozonaspring.model.Vendor;
 import com.tehno.tehnozonaspring.service.VendorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -130,6 +132,44 @@ public class VendorController {
     public ResponseEntity<Map<String, List<String>>> vratiSveNadgrupeSaNjihovimGrupama(@PathVariable Long vendorId, @PathVariable String glavnaGrupa) {
         Map<String, List<String>> groups = vendorService.vratiSveNadgrupeSaNjihovimGrupama(glavnaGrupa);
         return ResponseEntity.ok(groups);
+    }
+
+    @GetMapping("/{vendorid}/svi_idjevi")
+    public ResponseEntity<List<Long>> vratiSveIdjeve(){
+        List<Long> idjevi = vendorService.vratiSveIdjeve();
+        return ResponseEntity.ok(idjevi);
+    }
+
+    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/proizvodjaci")
+    public ResponseEntity<List<String>> getProizvodjaciByGlavnaGrupa(
+            @PathVariable Long vendorId,
+            @PathVariable String glavnaGrupa
+    ) {
+        List<String> proizvodjaci = vendorService.getProizvodjaciByGlavnaGrupa(vendorId, glavnaGrupa);
+        if (proizvodjaci.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(proizvodjaci);
+    }
+
+    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/proizvodjaci-count")
+    public ResponseEntity<Map<String, Integer>> getProizvodjaciWithCountByGlavnaGrupa(
+            @PathVariable Long vendorId,
+            @PathVariable String glavnaGrupa) {
+        Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupa(vendorId, glavnaGrupa);
+        return result.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(result);
+    }
+
+    // ne radi kako treba
+    @GetMapping("/{vendorId}/max-price")
+    public ResponseEntity<BigDecimal> getMaxPrice(@PathVariable Long vendorId) {
+        BigDecimal maxPrice = vendorService.getMaxPriceByVendorId(vendorId);
+
+        if (maxPrice != null) {
+            return ResponseEntity.ok(maxPrice);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
 }

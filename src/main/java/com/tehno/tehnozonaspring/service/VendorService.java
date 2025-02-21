@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.StringReader;
+import java.math.BigDecimal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class VendorService {
@@ -215,5 +217,66 @@ public class VendorService {
 
         return result;
     }
+
+    public List<Long> vratiSveIdjeve() {
+        return vendorRepository.vratiSveIdjeve();
+    }
+
+    public List<String> getProizvodjaciByGlavnaGrupa(Long vendorId, String glavnaGrupa) {
+        // Dohvati sve nadgrupe povezane sa glavnom grupom
+        String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
+
+        // Poziv repository metode za dobijanje proizvođača
+        List<String> proizvodjaci = vendorRepository.findProizvodjaciByGlavnaGrupa(vendorId, nadgrupe);
+
+        // Obrada liste:
+        return proizvodjaci.stream()
+                .map(String::toUpperCase)                    // Pretvori sve u velika slova
+                .filter(name -> !(name.equals("/") || name.equals("-"))) // Ukloni "/" i "-"
+                .distinct()
+                .sorted()                                    // Sortiraj po abecednom redu
+                .toList();
+    }
+
+    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupa(Long vendorId, String glavnaGrupa) {
+        System.out.println("==== POČETAK getProizvodjaciWithCountByGlavnaGrupa ====");
+        System.out.println("Vendor ID: " + vendorId);
+        System.out.println("Glavna grupa: " + glavnaGrupa);
+
+        // Dobavljanje nadgrupa
+        String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
+        System.out.println("Nadgrupe: " + Arrays.toString(nadgrupe));
+
+        // Poziv repository metode
+        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe);
+        System.out.println("Broj rezultata iz repository-a: " + resultList.size());
+
+        // Ispis rezultata za proveru
+        for (Object[] arr : resultList) {
+            System.out.println("Proizvođač: " + arr[0] + ", Broj artikala: " + arr[1]);
+        }
+
+        // Mapiranje rezultata u Map<String, Integer>
+        Map<String, Integer> rezultat = resultList.stream()
+                .filter(arr -> arr[0] != null && !arr[0].equals("/") && !arr[0].equals("-")) // Izbacujemo "/" i "-"
+                .peek(arr -> System.out.println("Filtrirani proizvođač: " + arr[0] + ", Broj artikala: " + arr[1]))
+                .collect(Collectors.toMap(
+                        arr -> arr[0].toString(),                  // Key: Naziv proizvođača
+                        arr -> Integer.parseInt(arr[1].toString()),// Value: Broj artikala
+                        (oldValue, newValue) -> oldValue,          // Ako ima duplikata, zadrži prvi (ne bi trebalo da ih bude)
+                        TreeMap::new                               // Sortira mapu po ključu
+                ));
+
+        System.out.println("Konačan rezultat: " + rezultat);
+        System.out.println("==== KRAJ getProizvodjaciWithCountByGlavnaGrupa ====");
+
+        return rezultat;
+    }
+
+    public BigDecimal getMaxPriceByVendorId(Long vendorId) {
+        return vendorRepository.findMaxPriceByVendorId(vendorId);
+    }
+
+
 
 }
