@@ -61,6 +61,11 @@ public class VendorService {
             )
     );
 
+    private static final List<String> GLAVNI_PROIZVODJACI = List.of(
+            "BEKO", "BOSCH", "GORENJE", "HISENSE",
+            "HUAWEI", "LG", "MIDEA", "PHILIPS", "SAMSUNG", "XIAOMI"
+    );
+
     public List<String> getNadgrupeByGlavnaGrupa(String glavnaGrupa) {
         return groupMap.getOrDefault(glavnaGrupa.toUpperCase(), List.of());
     }
@@ -277,6 +282,33 @@ public class VendorService {
         return vendorRepository.findMaxPriceByVendorId(vendorId);
     }
 
+    public List<String> getAllDistinctProizvodjaci() {
+        return vendorRepository.findAllDistinctProizvodjaci();
+    }
 
+    public List<String> getAllMainProizvodjaci() {
+        return GLAVNI_PROIZVODJACI;
+    }
+
+    public List<Artikal> getArtikliByProizvodjac(String proizvodjac) {
+        List<String> artikalXmlList = vendorRepository.findArtikliByProizvodjac(proizvodjac);
+        List<Artikal> artikli = new ArrayList<>();
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Artikal.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            for (String artikalXml : artikalXmlList) {
+                StringReader reader = new StringReader(artikalXml);
+                Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
+                artikli.add(artikal);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Greška prilikom parsiranja artikala", e);
+        }
+
+        return artikli;
+    }
 
 }

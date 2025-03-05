@@ -172,4 +172,30 @@ public class VendorController {
         }
     }
 
+    @GetMapping("/proizvodjaci")
+    public ResponseEntity<List<String>> getAllDistinctProizvodjaci() {
+        List<String> proizvodjaci = vendorService.getAllDistinctProizvodjaci();
+        if (proizvodjaci.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(proizvodjaci);
+    }
+
+    @GetMapping("/glavni-proizvodjaci")
+    public ResponseEntity<List<String>> getAllMainProizvodjaci() {
+        List<String> glavniProizvodjaci = vendorService.getAllMainProizvodjaci();
+        return ResponseEntity.ok(glavniProizvodjaci);
+    }
+
+    @GetMapping("/artikli/proizvodjac")
+    public ResponseEntity<List<Artikal>> getArtikliByProizvodjac(@RequestParam String proizvodjac) {
+        List<Artikal> artikli = vendorService.getArtikliByProizvodjac(proizvodjac);
+
+        if (artikli.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(artikli);
+    }
+
 }

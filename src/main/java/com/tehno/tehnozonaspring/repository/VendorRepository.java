@@ -188,4 +188,24 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
         """, nativeQuery = true)
     BigDecimal findMaxPriceByVendorId(@Param("vendorId") Long vendorId);
 
+    @Query(value = """
+    SELECT DISTINCT UPPER(subquery.proizvodjac_text) AS proizvodjac
+    FROM vendor,
+    LATERAL (
+        SELECT unnest(xpath('/artikli/artikal/proizvodjac/text()', xml_data))::TEXT AS proizvodjac_text
+    ) AS subquery
+    ORDER BY proizvodjac
+""", nativeQuery = true)
+    List<String> findAllDistinctProizvodjaci();
+
+    @Query(value = """
+    SELECT unnest(xpath(
+        concat('/artikli/artikal[proizvodjac/text()="', :proizvodjac, '"]'), xml_data
+    ))::TEXT AS artikal_xml
+    FROM vendor
+    WHERE xml_data IS NOT NULL
+""", nativeQuery = true)
+    List<String> findArtikliByProizvodjac(@Param("proizvodjac") String proizvodjac);
+
+
 }
