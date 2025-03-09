@@ -148,11 +148,11 @@ public class VendorService {
     }
 
 
-    public List<Artikal> getArtikliByGlavnaGrupa(Long vendorId, String glavnaGrupa) {
+    public List<Artikal> getArtikliByGlavnaGrupa(Long vendorId, String glavnaGrupa, Integer minCena, Integer maxCena) {
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
 
 //        String[] nadgrupe = {"BELA TEHNIKA", "MALI KUĆNI APARATI", "GREJANJE", "HLADNJACI", "KUĆNA BELA TEHNIKA"};
-        List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(1L, nadgrupe);
+        List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
 
 //        List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
         List<Artikal> artikli = new ArrayList<>();
@@ -164,7 +164,10 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                artikli.add(artikal);
+                if ((minCena == null || artikal.getB2bcena() >= minCena) &&
+                        (maxCena == null || artikal.getB2bcena() <= maxCena)) {
+                    artikli.add(artikal);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -329,6 +332,29 @@ public class VendorService {
         } catch (Exception e) {
             return null; // Ignoriše nevalidne XML zapise i nastavlja obradu
         }
+    }
+
+    public List<Artikal> getArtikliByGrupa(Long vendorId, String grupa, Integer minCena, Integer maxCena) {
+        List<String> artikalXmlList = vendorRepository.findArtikliByVendorAndGrupa(vendorId, grupa);
+        List<Artikal> artikli = new ArrayList<>();
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Artikal.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            for (String artikalXml : artikalXmlList) {
+                StringReader reader = new StringReader(artikalXml);
+                Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
+                if ((minCena == null || artikal.getB2bcena() >= minCena) &&
+                        (maxCena == null || artikal.getB2bcena() <= maxCena)) {
+                    artikli.add(artikal);
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Greška prilikom parsiranja artikala", e);
+        }
+
+        return artikli;
     }
 
 }

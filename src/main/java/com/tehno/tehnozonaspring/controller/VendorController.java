@@ -99,9 +99,11 @@ public class VendorController {
     @GetMapping("/{id}/glavnaGrupa/{glavnaGrupa}/artikli")
     public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupa(
             @PathVariable Long id,
-            @PathVariable String glavnaGrupa
+            @PathVariable String glavnaGrupa,
+            @RequestParam(required = false) Integer minCena,
+            @RequestParam(required = false) Integer maxCena
     ) {
-        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa);
+        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, minCena, maxCena);
         if (artikli.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
@@ -205,5 +207,21 @@ public class VendorController {
 
         return ResponseEntity.ok(artikli);
     }
+
+    @GetMapping("/{vendorId}/grupa/{grupa}/artikli")
+    public ResponseEntity<List<Artikal>> getArtikliByGrupa(
+            @PathVariable Long vendorId,
+            @PathVariable String grupa,
+            @RequestParam(required = false) Integer minCena,
+            @RequestParam(required = false) Integer maxCena) {
+
+        List<Artikal> artikli = vendorService.getArtikliByGrupa(vendorId, grupa, minCena, maxCena);
+
+        if (artikli == null || artikli.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(artikli);
+    }
+
 
 }
