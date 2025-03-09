@@ -155,8 +155,10 @@ public class VendorController {
     @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/proizvodjaci-count")
     public ResponseEntity<Map<String, Integer>> getProizvodjaciWithCountByGlavnaGrupa(
             @PathVariable Long vendorId,
-            @PathVariable String glavnaGrupa) {
-        Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupa(vendorId, glavnaGrupa);
+            @PathVariable String glavnaGrupa,
+            @RequestParam(required = false) Integer minCena,
+            @RequestParam(required = false) Integer maxCena) {
+        Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupa(vendorId, glavnaGrupa, minCena, maxCena);
         return result.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(result);
     }
 
@@ -189,6 +191,10 @@ public class VendorController {
 
     @GetMapping("/artikli/proizvodjac")
     public ResponseEntity<List<Artikal>> getArtikliByProizvodjac(@RequestParam String proizvodjac) {
+        if (proizvodjac == null || proizvodjac.trim().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
         List<Artikal> artikli = vendorService.getArtikliByProizvodjac(proizvodjac);
 
         if (artikli.isEmpty()) {

@@ -165,15 +165,26 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
         COUNT(*) as broj_artikala
     FROM vendor,
     LATERAL (
-        SELECT unnest(xpath('/artikli/artikal/proizvodjac/text()', xml_data))::TEXT AS proizvodjac_text,
-               unnest(xpath('/artikli/artikal/nadgrupa/text()', xml_data))::TEXT AS nadgrupa_text
-    ) AS subquery
+        SELECT 
+            unnest(xpath('/artikli/artikal/proizvodjac/text()', xml_data))::TEXT AS proizvodjac_text,
+            unnest(xpath('/artikli/artikal/nadgrupa/text()', xml_data))::TEXT AS nadgrupa_text,
+            NULLIF(unnest(xpath('/artikli/artikal/b2bcena/text()', xml_data))::TEXT, '')::NUMERIC AS cena_b2b
+        ) AS subquery
     WHERE vendor.id = :vendorId
       AND subquery.nadgrupa_text = ANY(:nadgrupe)
+      AND (cena_b2b IS NOT NULL)  -- Osigurava da NULL vrednosti ne prave problem
+      AND (:minCena IS NULL OR cena_b2b >= :minCena)
+      AND (:maxCena IS NULL OR cena_b2b <= :maxCena)
     GROUP BY subquery.proizvodjac_text
     ORDER BY proizvodjac
     """, nativeQuery = true)
-    List<Object[]> findProizvodjaciWithCountByGlavnaGrupa(@Param("vendorId") Long vendorId, @Param("nadgrupe") String[] nadgrupe);
+    List<Object[]> findProizvodjaciWithCountByGlavnaGrupa(
+            @Param("vendorId") Long vendorId,
+            @Param("nadgrupe") String[] nadgrupe,
+            @Param("minCena") Integer minCena,
+            @Param("maxCena") Integer maxCena);
+
+
 
     @Query(value = """
         SELECT MAX(

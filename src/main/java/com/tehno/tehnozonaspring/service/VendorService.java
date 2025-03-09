@@ -243,7 +243,7 @@ public class VendorService {
                 .toList();
     }
 
-    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupa(Long vendorId, String glavnaGrupa) {
+    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupa(Long vendorId, String glavnaGrupa, Integer minCena, Integer maxCena) {
         System.out.println("==== POČETAK getProizvodjaciWithCountByGlavnaGrupa ====");
         System.out.println("Vendor ID: " + vendorId);
         System.out.println("Glavna grupa: " + glavnaGrupa);
@@ -253,7 +253,7 @@ public class VendorService {
         System.out.println("Nadgrupe: " + Arrays.toString(nadgrupe));
 
         // Poziv repository metode
-        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe);
+        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe, minCena, maxCena);
         System.out.println("Broj rezultata iz repository-a: " + resultList.size());
 
         // Ispis rezultata za proveru
@@ -294,21 +294,35 @@ public class VendorService {
         List<String> artikalXmlList = vendorRepository.findArtikliByProizvodjac(proizvodjac);
         List<Artikal> artikli = new ArrayList<>();
 
+        if (artikalXmlList == null || artikalXmlList.isEmpty()) {
+            return artikli; // Vraća praznu listu ako nema rezultata
+        }
+
         try {
             JAXBContext context = JAXBContext.newInstance(Artikal.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
 
-            for (String artikalXml : artikalXmlList) {
-                StringReader reader = new StringReader(artikalXml);
-                Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                artikli.add(artikal);
-            }
+            artikli = artikalXmlList.stream()
+                    .map(xml -> parseArtikal(xml, unmarshaller))
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+
         } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Greška prilikom parsiranja artikala", e);
+            throw new RuntimeException("Greška prilikom inicijalizacije JAXB-a", e);
         }
 
         return artikli;
+    }
+
+    private Artikal parseArtikal(String xml, Unmarshaller unmarshaller) {
+        try {
+            if (xml == null || xml.trim().isEmpty()) {
+                return null;
+            }
+            return (Artikal) unmarshaller.unmarshal(new StringReader(xml));
+        } catch (Exception e) {
+            return null; // Ignoriše nevalidne XML zapise i nastavlja obradu
+        }
     }
 
 }
