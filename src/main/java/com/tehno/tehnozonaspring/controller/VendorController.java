@@ -112,10 +112,12 @@ public class VendorController {
     public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupaAndNadgrupa(
             @PathVariable Long vendorId,
             @PathVariable String glavnaGrupa,
-            @PathVariable String nadgrupa) {
+            @PathVariable String nadgrupa,
+            @RequestParam(required = false) Integer minCena,
+            @RequestParam(required = false) Integer maxCena) {
         List<Artikal> artikli = null;
         try {
-            artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(vendorId, glavnaGrupa, nadgrupa);
+            artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(vendorId, glavnaGrupa, nadgrupa, minCena, maxCena);
             return ResponseEntity.ok(artikli);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.ok(artikli);
