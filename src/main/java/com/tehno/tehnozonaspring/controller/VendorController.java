@@ -224,4 +224,16 @@ public class VendorController {
     }
 
 
+    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/proizvodjaci-count")
+    public ResponseEntity<Map<String, Integer>> getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(
+            @PathVariable Long vendorId,
+            @PathVariable String glavnaGrupa,
+            @PathVariable String nadgrupa,
+            @RequestParam(required = false) Integer minCena,
+            @RequestParam(required = false) Integer maxCena) {
+
+        Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(vendorId, glavnaGrupa, nadgrupa, minCena, maxCena);
+        return result.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(result);
+    }
+
 }

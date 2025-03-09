@@ -357,4 +357,40 @@ public class VendorService {
         return artikli;
     }
 
+    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Integer minCena, Integer maxCena) {
+        System.out.println("==== POČETAK getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa ====");
+        System.out.println("Vendor ID: " + vendorId);
+        System.out.println("Glavna grupa: " + glavnaGrupa);
+        System.out.println("Nadgrupa: " + nadgrupa);
+
+        // Poziv repository metode bez filtracije po ceni
+        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(vendorId, nadgrupa);
+        System.out.println("Broj rezultata iz repository-a: " + resultList.size());
+
+        Map<String, Integer> rezultat = new TreeMap<>();
+
+        for (Object[] row : resultList) {
+            String proizvodjac = row[0].toString();
+            Integer brojArtikala = Integer.parseInt(row[1].toString());
+            List<BigDecimal> cene = Arrays.asList((BigDecimal[]) row[2]); // Preuzimanje niza cena
+
+            // Filtracija cene u servisu
+            long filtriraniBroj = cene.stream()
+                    .filter(cena -> (minCena == null || cena.compareTo(BigDecimal.valueOf(minCena)) >= 0))
+                    .filter(cena -> (maxCena == null || cena.compareTo(BigDecimal.valueOf(maxCena)) <= 0))
+                    .count();
+
+            if (filtriraniBroj > 0) {
+                rezultat.put(proizvodjac, (int) filtriraniBroj);
+            }
+        }
+
+        System.out.println("Konačan rezultat: " + rezultat);
+        System.out.println("==== KRAJ getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa ====");
+
+        return rezultat;
+    }
+
+
+
 }

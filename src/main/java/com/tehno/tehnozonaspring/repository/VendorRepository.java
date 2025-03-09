@@ -233,4 +233,33 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
             @Param("grupa") String grupa
     );
 
+    @Query(value = """
+    WITH artikli AS (
+        SELECT 
+            subquery.proizvodjac_text AS proizvodjac,
+            subquery.nadgrupa_text AS nadgrupa,
+            cena_text::NUMERIC AS cena
+        FROM vendor,
+        LATERAL (
+            SELECT 
+                unnest(xpath('/artikli/artikal/proizvodjac/text()', xml_data))::TEXT AS proizvodjac_text,
+                unnest(xpath('/artikli/artikal/nadgrupa/text()', xml_data))::TEXT AS nadgrupa_text,
+                unnest(xpath('/artikli/artikal/b2bcena/text()', xml_data))::TEXT AS cena_text
+        ) AS subquery
+        WHERE vendor.id = :vendorId
+          AND subquery.nadgrupa_text = :nadgrupa
+    )
+    SELECT 
+        UPPER(proizvodjac) as proizvodjac,
+        COUNT(*) as broj_artikala,
+        array_agg(cena) AS cene
+    FROM artikli
+    GROUP BY proizvodjac
+    ORDER BY proizvodjac
+    """, nativeQuery = true)
+    List<Object[]> findProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(
+            @Param("vendorId") Long vendorId,
+            @Param("nadgrupa") String nadgrupa);
+
+
 }
