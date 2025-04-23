@@ -261,5 +261,12 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
             @Param("vendorId") Long vendorId,
             @Param("nadgrupa") String nadgrupa);
 
+    @Query(value = """
+    SELECT unnest(xpath('/artikli/artikal', xml_data))::TEXT AS artikal_xml
+    FROM vendor
+    WHERE id = :vendorId
+""", nativeQuery = true)
+    List<String> findAllArtikliXmlByVendorId(@Param("vendorId") Long vendorId);
+
 
 }

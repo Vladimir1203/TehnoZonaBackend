@@ -391,6 +391,40 @@ public class VendorService {
         return rezultat;
     }
 
+    public List<Artikal> searchArtikliByNazivOrProizvodjac(Long vendorId, String query) {
+        List<String> allXml = vendorRepository.findAllArtikliXmlByVendorId(vendorId);
+        List<Artikal> rezultati = new ArrayList<>();
+
+        if (allXml == null || allXml.isEmpty()) {
+            return rezultati;
+        }
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Artikal.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            String lowerQuery = query.toLowerCase();
+
+            for (String xml : allXml) {
+                Artikal artikal = parseArtikal(xml, unmarshaller);
+                if (artikal != null) {
+                    String naziv = Optional.ofNullable(artikal.getNaziv()).orElse("").toLowerCase();
+                    String proizvodjac = Optional.ofNullable(artikal.getProizvodjac()).orElse("").toLowerCase();
+
+                    if (naziv.contains(lowerQuery) || proizvodjac.contains(lowerQuery)) {
+                        rezultati.add(artikal);
+                    }
+                }
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException("Greška prilikom pretrage artikala", e);
+        }
+
+        return rezultati;
+    }
+
+
+
 
 
 }

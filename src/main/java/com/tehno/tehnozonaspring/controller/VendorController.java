@@ -236,4 +236,23 @@ public class VendorController {
         return result.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(result);
     }
 
+    @GetMapping("/{vendorId}/artikli/search")
+    public ResponseEntity<List<Artikal>> searchArtikliByNazivOrProizvodjac(
+            @PathVariable Long vendorId,
+            @RequestParam String query
+    ) {
+        if (query == null || query.trim().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        List<Artikal> rezultati = vendorService.searchArtikliByNazivOrProizvodjac(vendorId, query.trim());
+
+        if (rezultati == null || rezultati.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(rezultati);
+    }
+
+
 }
