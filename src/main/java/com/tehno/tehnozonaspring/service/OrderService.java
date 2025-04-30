@@ -64,7 +64,8 @@ public class OrderService {
                 sb.append("<li>")
                         .append("<strong>").append(artikal.getNaziv()).append("</strong>")
                         .append(" (Šifra: ").append(artikal.getSifra()).append(") — ")
-                        .append("Cena: ").append(artikal.getB2bcena()).append(" ").append(artikal.getValuta())
+                        .append("Cena: ").append(artikal.getB2bcena()).append(" ").append(" — ")
+                        .append("Kolicina: ").append(artikal.getKolicina()).append(" ")
                         .append("</li>");
             }
             sb.append("</ul>");
