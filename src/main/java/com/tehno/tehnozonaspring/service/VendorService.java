@@ -148,13 +148,9 @@ public class VendorService {
     }
 
 
-    public List<Artikal> getArtikliByGlavnaGrupa(Long vendorId, String glavnaGrupa, Integer minCena, Integer maxCena) {
+    public List<Artikal> getArtikliByGlavnaGrupa(Long vendorId, String glavnaGrupa, Integer minCena, Integer maxCena, int page, int size, List<String> proizvodjaci) {
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
-
-//        String[] nadgrupe = {"BELA TEHNIKA", "MALI KUĆNI APARATI", "GREJANJE", "HLADNJACI", "KUĆNA BELA TEHNIKA"};
         List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
-
-//        List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
         List<Artikal> artikli = new ArrayList<>();
 
         try {
@@ -164,8 +160,9 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                if ((minCena == null || artikal.getB2bcena() >= minCena) &&
-                        (maxCena == null || artikal.getB2bcena() <= maxCena)) {
+
+                if ((minCena == null || minCena == 0 || artikal.getB2bcena() >= minCena) &&
+                        (maxCena == null || maxCena == 0 || artikal.getB2bcena() <= maxCena)) {
                     artikli.add(artikal);
                 }
             }
@@ -174,8 +171,16 @@ public class VendorService {
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }
 
+        int fromIndex = page * size;
+        int toIndex = Math.min(fromIndex + size, artikli.size());
+
+        if (fromIndex >= artikli.size()) {
+            return Collections.emptyList();
+        }
+
         return artikli;
     }
+
 
     public List<Artikal> getArtikliByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Integer minCena, Integer maxCena) {
 
