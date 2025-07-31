@@ -20,8 +20,8 @@ public class XmlDataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (!vendorRepository.existsById(2L)) {
-            Path filePath = new ClassPathResource("TehnoZona-uspon.txt").getFile().toPath();
-            String xmlContent = Files.readString(filePath);
+            ClassPathResource resource = new ClassPathResource("TehnoZona-uspon.txt");
+            String xmlContent = new String(resource.getInputStream().readAllBytes());
 
             Vendor vendor = new Vendor();
             vendor.setId(1L);
