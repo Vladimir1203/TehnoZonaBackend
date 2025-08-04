@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -20,8 +22,15 @@ public class XmlDataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (!vendorRepository.existsById(2L)) {
-            Path filePath = new ClassPathResource("TehnoZona-uspon.txt").getFile().toPath();
-            String xmlContent = Files.readString(filePath);
+            ClassPathResource resource = new ClassPathResource("TehnoZona-uspon.txt");
+            StringBuilder builder = new StringBuilder();
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    builder.append(line).append("\n");
+                }
+            }
+            String xmlContent = builder.toString();
 
             Vendor vendor = new Vendor();
             vendor.setId(1L);

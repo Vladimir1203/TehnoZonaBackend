@@ -1,5 +1,6 @@
 package com.tehno.tehnozonaspring.controller;
 
+import com.tehno.tehnozonaspring.dto.ProductPageResponse;
 import com.tehno.tehnozonaspring.model.Artikal;
 import com.tehno.tehnozonaspring.model.Vendor;
 import com.tehno.tehnozonaspring.service.VendorService;
@@ -97,34 +98,56 @@ public class VendorController {
     }
 
     @GetMapping("/{id}/glavnaGrupa/{glavnaGrupa}/artikli")
-    public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupa(
+    public ResponseEntity<ProductPageResponse> getArtikliByGlavnaGrupa(
             @PathVariable Long id,
             @PathVariable String glavnaGrupa,
             @RequestParam(required = false) Integer minCena,
-            @RequestParam(required = false) Integer maxCena
+            @RequestParam(required = false) Integer maxCena,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false) List<String> proizvodjaci
     ) {
-        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, minCena, maxCena);
-        if (artikli.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(artikli);
+        List<Artikal> sviArtikliBezFiltera = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, null, null, 0, Integer.MAX_VALUE, null);
+        double min = sviArtikliBezFiltera.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
+        double max = sviArtikliBezFiltera.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
+
+        List<Artikal> sviArtikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, minCena, maxCena, page, size, proizvodjaci);
+        int totalCount = sviArtikli.size();
+
+        int fromIndex = Math.min(page * size, totalCount);
+        int toIndex = Math.min(fromIndex + size, totalCount);
+        List<Artikal> paginated = sviArtikli.subList(fromIndex, toIndex);
+
+        ProductPageResponse response = new ProductPageResponse();
+        response.setProducts(paginated);
+        response.setTotalCount(totalCount);
+        response.setMinCena(min);
+        response.setMaxCena(max);
+
+        return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/artikli")
-    public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupaAndNadgrupa(
-            @PathVariable Long vendorId,
-            @PathVariable String glavnaGrupa,
-            @PathVariable String nadgrupa,
-            @RequestParam(required = false) Integer minCena,
-            @RequestParam(required = false) Integer maxCena) {
-        List<Artikal> artikli = null;
-        try {
-            artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(vendorId, glavnaGrupa, nadgrupa, minCena, maxCena);
-            return ResponseEntity.ok(artikli);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.ok(artikli);
-        }
-    }
+
+
+
+
+//    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/artikli")
+//    public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupaAndNadgrupa(
+//            @PathVariable Long vendorId,
+//            @PathVariable String glavnaGrupa,
+//            @PathVariable String nadgrupa,
+//            @RequestParam(required = false) Integer minCena,
+//            @RequestParam(required = false) Integer maxCena,
+//            @RequestParam(defaultValue = "0") int page,
+//            @RequestParam(defaultValue = "10") int size,
+//            @RequestParam(required = false) List<String> proizvodjaci // NOVO
+//    ) {
+//        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(
+//                vendorId, glavnaGrupa, nadgrupa, minCena, maxCena, page, size, proizvodjaci
+//        );
+//        return artikli.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(artikli);
+//    }
+//
 
     @GetMapping("/{vendorId}/glavne_grupe_i_nadgrupe")
     public ResponseEntity<Map<String, List<String>>> getAllGroupsAndSubgroups(@PathVariable Long vendorId) {
