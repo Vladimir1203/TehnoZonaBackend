@@ -182,13 +182,8 @@ public class VendorService {
     }
 
 
-    public List<Artikal> getArtikliByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Integer minCena, Integer maxCena) {
-
-        // Preuzmi sve nadgrupe koje pripadaju glavnoj grupi
-        String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
-
-        // Poziv repository sloja
-        List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupaAndNadgrupa(vendorId, nadgrupe);
+    public List<Artikal> getArtikliByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Integer minCena, Integer maxCena, int page, int size, List<String> proizvodjaci) {
+        List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
 
         List<Artikal> artikli = new ArrayList<>();
 

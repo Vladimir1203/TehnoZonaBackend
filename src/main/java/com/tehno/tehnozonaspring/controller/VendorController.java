@@ -131,23 +131,23 @@ public class VendorController {
 
 
 
-//    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/artikli")
-//    public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupaAndNadgrupa(
-//            @PathVariable Long vendorId,
-//            @PathVariable String glavnaGrupa,
-//            @PathVariable String nadgrupa,
-//            @RequestParam(required = false) Integer minCena,
-//            @RequestParam(required = false) Integer maxCena,
-//            @RequestParam(defaultValue = "0") int page,
-//            @RequestParam(defaultValue = "10") int size,
-//            @RequestParam(required = false) List<String> proizvodjaci // NOVO
-//    ) {
-//        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(
-//                vendorId, glavnaGrupa, nadgrupa, minCena, maxCena, page, size, proizvodjaci
-//        );
-//        return artikli.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(artikli);
-//    }
-//
+    @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/artikli")
+    public ResponseEntity<List<Artikal>> getArtikliByGlavnaGrupaAndNadgrupa(
+            @PathVariable Long vendorId,
+            @PathVariable String glavnaGrupa,
+            @PathVariable String nadgrupa,
+            @RequestParam(required = false) Integer minCena,
+            @RequestParam(required = false) Integer maxCena,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) List<String> proizvodjaci // NOVO
+    ) {
+        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(
+                vendorId, glavnaGrupa, nadgrupa, minCena, maxCena, page, size, proizvodjaci
+        );
+        return artikli.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(artikli);
+    }
+
 
     @GetMapping("/{vendorId}/glavne_grupe_i_nadgrupe")
     public ResponseEntity<Map<String, List<String>>> getAllGroupsAndSubgroups(@PathVariable Long vendorId) {

@@ -99,30 +99,22 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     );
 
     @Query(value = """
-    WITH artikli AS (
-        SELECT 
-            unnest(
-                xpath(
-                    concat(
-                        '/artikli/artikal[', 
-                        string_agg(concat('nadgrupa/text()="', nadgrupa, '"'), ' or '), 
-                        ']'
-                    ),
-                    xml_data
-                )
-            )::TEXT AS artikal_xml
-        FROM vendor,
-        unnest(:nadgrupe) AS nadgrupa
-        WHERE vendor.id = :vendorId
-        GROUP BY vendor.id
-    )
-    SELECT DISTINCT artikal_xml
-    FROM artikli
+    SELECT unnest(
+               xpath(
+                   concat(
+                       '/artikli/artikal[normalize-space(nadgrupa/text())="', :nadgrupa, '"]'
+                   ),
+                   xml_data
+               )
+           )::TEXT AS artikal_xml
+    FROM vendor
+    WHERE vendor.id = :vendorId
     """, nativeQuery = true)
-    List<String> findArtikliByGlavnaGrupaAndNadgrupa(
+    List<String> findArtikliByNadgrupaAndVendorId(
             @Param("vendorId") Long vendorId,
-            @Param("nadgrupe") String[] nadgrupe
+            @Param("nadgrupa") String nadgrupa
     );
+
 
     @Modifying
     @Transactional
