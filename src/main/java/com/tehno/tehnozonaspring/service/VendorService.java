@@ -206,7 +206,24 @@ public class VendorService {
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }
 
-        return artikli;
+        return filtrirajPoProizvodjacima(artikli, proizvodjaci);
+
+    }
+
+    private List<Artikal> filtrirajPoProizvodjacima(List<Artikal> artikli, List<String> proizvodjaci) {
+        if (proizvodjaci == null || proizvodjaci.isEmpty()) {
+            return artikli; // nema filtera, vrati sve
+        }
+
+        Set<String> proizvodjaciSet = proizvodjaci.stream()
+                .filter(Objects::nonNull)
+                .map(p -> p.trim().toUpperCase()) // case-insensitive upoređivanje
+                .collect(Collectors.toSet());
+
+        return artikli.stream()
+                .filter(a -> a.getProizvodjac() != null
+                        && proizvodjaciSet.contains(a.getProizvodjac().trim().toUpperCase()))
+                .collect(Collectors.toList());
     }
 
 
