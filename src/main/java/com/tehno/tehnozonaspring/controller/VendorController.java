@@ -102,17 +102,17 @@ public class VendorController {
     public ResponseEntity<ProductPageResponse> getArtikliByGlavnaGrupa(
             @PathVariable Long id,
             @PathVariable String glavnaGrupa,
-            @RequestParam(required = false) Integer minCena,
-            @RequestParam(required = false) Integer maxCena,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size,
             @RequestParam(required = false) List<String> proizvodjaci
     ) {
         List<Artikal> sviArtikliBezFiltera = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, null, null, 0, Integer.MAX_VALUE, null);
 
-        List<Artikal> filtrirani = filtrirajPoProizvodjacima(sviArtikliBezFiltera, proizvodjaci);
+        List<Artikal> filtrirani1 = filtrirajPoProizvodjacima(sviArtikliBezFiltera, proizvodjaci);
 
-
+        List<Artikal> filtrirani = filtrirajPoCeni(filtrirani1, minCena, maxCena);
 
         double min = filtrirani.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
         double max = filtrirani.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
@@ -156,6 +156,19 @@ public class VendorController {
          return artikli1;
     }
 
+    public static List<Artikal> filtrirajPoCeni(List<Artikal> artikli, Double minCena, Double maxCena) {
+        if (artikli == null || artikli.isEmpty()) return List.of();
+
+        double min = (minCena != null) ? minCena : Double.NEGATIVE_INFINITY;
+        double max = (maxCena != null) ? maxCena : Double.POSITIVE_INFINITY;
+
+        return artikli.stream()
+                .filter(a -> {
+                    double cena = a.getB2bcena();
+                    return cena >= min && cena <= max;
+                })
+                .toList();
+    }
 
 
 
@@ -164,16 +177,17 @@ public class VendorController {
             @PathVariable Long vendorId,
             @PathVariable String glavnaGrupa,
             @PathVariable String nadgrupa,
-            @RequestParam(required = false) Integer minCena,
-            @RequestParam(required = false) Integer maxCena,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(required = false) List<String> proizvodjaci // NOVO
     ) {
-        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(
+        List<Artikal> artikli1 = vendorService.getArtikliByGlavnaGrupaAndNadgrupa(
                 vendorId, glavnaGrupa, nadgrupa, minCena, maxCena, page, size, proizvodjaci
         );
 
+        List<Artikal> artikli = filtrirajPoCeni(artikli1, minCena, maxCena);
         double min = artikli.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
         double max = artikli.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
 
@@ -226,11 +240,12 @@ public class VendorController {
     public ResponseEntity<Map<String, Integer>> getProizvodjaciWithCountByGlavnaGrupa(
             @PathVariable Long vendorId,
             @PathVariable String glavnaGrupa,
-            @RequestParam(required = false) Integer minCena,
-            @RequestParam(required = false) Integer maxCena,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena,
             @RequestParam(required = false) List<String> nadgrupe) {
         // VL : 28.09.2025.
-        List<Artikal> artikals = vendorService.getArtikliByGlavnaGrupa(vendorId, glavnaGrupa, minCena, maxCena, 0, 0, null);
+        List<Artikal> artikli = vendorService.getArtikliByGlavnaGrupa(vendorId, glavnaGrupa, minCena, maxCena, 0, 0, null);
+        List<Artikal> artikals = filtrirajPoCeni(artikli, minCena, maxCena);
         Map<String, Integer> rezultat = izvuciProizvodjaceIzListeArtikala(artikals, nadgrupe);
         return rezultat.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(rezultat);
 //        Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupa(vendorId, glavnaGrupa, minCena, maxCena);
@@ -314,10 +329,12 @@ public class VendorController {
     public ResponseEntity<List<Artikal>> getArtikliByGrupa(
             @PathVariable Long vendorId,
             @PathVariable String grupa,
-            @RequestParam(required = false) Integer minCena,
-            @RequestParam(required = false) Integer maxCena) {
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena) {
 
-        List<Artikal> artikli = vendorService.getArtikliByGrupa(vendorId, grupa, minCena, maxCena);
+        List<Artikal> artikals = vendorService.getArtikliByGrupa(vendorId, grupa, minCena, maxCena);
+        List<Artikal> artikli = filtrirajPoCeni(artikals, minCena, maxCena);
+
 
         if (artikli == null || artikli.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -331,8 +348,8 @@ public class VendorController {
             @PathVariable Long vendorId,
             @PathVariable String glavnaGrupa,
             @PathVariable String nadgrupa,
-            @RequestParam(required = false) Integer minCena,
-            @RequestParam(required = false) Integer maxCena) {
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena) {
 
         Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(vendorId, glavnaGrupa, nadgrupa, minCena, maxCena);
         return result.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(result);

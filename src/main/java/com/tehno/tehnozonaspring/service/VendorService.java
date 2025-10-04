@@ -148,7 +148,7 @@ public class VendorService {
     }
 
 
-    public List<Artikal> getArtikliByGlavnaGrupa(Long vendorId, String glavnaGrupa, Integer minCena, Integer maxCena, int page, int size, List<String> proizvodjaci) {
+    public List<Artikal> getArtikliByGlavnaGrupa(Long vendorId, String glavnaGrupa, Double minCena, Double maxCena, int page, int size, List<String> proizvodjaci) {
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
         List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
         List<Artikal> artikli = new ArrayList<>();
@@ -182,7 +182,7 @@ public class VendorService {
     }
 
 
-    public List<Artikal> getArtikliByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Integer minCena, Integer maxCena, int page, int size, List<String> proizvodjaci) {
+    public List<Artikal> getArtikliByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Double minCena, Double maxCena, int page, int size, List<String> proizvodjaci) {
         List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
 
         List<Artikal> artikli = new ArrayList<>();
@@ -351,7 +351,7 @@ public class VendorService {
         }
     }
 
-    public List<Artikal> getArtikliByGrupa(Long vendorId, String grupa, Integer minCena, Integer maxCena) {
+    public List<Artikal> getArtikliByGrupa(Long vendorId, String grupa, Double minCena, Double maxCena) {
         List<String> artikalXmlList = vendorRepository.findArtikliByVendorAndGrupa(vendorId, grupa);
         List<Artikal> artikli = new ArrayList<>();
 
@@ -374,7 +374,7 @@ public class VendorService {
         return artikli;
     }
 
-    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Integer minCena, Integer maxCena) {
+    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Double minCena, Double maxCena) {
         System.out.println("==== POČETAK getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa ====");
         System.out.println("Vendor ID: " + vendorId);
         System.out.println("Glavna grupa: " + glavnaGrupa);
