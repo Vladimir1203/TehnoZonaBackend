@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -125,6 +127,46 @@ public class VendorController {
 //        List<Artikal> sviArtikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, minCena, maxCena, page, size, proizvodjaci);
         int totalCount = filtriraniPoProizvodjacima.size();
 
+        int fromIndex = Math.min(page * size, totalCount);
+        int toIndex = Math.min(fromIndex + size, totalCount);
+        List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
+
+        ProductPageResponse response = new ProductPageResponse();
+        response.setProducts(paginated);
+        response.setTotalCount(totalCount);
+        response.setMinCena(min);
+        response.setMaxCena(max);
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/{id}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/grupa/{grupa}/artikli")
+    public ResponseEntity<ProductPageResponse> getArtikliByGlavnaGrupaAndNadgrupaAndGrupa(
+            @PathVariable Long id,
+            @PathVariable String nadgrupa,
+            @PathVariable String glavnaGrupa,
+            @PathVariable String grupa,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false) List<String> proizvodjaci) {
+
+        List<Artikal> artikals = vendorService.getArtikliByGrupa(id, nadgrupa, grupa, minCena, maxCena);
+        List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikals, proizvodjaci);
+
+
+        double min, max;
+
+        if(proizvodjaci == null || proizvodjaci.isEmpty()) {
+            min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
+            max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
+        } else {
+            min = minCena != null ? minCena : 0;
+            max = maxCena != null ? maxCena : 0;
+        }
+
+        int totalCount = filtriraniPoProizvodjacima.size();
         int fromIndex = Math.min(page * size, totalCount);
         int toIndex = Math.min(fromIndex + size, totalCount);
         List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
@@ -254,14 +296,50 @@ public class VendorController {
             @PathVariable String glavnaGrupa,
             @RequestParam(required = false) Double minCena,
             @RequestParam(required = false) Double maxCena,
-            @RequestParam(required = false) List<String> nadgrupe) {
+            @RequestParam(required = false) List<String> nadgrupe,
+            @RequestParam(required = false) String grupa) {
         List<Artikal> artikli = vendorService.vratiArtiklePoGlavnojGrupiICeni(vendorId, glavnaGrupa, minCena, maxCena, 0, 0,
                 null);
-        Map<String, Integer> rezultat = izvuciProizvodjaceIzListeArtikala(artikli, nadgrupe);
+        Map<String, Integer> rezultat = new HashMap<>();
+        if(grupa == null ||  grupa.equals("null")) {
+            rezultat = izvuciProizvodjacePoNadgrupama(artikli, nadgrupe);
+        } else{
+            rezultat = izvuciProizvodjacePoGrupama(artikli, grupa);
+        }
         return rezultat.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(rezultat);
     }
 
-    public static Map<String, Integer> izvuciProizvodjaceIzListeArtikala(List<Artikal> artikals, List<String> nadgrupe) {
+    public static Map<String, Integer> izvuciProizvodjacePoGrupama(List<Artikal> artikals, String grupa) {
+        if (artikals == null || artikals.isEmpty()) {
+            return Collections.emptyMap();
+        }
+
+        Stream<Artikal> stream = artikals.stream();
+
+        if (grupa != null && !grupa.trim().isEmpty()) {
+            String decodedGrupa = URLDecoder.decode(grupa, StandardCharsets.UTF_8)
+                    .trim()
+                    .toUpperCase();
+            stream = stream.filter(a -> {
+                String g = a.getGrupa();
+                return g != null && g.trim().toUpperCase().equals(decodedGrupa);
+            });
+        }
+
+        return stream
+                .map(Artikal::getProizvodjac)
+                .filter(Objects::nonNull)
+                .map(p -> p.trim().toUpperCase())
+                .filter(p -> !p.equals("/") && !p.equals("-") && !p.isEmpty())
+                .collect(Collectors.groupingBy(
+                        p -> p,
+                        TreeMap::new,
+                        Collectors.summingInt(x -> 1)
+                ));
+    }
+
+
+    public static Map<String, Integer> izvuciProizvodjacePoNadgrupama(List<Artikal> artikals, List<String> nadgrupe) {
         if (artikals == null || artikals.isEmpty()) {
             return Collections.emptyMap();
         }
@@ -339,9 +417,10 @@ public class VendorController {
             @PathVariable Long vendorId,
             @PathVariable String grupa,
             @RequestParam(required = false) Double minCena,
-            @RequestParam(required = false) Double maxCena) {
+            @RequestParam(required = false) Double maxCena,
+            @RequestParam(required = false) String nadgrupa) {
 
-        List<Artikal> artikals = vendorService.getArtikliByGrupa(vendorId, grupa, minCena, maxCena);
+        List<Artikal> artikals = vendorService.getArtikliByGrupa(vendorId, nadgrupa, grupa, minCena, maxCena);
         List<Artikal> artikli = filtrirajPoCeni(artikals, minCena, maxCena);
 
 

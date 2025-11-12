@@ -353,8 +353,9 @@ public class VendorService {
         }
     }
 
-    public List<Artikal> getArtikliByGrupa(Long vendorId, String grupa, Double minCena, Double maxCena) {
-        List<String> artikalXmlList = vendorRepository.findArtikliByVendorAndGrupa(vendorId, grupa);
+    public List<Artikal> getArtikliByGrupa(Long vendorId, String nadgrupa, String grupa, Double minCena,
+                                           Double maxCena) {
+        List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
         List<Artikal> artikli = new ArrayList<>();
 
         try {
@@ -364,9 +365,11 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                if ((minCena == null || artikal.getB2bcena() >= minCena) &&
-                        (maxCena == null || artikal.getB2bcena() <= maxCena)) {
-                    artikli.add(artikal);
+                if ((minCena == null || minCena == 0 || artikal.getB2bcena() >= minCena) &&
+                        (maxCena == null || maxCena == 0 || artikal.getB2bcena() <= maxCena)) {
+                    if(artikal.getGrupa().trim().equalsIgnoreCase(grupa.trim())){
+                        artikli.add(artikal);
+                    }
                 }
             }
         } catch (Exception e) {
