@@ -113,8 +113,8 @@ public class VendorController {
 
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikliPoCeni, proizvodjaci);
 
-        double min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
-        double max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
+        double min = minCena != null ? minCena : 0;
+        double max = maxCena != null ? maxCena : 0;
 
 //        List<Artikal> sviArtikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, minCena, maxCena, page, size, proizvodjaci);
         int totalCount = filtriraniPoProizvodjacima.size();
@@ -187,8 +187,8 @@ public class VendorController {
 
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikliPoNadgrupiICeni, proizvodjaci);
 
-        double min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
-        double max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
+        double min = minCena != null ? minCena : 0;
+        double max = maxCena != null ? maxCena : 0;
 
         int totalCount = filtriraniPoProizvodjacima.size();
         int fromIndex = Math.min(page * size, totalCount);
