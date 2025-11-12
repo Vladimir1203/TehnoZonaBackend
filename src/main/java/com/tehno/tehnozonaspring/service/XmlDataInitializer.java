@@ -19,7 +19,7 @@ public class XmlDataInitializer implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception {
-        if (!vendorRepository.existsById(2L)) {
+        if (!vendorRepository.existsById(1L)) {
             ClassPathResource resource = new ClassPathResource("TehnoZona-uspon.txt");
             StringBuilder builder = new StringBuilder();
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
@@ -35,7 +35,7 @@ public class XmlDataInitializer implements CommandLineRunner {
             vendor.setName("uspon");
             vendor.setXmlData(xmlContent);
 
-            vendorRepository.insertVendor(2L, "uspon", xmlContent);
+            vendorRepository.insertVendor(1L, "uspon", xmlContent);
             System.out.println("XML data inserted successfully.");
         }
     }

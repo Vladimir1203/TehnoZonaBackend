@@ -148,7 +148,8 @@ public class VendorService {
     }
 
 
-    public List<Artikal> getArtikliByGlavnaGrupa(Long vendorId, String glavnaGrupa, Double minCena, Double maxCena, int page, int size, List<String> proizvodjaci) {
+    public List<Artikal> vratiArtiklePoGlavnojGrupiICeni(Long vendorId, String glavnaGrupa, Double minCena, Double maxCena,
+                                                  int page, int size, List<String> proizvodjaci) {
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
         List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
         List<Artikal> artikli = new ArrayList<>();
@@ -182,23 +183,24 @@ public class VendorService {
     }
 
 
-    public List<Artikal> getArtikliByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Double minCena, Double maxCena, int page, int size, List<String> proizvodjaci) {
-        List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
+    public List<Artikal> vratiArtiklePoNadgrupi(Long vendorId, String nadgrupa, Double minCena, Double maxCena,
+                                                int page, int size, List<String> proizvodjaci) {
+        List<String> artikliPoNadgrupi = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
 
-        List<Artikal> artikli = new ArrayList<>();
+        List<Artikal> artikliPoNadgrupiIceni = new ArrayList<>();
 
         try {
             JAXBContext context = JAXBContext.newInstance(Artikal.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
 
-            for (String artikalXml : artikalXmlList) {
+            for (String artikalXml : artikliPoNadgrupi) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
                 // Primeni filtriranje cene ako su prosleđene granice
                 if ((minCena == null || artikal.getB2bcena() >= minCena) &&
                         (maxCena == null || artikal.getB2bcena() <= maxCena)) {
-                    artikli.add(artikal);
+                    artikliPoNadgrupiIceni.add(artikal);
                 }
             }
         } catch (Exception e) {
@@ -206,7 +208,7 @@ public class VendorService {
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }
 
-        return filtrirajPoProizvodjacima(artikli, proizvodjaci);
+        return filtrirajPoProizvodjacima(artikliPoNadgrupiIceni, proizvodjaci);
 
     }
 
