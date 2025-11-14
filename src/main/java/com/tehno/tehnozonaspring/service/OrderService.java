@@ -23,7 +23,7 @@ public class OrderService {
     }
 
     public void sendOrderEmail(OrderRequest request) {
-        String to = "bratislav.2000@gmail.com"; // primalac
+        String to = "bratislav.2000@gmail.com";
         String subject = "Nova porudžbina od " + request.getIme() + " " + request.getPrezime();
         String body = generateEmailBody(request);
 
@@ -31,15 +31,15 @@ public class OrderService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
-            helper.setFrom("vladimir12934@gmail.com"); // tvoja gmail adresa
+            helper.setFrom("vladimir12934@gmail.com");
             helper.setTo(to);
             helper.setSubject(subject);
-            helper.setText(body, true); // HTML
+            helper.setText(body, true);
 
             try {
                 mailSender.send(message);
             } catch (Exception e) {
-                e.printStackTrace(); // ili log.error("Neuspešno slanje mejla", e);
+                e.printStackTrace();
                 throw new RuntimeException("Slanje mejla nije uspelo. Pokušajte kasnije.");
             }        } catch (MessagingException e) {
             throw new RuntimeException("Greška prilikom slanja porudžbine: " + e.getMessage(), e);
