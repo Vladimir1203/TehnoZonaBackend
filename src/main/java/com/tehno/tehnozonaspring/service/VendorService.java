@@ -404,16 +404,17 @@ public class VendorService {
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
                 double cena = artikal.getB2bcena();
-                if (cena < globalMin) {
-                    globalMin = cena;
-                }
-                if (cena > globalMax) {
-                    globalMax = cena;
-                }
+
 
                 if ((minCena == null || minCena == 0 || artikal.getB2bcena() >= minCena) &&
                         (maxCena == null || maxCena == 0 || artikal.getB2bcena() <= maxCena)) {
                     if(artikal.getGrupa().trim().equalsIgnoreCase(grupa.trim())){
+                        if (cena < globalMin) {
+                            globalMin = cena;
+                        }
+                        if (cena > globalMax) {
+                            globalMax = cena;
+                        }
                         artikli.add(artikal);
                     }
                 }
