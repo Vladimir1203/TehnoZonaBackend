@@ -505,7 +505,7 @@ public class VendorController {
     }
 
     @GetMapping("/featured/all")
-    public ResponseEntity<List<FeaturedProduct>> getAllFeatured() {
+    public ResponseEntity<List<FeaturedArtikalResponse>> getAllFeatured() {
         return ResponseEntity.ok(vendorService.getActiveFeaturedArtikli());
     }
 

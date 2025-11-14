@@ -586,9 +586,21 @@ public class VendorService {
     }
 
 
-    public List<FeaturedProduct> getActiveFeaturedArtikli() {
-        return featuredProductRepository.getAllActiveFeatured();
-    }
+    public List<FeaturedArtikalResponse> getActiveFeaturedArtikli() {
+        List<FeaturedProduct> featuredList =
+                featuredProductRepository.getAllActiveFeatured();
+
+        List<FeaturedArtikalResponse> result = new ArrayList<>();
+
+        for (FeaturedProduct fp : featuredList) {
+            Artikal artikal = getProductByArtikalBarCode(fp.getVendorId(), fp.getBarcode());
+
+            if (artikal != null) {
+                result.add(new FeaturedArtikalResponse(artikal, fp));
+            }
+        }
+
+        return result;    }
 
     public List<FeaturedArtikalResponse> getActiveFeaturedArtikliByType(FeatureType type) {
 
