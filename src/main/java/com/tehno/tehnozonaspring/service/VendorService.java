@@ -519,4 +519,29 @@ public class VendorService {
             throw new RuntimeException("Greška prilikom parsiranja XML artikla za barkod " + barCode, e);
         }
     }
+
+    public List<Artikal> getArtikliByBrand(Long vendorId, String proizvodjac) {
+        List<String> xmlList = vendorRepository.findArtikliByProizvodjac(proizvodjac);
+        List<Artikal> result = new ArrayList<>();
+
+        if (xmlList == null || xmlList.isEmpty()) {
+            return result;
+        }
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Artikal.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            for (String xml : xmlList) {
+                Artikal artikal = (Artikal) unmarshaller.unmarshal(new StringReader(xml));
+                result.add(artikal);
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException("Greška prilikom parsiranja artikala za brend " + proizvodjac, e);
+        }
+
+        return result;
+    }
+
 }

@@ -473,4 +473,14 @@ public class VendorController {
 
         return ResponseEntity.ok(artikal);
     }
+
+    @GetMapping("/{vendorId}/artikli/brand/{brand}")
+    public ResponseEntity<List<Artikal>> getArtikliByBrand(
+            @PathVariable Long vendorId,
+            @PathVariable String brand
+    ) {
+        List<Artikal> artikli = vendorService.getArtikliByBrand(vendorId, brand);
+        return ResponseEntity.ok(artikli);
+    }
+
 }
