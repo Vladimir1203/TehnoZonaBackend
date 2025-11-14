@@ -1,6 +1,10 @@
 package com.tehno.tehnozonaspring.service;
 
+import com.tehno.tehnozonaspring.dto.FeaturedArtikalResponse;
 import com.tehno.tehnozonaspring.dto.ProductPageResponse;
+import com.tehno.tehnozonaspring.model.FeatureType;
+import com.tehno.tehnozonaspring.model.FeaturedProduct;
+import com.tehno.tehnozonaspring.repository.FeaturedProductRepository;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Unmarshaller;
 
@@ -12,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.StringReader;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -19,6 +24,8 @@ import java.util.stream.Collectors;
 public class VendorService {
 
     private final VendorRepository vendorRepository;
+    private final FeaturedProductRepository featuredProductRepository;
+
 
     private final Map<String, List<String>> groupMap = Map.of(
             "BELA TEHNIKA I KUĆNI APARATI", List.of(
@@ -78,8 +85,9 @@ public class VendorService {
 
 
     @Autowired
-    public VendorService(VendorRepository VendorRepository) {
-        this.vendorRepository = VendorRepository;
+    public VendorService(VendorRepository vendorRepository, FeaturedProductRepository featuredProductRepository) {
+        this.vendorRepository = vendorRepository;
+        this.featuredProductRepository = featuredProductRepository;
     }
 
     public List<Vendor> getAllBeans() {
@@ -543,5 +551,64 @@ public class VendorService {
 
         return result;
     }
+
+    public FeaturedProduct addFeaturedProduct(Long vendorId, String barcode, FeatureType featureType, Integer priority, LocalDateTime validFrom, LocalDateTime validTo
+    ) {
+        if (priority == null) {
+            priority = 1;
+        }
+        if (validFrom == null) {
+            validFrom = LocalDateTime.now();
+        }
+        if (validTo == null) {
+            validTo = LocalDateTime.now().plusMonths(1);
+        }
+
+        vendorRepository.insertFeaturedProduct(
+                barcode,
+                vendorId,
+                featureType.name(),
+                priority,
+                validFrom,
+                validTo
+        );
+
+        // kreiramo objekat da vratimo klijentu
+        FeaturedProduct fp = new FeaturedProduct();
+        fp.setBarcode(barcode);
+        fp.setVendorId(vendorId);
+        fp.setFeatureType(featureType);
+        fp.setPriority(priority);
+        fp.setValidFrom(validFrom);
+        fp.setValidTo(validTo);
+
+        return fp;
+    }
+
+
+    public List<FeaturedProduct> getActiveFeaturedArtikli() {
+        return featuredProductRepository.getAllActiveFeatured();
+    }
+
+    public List<FeaturedArtikalResponse> getActiveFeaturedArtikliByType(FeatureType type) {
+
+        // 1. Prvo dohvati sve featured iz tabele
+        List<FeaturedProduct> featuredList =
+                featuredProductRepository.getActiveFeaturedByType(type.name());
+
+        List<FeaturedArtikalResponse> result = new ArrayList<>();
+
+        // 2. Za svaki featured — izvuci artikal po barkodu
+        for (FeaturedProduct fp : featuredList) {
+            Artikal artikal = getProductByArtikalBarCode(fp.getVendorId(), fp.getBarcode());
+
+            if (artikal != null) {
+                result.add(new FeaturedArtikalResponse(artikal, fp));
+            }
+        }
+
+        return result;
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.tehno.tehnozonaspring.repository;
 
 import com.tehno.tehnozonaspring.model.Artikal;
+import com.tehno.tehnozonaspring.model.FeaturedProduct;
 import com.tehno.tehnozonaspring.model.Vendor;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -275,4 +277,23 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     List<String> getProductByArtikalBarCodeRaw(
             @Param("vendorId") Long vendorId,
             @Param("barCode") String barCode
-    );}
+    );
+
+    @Modifying
+    @Transactional
+    @Query(value = """
+    INSERT INTO featured_products 
+        (barcode, vendor_id, feature_type, priority, valid_from, valid_to)
+    VALUES 
+        (:barcode, :vendorId, :featureType, :priority, :validFrom, :validTo)
+""", nativeQuery = true)
+    void insertFeaturedProduct(
+            @Param("barcode") String barcode,
+            @Param("vendorId") Long vendorId,
+            @Param("featureType") String featureType,  // ovo je tvoj 'name' parametar
+            @Param("priority") Integer priority,
+            @Param("validFrom") LocalDateTime validFrom,
+            @Param("validTo") LocalDateTime validTo
+    );
+
+}

@@ -1,9 +1,8 @@
 package com.tehno.tehnozonaspring.controller;
 
+import com.tehno.tehnozonaspring.dto.FeaturedArtikalResponse;
 import com.tehno.tehnozonaspring.dto.ProductPageResponse;
-import com.tehno.tehnozonaspring.model.Artikal;
-import com.tehno.tehnozonaspring.model.Product;
-import com.tehno.tehnozonaspring.model.Vendor;
+import com.tehno.tehnozonaspring.model.*;
 import com.tehno.tehnozonaspring.service.VendorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -482,5 +482,40 @@ public class VendorController {
         List<Artikal> artikli = vendorService.getArtikliByBrand(vendorId, brand);
         return ResponseEntity.ok(artikli);
     }
+
+    @PostMapping("/{vendorId}/featured")
+    public ResponseEntity<FeaturedProduct> addFeaturedProduct(
+            @PathVariable Long vendorId,
+            @RequestParam String barcode,
+            @RequestParam FeatureType featureType,
+            @RequestParam(required = false) Integer priority,
+            @RequestParam(required = false) String validFrom,
+            @RequestParam(required = false) String validTo
+    ) {
+        FeaturedProduct fp = vendorService.addFeaturedProduct(
+                vendorId,
+                barcode,
+                featureType,
+                priority,
+                validFrom != null ? LocalDateTime.parse(validFrom) : null,
+                validTo != null ? LocalDateTime.parse(validTo) : null
+        );
+
+        return ResponseEntity.ok(fp);
+    }
+
+    @GetMapping("/featured/all")
+    public ResponseEntity<List<FeaturedProduct>> getAllFeatured() {
+        return ResponseEntity.ok(vendorService.getActiveFeaturedArtikli());
+    }
+
+    @GetMapping("/featured")
+    public ResponseEntity<List<FeaturedArtikalResponse>> getFeaturedByType(
+            @RequestParam FeatureType type
+    ) {
+        return ResponseEntity.ok(vendorService.getActiveFeaturedArtikliByType(type));
+    }
+
+
 
 }
