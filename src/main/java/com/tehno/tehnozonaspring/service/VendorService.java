@@ -499,7 +499,24 @@ public class VendorService {
     }
 
 
+    public Artikal getProductByArtikalBarCode(Long vendorId, String barCode) {
+        List<String> xmlList = vendorRepository.getProductByArtikalBarCodeRaw(vendorId, barCode);
 
+        if (xmlList == null || xmlList.isEmpty()) {
+            return null;
+        }
 
+        try {
+            JAXBContext context = JAXBContext.newInstance(Artikal.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
 
+            // može biti više artikala za isti barkod – vrati prvi
+            String xml = xmlList.get(0);
+
+            return (Artikal) unmarshaller.unmarshal(new StringReader(xml));
+
+        } catch (Exception e) {
+            throw new RuntimeException("Greška prilikom parsiranja XML artikla za barkod " + barCode, e);
+        }
+    }
 }

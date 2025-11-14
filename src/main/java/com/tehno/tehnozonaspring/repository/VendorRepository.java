@@ -1,5 +1,6 @@
 package com.tehno.tehnozonaspring.repository;
 
+import com.tehno.tehnozonaspring.model.Artikal;
 import com.tehno.tehnozonaspring.model.Vendor;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -261,4 +262,17 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     List<String> findAllArtikliXmlByVendorId(@Param("vendorId") Long vendorId);
 
 
-}
+    @Query(value = """
+    SELECT unnest(
+               xpath(
+                   concat('/artikli/artikal[barkod/text()="', :barCode, '"]'),
+                   xml_data
+               )
+           )::TEXT AS artikal_xml
+    FROM vendor
+    WHERE id = :vendorId
+""", nativeQuery = true)
+    List<String> getProductByArtikalBarCodeRaw(
+            @Param("vendorId") Long vendorId,
+            @Param("barCode") String barCode
+    );}

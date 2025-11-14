@@ -2,6 +2,7 @@ package com.tehno.tehnozonaspring.controller;
 
 import com.tehno.tehnozonaspring.dto.ProductPageResponse;
 import com.tehno.tehnozonaspring.model.Artikal;
+import com.tehno.tehnozonaspring.model.Product;
 import com.tehno.tehnozonaspring.model.Vendor;
 import com.tehno.tehnozonaspring.service.VendorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -463,5 +464,13 @@ public class VendorController {
         return ResponseEntity.ok(rezultati);
     }
 
+    @GetMapping("/{vendorId}/artikal/{artikalBarCode}")
+    public ResponseEntity<Artikal> getProductByArtikalBarCode(
+            @PathVariable Long vendorId,
+            @PathVariable String artikalBarCode
+    ){
+        Artikal artikal = vendorService.getProductByArtikalBarCode(vendorId, artikalBarCode);
 
+        return ResponseEntity.ok(artikal);
+    }
 }
