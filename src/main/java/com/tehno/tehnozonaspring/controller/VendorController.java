@@ -110,8 +110,10 @@ public class VendorController {
             @RequestParam(defaultValue = "20") int size,
             @RequestParam(required = false) List<String> proizvodjaci
     ) {
+        ProductPageResponse response = new ProductPageResponse();
+
         List<Artikal> artikliPoCeni = vendorService.vratiArtiklePoGlavnojGrupiICeni(id, glavnaGrupa, minCena, maxCena
-                , 0, Integer.MAX_VALUE, null);
+                , 0, Integer.MAX_VALUE, null, response);
 
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikliPoCeni, proizvodjaci);
 
@@ -131,7 +133,6 @@ public class VendorController {
         int toIndex = Math.min(fromIndex + size, totalCount);
         List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
 
-        ProductPageResponse response = new ProductPageResponse();
         response.setProducts(paginated);
         response.setTotalCount(totalCount);
         response.setMinCena(min);
@@ -151,8 +152,9 @@ public class VendorController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size,
             @RequestParam(required = false) List<String> proizvodjaci) {
+        ProductPageResponse response = new ProductPageResponse();
 
-        List<Artikal> artikals = vendorService.getArtikliByGrupa(id, nadgrupa, grupa, minCena, maxCena);
+        List<Artikal> artikals = vendorService.getArtikliByGrupa(id, nadgrupa, grupa, minCena, maxCena, response);
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikals, proizvodjaci);
 
 
@@ -171,7 +173,6 @@ public class VendorController {
         int toIndex = Math.min(fromIndex + size, totalCount);
         List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
 
-        ProductPageResponse response = new ProductPageResponse();
         response.setProducts(paginated);
         response.setTotalCount(totalCount);
         response.setMinCena(min);
@@ -229,8 +230,10 @@ public class VendorController {
             @RequestParam(defaultValue = "20") int size,
             @RequestParam(required = false) List<String> proizvodjaci
     ) {
+        ProductPageResponse response = new ProductPageResponse();
+
         List<Artikal> artikliPoNadgrupiICeni = vendorService.vratiArtiklePoNadgrupi(
-                vendorId, nadgrupa, minCena, maxCena, page, size, proizvodjaci
+                vendorId, nadgrupa, minCena, maxCena, page, size, proizvodjaci, response
         );
 
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikliPoNadgrupiICeni, proizvodjaci);
@@ -250,7 +253,6 @@ public class VendorController {
         int toIndex = Math.min(fromIndex + size, totalCount);
         List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
 
-        ProductPageResponse response = new ProductPageResponse();
         response.setProducts(paginated);
         response.setTotalCount(totalCount);
         response.setMinCena(min);
@@ -299,7 +301,7 @@ public class VendorController {
             @RequestParam(required = false) List<String> nadgrupe,
             @RequestParam(required = false) String grupa) {
         List<Artikal> artikli = vendorService.vratiArtiklePoGlavnojGrupiICeni(vendorId, glavnaGrupa, minCena, maxCena, 0, 0,
-                null);
+                null, new ProductPageResponse());
         Map<String, Integer> rezultat = new HashMap<>();
         if(grupa == null ||  grupa.equals("null")) {
             rezultat = izvuciProizvodjacePoNadgrupama(artikli, nadgrupe);
@@ -420,7 +422,7 @@ public class VendorController {
             @RequestParam(required = false) Double maxCena,
             @RequestParam(required = false) String nadgrupa) {
 
-        List<Artikal> artikals = vendorService.getArtikliByGrupa(vendorId, nadgrupa, grupa, minCena, maxCena);
+        List<Artikal> artikals = vendorService.getArtikliByGrupa(vendorId, nadgrupa, grupa, minCena, maxCena, new ProductPageResponse());
         List<Artikal> artikli = filtrirajPoCeni(artikals, minCena, maxCena);
 
 

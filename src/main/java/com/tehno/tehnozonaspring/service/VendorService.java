@@ -1,5 +1,6 @@
 package com.tehno.tehnozonaspring.service;
 
+import com.tehno.tehnozonaspring.dto.ProductPageResponse;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Unmarshaller;
 
@@ -149,10 +150,13 @@ public class VendorService {
 
 
     public List<Artikal> vratiArtiklePoGlavnojGrupiICeni(Long vendorId, String glavnaGrupa, Double minCena, Double maxCena,
-                                                  int page, int size, List<String> proizvodjaci) {
+                                                  int page, int size, List<String> proizvodjaci, ProductPageResponse response) {
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
         List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
         List<Artikal> artikli = new ArrayList<>();
+
+        double globalMin = Double.MAX_VALUE;
+        double globalMax = Double.MIN_VALUE;
 
         try {
             JAXBContext context = JAXBContext.newInstance(Artikal.class);
@@ -161,6 +165,14 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
+
+                double cena = artikal.getB2bcena();
+                if (cena < globalMin) {
+                    globalMin = cena;
+                }
+                if (cena > globalMax) {
+                    globalMax = cena;
+                }
 
                 if ((minCena == null || minCena == 0 || artikal.getB2bcena() >= minCena) &&
                         (maxCena == null || maxCena == 0 || artikal.getB2bcena() <= maxCena)) {
@@ -171,6 +183,12 @@ public class VendorService {
             e.printStackTrace();
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }
+
+        if (globalMin == Double.MAX_VALUE) globalMin = 0;
+        if (globalMax == Double.MIN_VALUE) globalMax = 0;
+
+        response.setInitialMaxCena(globalMax);
+        response.setInitialMinCena(globalMin);
 
         int fromIndex = page * size;
         int toIndex = Math.min(fromIndex + size, artikli.size());
@@ -184,10 +202,13 @@ public class VendorService {
 
 
     public List<Artikal> vratiArtiklePoNadgrupi(Long vendorId, String nadgrupa, Double minCena, Double maxCena,
-                                                int page, int size, List<String> proizvodjaci) {
+                                                int page, int size, List<String> proizvodjaci, ProductPageResponse response) {
         List<String> artikliPoNadgrupi = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
 
         List<Artikal> artikliPoNadgrupiIceni = new ArrayList<>();
+
+        double globalMin = Double.MAX_VALUE;
+        double globalMax = Double.MIN_VALUE;
 
         try {
             JAXBContext context = JAXBContext.newInstance(Artikal.class);
@@ -197,12 +218,25 @@ public class VendorService {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
-                // Primeni filtriranje cene ako su prosleđene granice
+                double cena = artikal.getB2bcena();
+                if (cena < globalMin) {
+                    globalMin = cena;
+                }
+                if (cena > globalMax) {
+                    globalMax = cena;
+                }
+
                 if ((minCena == null || artikal.getB2bcena() >= minCena) &&
                         (maxCena == null || artikal.getB2bcena() <= maxCena)) {
                     artikliPoNadgrupiIceni.add(artikal);
                 }
             }
+
+            if (globalMin == Double.MAX_VALUE) globalMin = 0;
+            if (globalMax == Double.MIN_VALUE) globalMax = 0;
+
+            response.setInitialMaxCena(globalMax);
+            response.setInitialMinCena(globalMin);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
@@ -354,9 +388,12 @@ public class VendorService {
     }
 
     public List<Artikal> getArtikliByGrupa(Long vendorId, String nadgrupa, String grupa, Double minCena,
-                                           Double maxCena) {
+                                           Double maxCena, ProductPageResponse response) {
         List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
         List<Artikal> artikli = new ArrayList<>();
+
+        double globalMin = Double.MAX_VALUE;
+        double globalMax = Double.MIN_VALUE;
 
         try {
             JAXBContext context = JAXBContext.newInstance(Artikal.class);
@@ -365,6 +402,15 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
+
+                double cena = artikal.getB2bcena();
+                if (cena < globalMin) {
+                    globalMin = cena;
+                }
+                if (cena > globalMax) {
+                    globalMax = cena;
+                }
+
                 if ((minCena == null || minCena == 0 || artikal.getB2bcena() >= minCena) &&
                         (maxCena == null || maxCena == 0 || artikal.getB2bcena() <= maxCena)) {
                     if(artikal.getGrupa().trim().equalsIgnoreCase(grupa.trim())){
@@ -372,6 +418,12 @@ public class VendorService {
                     }
                 }
             }
+
+            if (globalMin == Double.MAX_VALUE) globalMin = 0;
+            if (globalMax == Double.MIN_VALUE) globalMax = 0;
+
+            response.setInitialMaxCena(globalMax);
+            response.setInitialMinCena(globalMin);
         } catch (Exception e) {
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }

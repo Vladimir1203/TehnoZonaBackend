@@ -8,6 +8,8 @@ public class ProductPageResponse {
     private int totalCount;
     private double minCena;
     private double maxCena;
+    private double initialMinCena;
+    private double initialMaxCena;
 
     public List<Artikal> getProducts() {
         return products;
@@ -39,6 +41,20 @@ public class ProductPageResponse {
 
     public void setMaxCena(double maxCena) {
         this.maxCena = maxCena;
+    }
+
+    public double getInitialMinCena() {
+        return initialMinCena;
+    }
+    public void setInitialMinCena(double initialMinCena) {
+        this.initialMinCena = initialMinCena;
+    }
+
+    public double getInitialMaxCena() {
+        return initialMaxCena;
+    }
+    public void setInitialMaxCena(double initialMaxCena) {
+        this.initialMaxCena = initialMaxCena;
     }
 }
 
