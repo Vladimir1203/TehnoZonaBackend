@@ -516,6 +516,20 @@ public class VendorController {
         return ResponseEntity.ok(vendorService.getActiveFeaturedArtikliByType(type));
     }
 
+    @GetMapping("/{vendorId}/brand/{brand}/glavnaGrupa/count")
+    public ResponseEntity<List<Map<String, Object>>> getCountByGlavnaGrupaForBrand(
+            @PathVariable Long vendorId,
+            @PathVariable String brand
+    ) {
+        List<Map<String, Object>> result = vendorService.getCountByGlavnaGrupaForBrand(vendorId, brand);
+
+        if (result.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(result);
+    }
+
 
 
 }

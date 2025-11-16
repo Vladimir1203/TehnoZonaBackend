@@ -528,13 +528,11 @@ public class VendorService {
         }
     }
 
-    public List<Artikal> getArtikliByBrand(Long vendorId, String proizvodjac) {
-        List<String> xmlList = vendorRepository.findArtikliByProizvodjac(proizvodjac);
-        List<Artikal> result = new ArrayList<>();
+    public List<Artikal> getArtikliByBrand(Long vendorId, String brand) {
+        String target = brand.trim().toUpperCase();
 
-        if (xmlList == null || xmlList.isEmpty()) {
-            return result;
-        }
+        List<String> xmlList = vendorRepository.findAllArtikliXmlByVendorId(vendorId);
+        List<Artikal> result = new ArrayList<>();
 
         try {
             JAXBContext context = JAXBContext.newInstance(Artikal.class);
@@ -542,11 +540,16 @@ public class VendorService {
 
             for (String xml : xmlList) {
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(new StringReader(xml));
-                result.add(artikal);
+
+                if (artikal.getProizvodjac() != null &&
+                        artikal.getProizvodjac().trim().toUpperCase().equals(target)) {
+
+                    result.add(artikal);
+                }
             }
 
         } catch (Exception e) {
-            throw new RuntimeException("Greška prilikom parsiranja artikala za brend " + proizvodjac, e);
+            throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }
 
         return result;
@@ -620,6 +623,62 @@ public class VendorService {
         }
 
         return result;
+    }
+
+
+    public List<Map<String, Object>> getCountByGlavnaGrupaForBrand(Long vendorId, String brand) {
+
+        // 1. Dohvati sve artikle tog brenda
+        List<Artikal> artikli = getArtikliByBrand(vendorId, brand);
+
+        if (artikli == null || artikli.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        // 2. Map za brojanje po glavnim grupama
+        Map<String, Integer> counter = new HashMap<>();
+
+        for (Artikal artikal : artikli) {
+
+            String nadgrupa = artikal.getNadgrupa();
+            if (nadgrupa == null || nadgrupa.trim().isEmpty()) {
+                continue;
+            }
+
+            // 3. Pronađi glavnu grupu kojoj pripada nadgrupa
+            String glavnaGrupa = findGlavnaGrupaForNadgrupa(nadgrupa);
+
+            // Ako nije pronađena, skip
+            if (glavnaGrupa == null) continue;
+
+            // 4. Povećaj counter
+            counter.merge(glavnaGrupa, 1, Integer::sum);
+        }
+
+        // 5. Pretvori u listu mapova za frontend
+        return counter.entrySet().stream()
+                .map(e -> Map.<String, Object>of(
+                        "glavnaGrupa", e.getKey(),
+                        "count", e.getValue()
+                ))
+                .toList();
+    }
+
+    private String findGlavnaGrupaForNadgrupa(String nadgrupa) {
+        if (nadgrupa == null) return null;
+        String n = nadgrupa.trim().toUpperCase();
+
+        for (Map.Entry<String, List<String>> entry : groupMap.entrySet()) {
+            List<String> nadgrupe = entry.getValue();
+
+            // Da li se nadgrupa iz artikla nalazi u listi nadgrupa za glavnu grupu?
+            for (String ng : nadgrupe) {
+                if (ng.equalsIgnoreCase(n)) {
+                    return entry.getKey(); // glavna grupa
+                }
+            }
+        }
+        return null;
     }
 
 
