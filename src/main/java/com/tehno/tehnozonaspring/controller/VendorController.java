@@ -519,9 +519,11 @@ public class VendorController {
     @GetMapping("/{vendorId}/brand/{brand}/glavnaGrupa/count")
     public ResponseEntity<List<Map<String, Object>>> getCountByGlavnaGrupaForBrand(
             @PathVariable Long vendorId,
-            @PathVariable String brand
+            @PathVariable String brand,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena
     ) {
-        List<Map<String, Object>> result = vendorService.getCountByGlavnaGrupaForBrand(vendorId, brand);
+        List<Map<String, Object>> result = vendorService.getCountByGlavnaGrupaForBrand(vendorId, brand, minCena, maxCena);
 
         if (result.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -531,19 +533,46 @@ public class VendorController {
     }
 
     @GetMapping("/{vendorId}/brand/{brand}/glavnaGrupa/{glavnaGrupa}/artikli")
-    public ResponseEntity<List<Artikal>> getArtikliByBrandAndGlavnaGrupa(
+    public ResponseEntity<ProductPageResponse> getArtikliByBrandAndGlavnaGrupa(
             @PathVariable Long vendorId,
             @PathVariable String brand,
-            @PathVariable String glavnaGrupa
+            @PathVariable String glavnaGrupa,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size
     ) {
+        ProductPageResponse response = new ProductPageResponse();
 
         List<Artikal> artikli = vendorService.getArtikliByBrandAndGlavnaGrupa(vendorId, brand, glavnaGrupa);
 
-        if (artikli.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
+        List<Artikal> filtriraniPoCeni = filtrirajPoCeni(artikli, minCena, maxCena);
 
-        return ResponseEntity.ok(artikli);
+        // 3. Računanje min/max nakon filtriranja
+        double min = filtriraniPoCeni.stream()
+                .mapToDouble(Artikal::getB2bcena)
+                .min()
+                .orElse(0.0);
+
+        double max = filtriraniPoCeni.stream()
+                .mapToDouble(Artikal::getB2bcena)
+                .max()
+                .orElse(0.0);
+
+        // 4. Paginacija
+        int totalCount = filtriraniPoCeni.size();
+        int fromIndex = Math.min(page * size, totalCount);
+        int toIndex = Math.min(fromIndex + size, totalCount);
+
+        List<Artikal> paginated = filtriraniPoCeni.subList(fromIndex, toIndex);
+
+        // 5. Upis u response
+        response.setProducts(paginated);
+        response.setTotalCount(totalCount);
+        response.setMinCena(min);
+        response.setMaxCena(max);
+
+        return ResponseEntity.ok(response);
     }
 
 }

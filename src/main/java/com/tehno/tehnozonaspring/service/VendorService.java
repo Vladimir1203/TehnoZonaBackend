@@ -1,5 +1,6 @@
 package com.tehno.tehnozonaspring.service;
 
+import com.tehno.tehnozonaspring.controller.VendorController;
 import com.tehno.tehnozonaspring.dto.FeaturedArtikalResponse;
 import com.tehno.tehnozonaspring.dto.ProductPageResponse;
 import com.tehno.tehnozonaspring.model.FeatureType;
@@ -626,19 +627,22 @@ public class VendorService {
     }
 
 
-    public List<Map<String, Object>> getCountByGlavnaGrupaForBrand(Long vendorId, String brand) {
+    public List<Map<String, Object>> getCountByGlavnaGrupaForBrand(Long vendorId, String brand, Double minCena, Double maxCena) {
 
         // 1. Dohvati sve artikle tog brenda
         List<Artikal> artikli = getArtikliByBrand(vendorId, brand);
 
-        if (artikli == null || artikli.isEmpty()) {
+        List<Artikal> filtrirani =
+                VendorController.filtrirajPoCeni(artikli, minCena, maxCena);
+
+        if (filtrirani == null || filtrirani.isEmpty()) {
             return Collections.emptyList();
         }
 
         // 2. Map za brojanje po glavnim grupama
         Map<String, Integer> counter = new HashMap<>();
 
-        for (Artikal artikal : artikli) {
+        for (Artikal artikal : filtrirani) {
 
             String nadgrupa = artikal.getNadgrupa();
             if (nadgrupa == null || nadgrupa.trim().isEmpty()) {
