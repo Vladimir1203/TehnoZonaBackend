@@ -530,6 +530,20 @@ public class VendorController {
         return ResponseEntity.ok(result);
     }
 
+    @GetMapping("/{vendorId}/brand/{brand}/glavnaGrupa/{glavnaGrupa}/artikli")
+    public ResponseEntity<List<Artikal>> getArtikliByBrandAndGlavnaGrupa(
+            @PathVariable Long vendorId,
+            @PathVariable String brand,
+            @PathVariable String glavnaGrupa
+    ) {
 
+        List<Artikal> artikli = vendorService.getArtikliByBrandAndGlavnaGrupa(vendorId, brand, glavnaGrupa);
+
+        if (artikli.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(artikli);
+    }
 
 }

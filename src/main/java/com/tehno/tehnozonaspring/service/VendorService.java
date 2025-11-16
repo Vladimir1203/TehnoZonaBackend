@@ -682,4 +682,47 @@ public class VendorService {
     }
 
 
+    public List<Artikal> getArtikliByBrandAndGlavnaGrupa(Long vendorId, String brand, String glavnaGrupa) {
+
+        String targetBrand = brand.trim().toUpperCase();
+
+        // Nadgrupe koje pripadaju traženoj glavnoj grupi
+        String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
+
+        // Pretvori nadgrupe u set radi bržeg lookup-a
+        Set<String> nadgrupeSet = Arrays.stream(nadgrupe)
+                .map(s -> s.trim().toUpperCase())
+                .collect(Collectors.toSet());
+
+        List<String> xmlList = vendorRepository.findAllArtikliXmlByVendorId(vendorId);
+        List<Artikal> result = new ArrayList<>();
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Artikal.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            for (String xml : xmlList) {
+                Artikal a = (Artikal) unmarshaller.unmarshal(new StringReader(xml));
+
+                if (a.getProizvodjac() == null || a.getNadgrupa() == null)
+                    continue;
+
+                boolean matchesBrand =
+                        a.getProizvodjac().trim().toUpperCase().equals(targetBrand);
+
+                boolean matchesGlavnaGrupa =
+                        nadgrupeSet.contains(a.getNadgrupa().trim().toUpperCase());
+
+                if (matchesBrand && matchesGlavnaGrupa) {
+                    result.add(a);
+                }
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException("Greška prilikom parsiranja artikala", e);
+        }
+
+        return result;
+    }
+
 }
