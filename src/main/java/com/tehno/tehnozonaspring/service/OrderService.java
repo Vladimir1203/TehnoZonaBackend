@@ -41,7 +41,8 @@ public class OrderService {
             } catch (Exception e) {
                 e.printStackTrace();
                 throw new RuntimeException("Slanje mejla nije uspelo. Pokušajte kasnije.");
-            }        } catch (MessagingException e) {
+            }
+        } catch (MessagingException e) {
             throw new RuntimeException("Greška prilikom slanja porudžbine: " + e.getMessage(), e);
         }
     }
@@ -50,7 +51,8 @@ public class OrderService {
         StringBuilder sb = new StringBuilder();
 
         sb.append("<h3>Nova porudžbina</h3>")
-                .append("<p><strong>Ime i prezime:</strong> ").append(request.getIme()).append(" ").append(request.getPrezime()).append("</p>")
+                .append("<p><strong>Ime i prezime:</strong> ").append(request.getIme()).append(" ")
+                .append(request.getPrezime()).append("</p>")
                 .append("<p><strong>Email:</strong> ").append(request.getEmail()).append("</p>")
                 .append("<p><strong>Adresa:</strong> ").append(request.getAdresa()).append("</p>")
                 .append("<p><strong>Poštanski broj:</strong> ").append(request.getPostanskiBroj()).append("</p>")
@@ -64,7 +66,7 @@ public class OrderService {
                 sb.append("<li>")
                         .append("<strong>").append(artikal.getNaziv()).append("</strong>")
                         .append(" (Šifra: ").append(artikal.getSifra()).append(") — ")
-                        .append("Cena: ").append(artikal.getB2bcena()).append(" ").append(" — ")
+                        .append("Cena: ").append(artikal.getMpcena()).append(" ").append(" — ")
                         .append("Kolicina: ").append(artikal.getKolicina()).append(" ")
                         .append("</li>");
             }

@@ -3,6 +3,8 @@ package com.tehno.tehnozonaspring.dto;
 import com.tehno.tehnozonaspring.model.Artikal;
 
 import java.util.List;
+import java.util.Map;
+
 public class ProductPageResponse {
     private List<Artikal> products;
     private int totalCount;
@@ -10,6 +12,7 @@ public class ProductPageResponse {
     private double maxCena;
     private double initialMinCena;
     private double initialMaxCena;
+    private Map<String, Integer> manufacturerCounts;
 
     public List<Artikal> getProducts() {
         return products;
@@ -46,6 +49,7 @@ public class ProductPageResponse {
     public double getInitialMinCena() {
         return initialMinCena;
     }
+
     public void setInitialMinCena(double initialMinCena) {
         this.initialMinCena = initialMinCena;
     }
@@ -53,8 +57,16 @@ public class ProductPageResponse {
     public double getInitialMaxCena() {
         return initialMaxCena;
     }
+
     public void setInitialMaxCena(double initialMaxCena) {
         this.initialMaxCena = initialMaxCena;
     }
-}
 
+    public Map<String, Integer> getManufacturerCounts() {
+        return manufacturerCounts;
+    }
+
+    public void setManufacturerCounts(Map<String, Integer> manufacturerCounts) {
+        this.manufacturerCounts = manufacturerCounts;
+    }
+}
