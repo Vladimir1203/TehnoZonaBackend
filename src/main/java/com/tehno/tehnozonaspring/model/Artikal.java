@@ -78,28 +78,98 @@ public class Artikal {
     private List<FilterGrupa> filteri;
 
     // GETTER METODE
-    public String getSifra() { return sifra; }
-    public String getBarkod() { return barkod; }
-    public String getNaziv() { return naziv; }
-    public int getPdv() { return pdv; }
-    public String getNadgrupa() { return nadgrupa; }
-    public String getGrupa() { return grupa; }
-    public String getProizvodjac() { return proizvodjac; }
-    public String getJedinicaMere() { return jedinicaMere; }
-    public String getModel() { return model; }
-    public String getKolicina() { return kolicina; }
-    public double getB2bcena() { return b2bcena; }
-    public String getValuta() { return valuta; }
-    public int getFlagAkcijskaCena() { return flagAkcijskaCena; }
-    public double getWebCena() { return webCena; }
-    public double getMpcena() { return mpcena; }
-    public String getEnergetskaKlasa() { return energetskaKlasa; }
-    public String getEnergetskaKlasaLink() { return energetskaKlasaLink; }
-    public String getEnergetskaKlasaPdf() { return energetskaKlasaPdf; }
-    public String getDeklaracija() { return deklaracija; }
-    public String getOpis() { return opis; }
-    public List<String> getSlike() { return slike; }
-    public List<FilterGrupa> getFilteri() { return filteri; }
+    public String getSifra() {
+        return sifra;
+    }
+
+    public String getBarkod() {
+        return barkod;
+    }
+
+    public String getNaziv() {
+        return naziv;
+    }
+
+    public int getPdv() {
+        return pdv;
+    }
+
+    public String getNadgrupa() {
+        return nadgrupa;
+    }
+
+    public String getGrupa() {
+        return grupa;
+    }
+
+    public String getProizvodjac() {
+        return proizvodjac;
+    }
+
+    public String getJedinicaMere() {
+        return jedinicaMere;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getKolicina() {
+        return kolicina;
+    }
+
+    public double getB2bcena() {
+        return b2bcena;
+    }
+
+    public String getValuta() {
+        return valuta;
+    }
+
+    public int getFlagAkcijskaCena() {
+        return flagAkcijskaCena;
+    }
+
+    public double getWebCena() {
+        return webCena;
+    }
+
+    public double getMpcena() {
+        return mpcena;
+    }
+
+    // Helper: koristi mpcena, fallback na webCena, ako ni ona ne postoji vraca 0
+    public double getCena() {
+        return mpcena > 0 ? mpcena : webCena;
+    }
+
+    public String getEnergetskaKlasa() {
+        return energetskaKlasa;
+    }
+
+    public String getEnergetskaKlasaLink() {
+        return energetskaKlasaLink;
+    }
+
+    public String getEnergetskaKlasaPdf() {
+        return energetskaKlasaPdf;
+    }
+
+    public String getDeklaracija() {
+        return deklaracija;
+    }
+
+    public String getOpis() {
+        return opis;
+    }
+
+    public List<String> getSlike() {
+        return slike;
+    }
+
+    public List<FilterGrupa> getFilteri() {
+        return filteri;
+    }
 
     @XmlRootElement(name = "filter_grupa")
     public static class FilterGrupa {
@@ -110,8 +180,13 @@ public class Artikal {
         private List<Filter> filter;
 
         // GETTER METODE
-        public String getIme() { return ime; }
-        public List<Filter> getFilter() { return filter; }
+        public String getIme() {
+            return ime;
+        }
+
+        public List<Filter> getFilter() {
+            return filter;
+        }
 
         @XmlRootElement(name = "filter")
         public static class Filter {
@@ -122,8 +197,13 @@ public class Artikal {
             private String vrednost;
 
             // GETTER METODE
-            public String getIme() { return ime; }
-            public String getVrednost() { return vrednost; }
+            public String getIme() {
+                return ime;
+            }
+
+            public String getVrednost() {
+                return vrednost;
+            }
         }
     }
 

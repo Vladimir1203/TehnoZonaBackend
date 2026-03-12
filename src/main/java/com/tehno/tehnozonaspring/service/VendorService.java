@@ -26,54 +26,43 @@ public class VendorService {
 
     private final VendorRepository vendorRepository;
     private final FeaturedProductRepository featuredProductRepository;
-
+    private final com.tehno.tehnozonaspring.repository.HomepageItemRepository homepageItemRepository;
 
     private final Map<String, List<String>> groupMap = Map.of(
             "BELA TEHNIKA I KUĆNI APARATI", List.of(
-                    "BELA TEHNIKA", "MALI KUĆNI APARATI", "GREJANJE", "HLADNJACI", "KUĆNA BELA TEHNIKA"
-            ),
+                    "BELA TEHNIKA", "MALI KUĆNI APARATI", "GREJANJE", "HLADNJACI", "KUĆNA BELA TEHNIKA"),
             "TV, FOTO, AUDIO I VIDEO", List.of(
                     "AUDIO, HI-FI", "TV, AUDIO, VIDEO", "FOTOAPARATI I KAMERE", "DIGITALNI SNIMAČI",
-                    "PROJEKTORI I OPREMA", "ZVUČNICI", "SLUŠALICE I MIKROFONI", "KAMERE"
-            ),
+                    "PROJEKTORI I OPREMA", "ZVUČNICI", "SLUŠALICE I MIKROFONI", "KAMERE"),
             "RAČUNARI, KOMPONENTE I GAMING", List.of(
                     "LAPTOP I TABLET RAČUNARI", "DESKTOP RAČUNARI", "SERVERI", "PROCESORI",
                     "MATIČNE PLOČE", "MEMORIJE", "HARD DISKOVI", "HDD Rack", "GRAFIČKE KARTE",
                     "GAMING", "RAČUNARI", "RAČUNARSKE KOMPONENTE", "RAČUNARSKE PERIFERIJE",
-                    "PC KOZMETIKA", "SOFTWARE", "Microsoft", "WIRELESS", "OPTIČKI UREĐAJI", "Čitači kartica", "REKOVI I OPREMA", "TASTATURE", "FIBER"
-            ),
+                    "PC KOZMETIKA", "SOFTWARE", "Microsoft", "WIRELESS", "OPTIČKI UREĐAJI", "Čitači kartica",
+                    "REKOVI I OPREMA", "TASTATURE", "FIBER"),
             "TELEFONI, TABLETI I OPREMA", List.of(
                     "MOBILNI I FIKSNI TELEFONI", "OPREMA ZA MOBILNE TELEFONE", "OPREMA ZA LAPTOPOVE",
                     "OPREMA ZA TABLETE", "OPREMA ZA TV", "MEMORIJSKE KARTICE I ČITAČI",
-                    "USB FLASH I HDD", "USB KABLOVI", "USB ADAPTERI", "MREŽNA OPREMA", "FIKSNI TELEFONI"
-            ),
+                    "USB FLASH I HDD", "USB KABLOVI", "USB ADAPTERI", "MREŽNA OPREMA", "FIKSNI TELEFONI"),
             "SIGURNOSNI I ALARMNI SISTEMI", List.of(
                     "ALARMNI SISTEMI", "ALARMNI SISTEM PARADOX", "ALARMNI SISTEM ELDES",
                     "VIDEO NADZOR I SIGURNOSNA OPREMA", "OPREMA ZA VIDEO NADZOR", "KUTIJE",
-                    "KANALICE", "UTIČNICE", "KONEKTORI I MODULI", "VIDEO NADZOR I  SIGURNOSNA OPREMA"
-            ),
+                    "KANALICE", "UTIČNICE", "KONEKTORI I MODULI", "VIDEO NADZOR I  SIGURNOSNA OPREMA"),
             "ALATI I OPREMA ZA DOM", List.of(
-                    "ALAT I BAŠTA", "BAŠTA", "LED RASVETA", "SVE ZA KUĆU"
-            ),
+                    "ALAT I BAŠTA", "BAŠTA", "LED RASVETA", "SVE ZA KUĆU"),
             "BATERIJE, PUNJAČI I KABLOVI", List.of(
-                    "BATERIJE I PUNJAČI", "KABLOVI", "KABLOVI I ADAPTERI", "PCI ADAPTERI", "PC KABLOVI", "ADAPTERI"
-            ),
+                    "BATERIJE I PUNJAČI", "KABLOVI", "KABLOVI I ADAPTERI", "PCI ADAPTERI", "PC KABLOVI", "ADAPTERI"),
             "FITNESS I SPORT", List.of(
-                    "BICIKLE I FITNES", "NEGA LICA I TELA"
-            ),
+                    "BICIKLE I FITNES", "NEGA LICA I TELA"),
             "KANCELARIJSKI I ŠKOLSKI MATERIJAL", List.of(
                     "KANCELARIJSKI MATERIJAL", "ŠKOLSKI PRIBOR", "ŠTAMPAČI", "TONERI",
-                    "KERTRIDŽ", "RIBONI", "MASTILA", "CD, DVD MEDIJI", "SKENERI I FOTOKOPIRI"
-            ),
+                    "KERTRIDŽ", "RIBONI", "MASTILA", "CD, DVD MEDIJI", "SKENERI I FOTOKOPIRI"),
             "OSTALO I OUTLET", List.of(
-                    "OUTLET", "RAZNO"
-            )
-    );
+                    "OUTLET", "RAZNO"));
 
     private static final List<String> GLAVNI_PROIZVODJACI = List.of(
             "BEKO", "BOSCH", "GORENJE", "HISENSE",
-            "HUAWEI", "LG", "MIDEA", "PHILIPS", "SAMSUNG", "XIAOMI"
-    );
+            "HUAWEI", "LG", "MIDEA", "PHILIPS", "SAMSUNG", "XIAOMI");
 
     public List<String> getNadgrupeByGlavnaGrupa(String glavnaGrupa) {
         return groupMap.getOrDefault(glavnaGrupa.toUpperCase(), List.of());
@@ -84,11 +73,13 @@ public class VendorService {
                 .toArray(new String[0]); // Konvertuje List<String> u String[]
     }
 
-
     @Autowired
-    public VendorService(VendorRepository vendorRepository, FeaturedProductRepository featuredProductRepository) {
+    public VendorService(VendorRepository vendorRepository,
+            FeaturedProductRepository featuredProductRepository,
+            com.tehno.tehnozonaspring.repository.HomepageItemRepository homepageItemRepository) {
         this.vendorRepository = vendorRepository;
         this.featuredProductRepository = featuredProductRepository;
+        this.homepageItemRepository = homepageItemRepository;
     }
 
     public List<Vendor> getAllBeans() {
@@ -111,7 +102,6 @@ public class VendorService {
         List<String> artikalXmlList = vendorRepository.findLimitedArtikliByVendorId(id, limit);
         List<Artikal> artikli = new ArrayList<>();
 
-
         try {
             JAXBContext context = JAXBContext.newInstance(Artikal.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
@@ -119,12 +109,13 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                artikli.add(artikal);
+                if (artikal.getCena() >= 100) {
+                    artikli.add(artikal);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
         return artikli;
     }
@@ -144,7 +135,9 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                artikli.add(artikal);
+                if (artikal.getCena() >= 100) {
+                    artikli.add(artikal);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -157,9 +150,9 @@ public class VendorService {
         return vendorRepository.findAllGroups();
     }
 
-
-    public List<Artikal> vratiArtiklePoGlavnojGrupiICeni(Long vendorId, String glavnaGrupa, Double minCena, Double maxCena,
-                                                  int page, int size, List<String> proizvodjaci, ProductPageResponse response) {
+    public List<Artikal> vratiArtiklePoGlavnojGrupiICeni(Long vendorId, String glavnaGrupa, Double minCena,
+            Double maxCena,
+            int page, int size, List<String> proizvodjaci, ProductPageResponse response) {
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
         List<String> artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
         List<Artikal> artikli = new ArrayList<>();
@@ -175,7 +168,10 @@ public class VendorService {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
-                double cena = artikal.getB2bcena();
+                double cena = artikal.getCena();
+                if (cena < 100)
+                    continue; // preskoci artikle sa cenom ispod 100
+
                 if (cena < globalMin) {
                     globalMin = cena;
                 }
@@ -183,8 +179,8 @@ public class VendorService {
                     globalMax = cena;
                 }
 
-                if ((minCena == null || minCena == 0 || artikal.getB2bcena() >= minCena) &&
-                        (maxCena == null || maxCena == 0 || artikal.getB2bcena() <= maxCena)) {
+                if ((minCena == null || minCena == 0 || cena >= minCena) &&
+                        (maxCena == null || maxCena == 0 || cena <= maxCena)) {
                     artikli.add(artikal);
                 }
             }
@@ -193,25 +189,19 @@ public class VendorService {
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }
 
-        if (globalMin == Double.MAX_VALUE) globalMin = 0;
-        if (globalMax == Double.MIN_VALUE) globalMax = 0;
+        if (globalMin == Double.MAX_VALUE)
+            globalMin = 0;
+        if (globalMax == Double.MIN_VALUE)
+            globalMax = 0;
 
         response.setInitialMaxCena(globalMax);
         response.setInitialMinCena(globalMin);
 
-        int fromIndex = page * size;
-        int toIndex = Math.min(fromIndex + size, artikli.size());
-
-        if (fromIndex >= artikli.size()) {
-            return Collections.emptyList();
-        }
-
         return artikli;
     }
 
-
     public List<Artikal> vratiArtiklePoNadgrupi(Long vendorId, String nadgrupa, Double minCena, Double maxCena,
-                                                int page, int size, List<String> proizvodjaci, ProductPageResponse response) {
+            int page, int size, List<String> proizvodjaci, ProductPageResponse response) {
         List<String> artikliPoNadgrupi = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
 
         List<Artikal> artikliPoNadgrupiIceni = new ArrayList<>();
@@ -227,7 +217,10 @@ public class VendorService {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
-                double cena = artikal.getB2bcena();
+                double cena = artikal.getCena();
+                if (cena < 100)
+                    continue; // preskoci artikle sa cenom ispod 100
+
                 if (cena < globalMin) {
                     globalMin = cena;
                 }
@@ -235,14 +228,16 @@ public class VendorService {
                     globalMax = cena;
                 }
 
-                if ((minCena == null || artikal.getB2bcena() >= minCena) &&
-                        (maxCena == null || artikal.getB2bcena() <= maxCena)) {
+                if ((minCena == null || cena >= minCena) &&
+                        (maxCena == null || cena <= maxCena)) {
                     artikliPoNadgrupiIceni.add(artikal);
                 }
             }
 
-            if (globalMin == Double.MAX_VALUE) globalMin = 0;
-            if (globalMax == Double.MIN_VALUE) globalMax = 0;
+            if (globalMin == Double.MAX_VALUE)
+                globalMin = 0;
+            if (globalMax == Double.MIN_VALUE)
+                globalMax = 0;
 
             response.setInitialMaxCena(globalMax);
             response.setInitialMinCena(globalMin);
@@ -271,7 +266,6 @@ public class VendorService {
                 .collect(Collectors.toList());
     }
 
-
     public Map<String, List<String>> getAllGroupsAndSubgroups() {
         return groupMap;
     }
@@ -283,7 +277,8 @@ public class VendorService {
         // Mapiranje nadgrupa na njihove grupe koristeći vendorRepository metodu
         Map<String, List<String>> result = new HashMap<>();
         for (String nadgrupa : nadgrupe) {
-            // Pretpostavljamo da `vendorRepository.findDistinctGroupsByNadgrupa` vraća listu grupa
+            // Pretpostavljamo da `vendorRepository.findDistinctGroupsByNadgrupa` vraća
+            // listu grupa
             String grupe = getGrupeByNadgrupa(1L, nadgrupa); // Pretpostavljamo da je vendorId=1
             if (grupe != null && !grupe.isEmpty()) {
                 // Dodaj u rezultat kao listu grupa
@@ -307,14 +302,15 @@ public class VendorService {
 
         // Obrada liste:
         return proizvodjaci.stream()
-                .map(String::toUpperCase)                    // Pretvori sve u velika slova
+                .map(String::toUpperCase) // Pretvori sve u velika slova
                 .filter(name -> !(name.equals("/") || name.equals("-"))) // Ukloni "/" i "-"
                 .distinct()
-                .sorted()                                    // Sortiraj po abecednom redu
+                .sorted() // Sortiraj po abecednom redu
                 .toList();
     }
 
-    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupa(Long vendorId, String glavnaGrupa, Integer minCena, Integer maxCena) {
+    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupa(Long vendorId, String glavnaGrupa,
+            Integer minCena, Integer maxCena) {
         System.out.println("==== POČETAK getProizvodjaciWithCountByGlavnaGrupa ====");
         System.out.println("Vendor ID: " + vendorId);
         System.out.println("Glavna grupa: " + glavnaGrupa);
@@ -324,7 +320,8 @@ public class VendorService {
         System.out.println("Nadgrupe: " + Arrays.toString(nadgrupe));
 
         // Poziv repository metode
-        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe, minCena, maxCena);
+        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe, minCena,
+                maxCena);
         System.out.println("Broj rezultata iz repository-a: " + resultList.size());
 
         // Ispis rezultata za proveru
@@ -337,10 +334,10 @@ public class VendorService {
                 .filter(arr -> arr[0] != null && !arr[0].equals("/") && !arr[0].equals("-")) // Izbacujemo "/" i "-"
                 .peek(arr -> System.out.println("Filtrirani proizvođač: " + arr[0] + ", Broj artikala: " + arr[1]))
                 .collect(Collectors.toMap(
-                        arr -> arr[0].toString(),                  // Key: Naziv proizvođača
-                        arr -> Integer.parseInt(arr[1].toString()),// Value: Broj artikala
-                        (oldValue, newValue) -> oldValue,          // Ako ima duplikata, zadrži prvi (ne bi trebalo da ih bude)
-                        TreeMap::new                               // Sortira mapu po ključu
+                        arr -> arr[0].toString(), // Key: Naziv proizvođača
+                        arr -> Integer.parseInt(arr[1].toString()), // Value: Broj artikala
+                        (oldValue, newValue) -> oldValue, // Ako ima duplikata, zadrži prvi (ne bi trebalo da ih bude)
+                        TreeMap::new // Sortira mapu po ključu
                 ));
 
         System.out.println("Konačan rezultat: " + rezultat);
@@ -376,6 +373,7 @@ public class VendorService {
             artikli = artikalXmlList.stream()
                     .map(xml -> parseArtikal(xml, unmarshaller))
                     .filter(Objects::nonNull)
+                    .filter(a -> a.getCena() >= 100)
                     .collect(Collectors.toList());
 
         } catch (Exception e) {
@@ -397,7 +395,7 @@ public class VendorService {
     }
 
     public List<Artikal> getArtikliByGrupa(Long vendorId, String nadgrupa, String grupa, Double minCena,
-                                           Double maxCena, ProductPageResponse response) {
+            Double maxCena, ProductPageResponse response) {
         List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
         List<Artikal> artikli = new ArrayList<>();
 
@@ -412,12 +410,13 @@ public class VendorService {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
-                double cena = artikal.getB2bcena();
+                double cena = artikal.getCena();
+                if (cena < 100)
+                    continue; // preskoci artikle sa cenom ispod 100
 
-
-                if ((minCena == null || minCena == 0 || artikal.getB2bcena() >= minCena) &&
-                        (maxCena == null || maxCena == 0 || artikal.getB2bcena() <= maxCena)) {
-                    if(artikal.getGrupa().trim().equalsIgnoreCase(grupa.trim())){
+                if ((minCena == null || minCena == 0 || cena >= minCena) &&
+                        (maxCena == null || maxCena == 0 || cena <= maxCena)) {
+                    if (artikal.getGrupa().trim().equalsIgnoreCase(grupa.trim())) {
                         if (cena < globalMin) {
                             globalMin = cena;
                         }
@@ -429,8 +428,10 @@ public class VendorService {
                 }
             }
 
-            if (globalMin == Double.MAX_VALUE) globalMin = 0;
-            if (globalMax == Double.MIN_VALUE) globalMax = 0;
+            if (globalMin == Double.MAX_VALUE)
+                globalMin = 0;
+            if (globalMax == Double.MIN_VALUE)
+                globalMax = 0;
 
             response.setInitialMaxCena(globalMax);
             response.setInitialMinCena(globalMin);
@@ -441,21 +442,22 @@ public class VendorService {
         return artikli;
     }
 
-    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa, String nadgrupa, Double minCena, Double maxCena) {
+    public Map<String, Integer> getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(Long vendorId, String glavnaGrupa,
+            String nadgrupa, Double minCena, Double maxCena) {
         System.out.println("==== POČETAK getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa ====");
         System.out.println("Vendor ID: " + vendorId);
         System.out.println("Glavna grupa: " + glavnaGrupa);
         System.out.println("Nadgrupa: " + nadgrupa);
 
         // Poziv repository metode bez filtracije po ceni
-        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(vendorId, nadgrupa);
+        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(vendorId,
+                nadgrupa);
         System.out.println("Broj rezultata iz repository-a: " + resultList.size());
 
         Map<String, Integer> rezultat = new TreeMap<>();
 
         for (Object[] row : resultList) {
             String proizvodjac = row[0].toString();
-            Integer brojArtikala = Integer.parseInt(row[1].toString());
             List<BigDecimal> cene = Arrays.asList((BigDecimal[]) row[2]); // Preuzimanje niza cena
 
             // Filtracija cene u servisu
@@ -490,7 +492,7 @@ public class VendorService {
 
             for (String xml : allXml) {
                 Artikal artikal = parseArtikal(xml, unmarshaller);
-                if (artikal != null) {
+                if (artikal != null && artikal.getCena() >= 100) {
                     String naziv = Optional.ofNullable(artikal.getNaziv()).orElse("").toLowerCase();
                     String proizvodjac = Optional.ofNullable(artikal.getProizvodjac()).orElse("").toLowerCase();
 
@@ -506,7 +508,6 @@ public class VendorService {
 
         return rezultati;
     }
-
 
     public Artikal getProductByArtikalBarCode(Long vendorId, String barCode) {
         List<String> xmlList = vendorRepository.getProductByArtikalBarCodeRaw(vendorId, barCode);
@@ -542,6 +543,9 @@ public class VendorService {
             for (String xml : xmlList) {
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(new StringReader(xml));
 
+                if (artikal.getCena() < 100)
+                    continue;
+
                 if (artikal.getProizvodjac() != null &&
                         artikal.getProizvodjac().trim().toUpperCase().equals(target)) {
 
@@ -556,8 +560,10 @@ public class VendorService {
         return result;
     }
 
-    public FeaturedProduct addFeaturedProduct(Long vendorId, String barcode, FeatureType featureType, Integer priority, LocalDateTime validFrom, LocalDateTime validTo
-    ) {
+    public FeaturedProduct addFeaturedProduct(Long vendorId, String barcode, FeatureType featureType, Integer priority,
+            LocalDateTime validFrom, LocalDateTime validTo, String itemType, String subtitle, String buttonText,
+            String buttonRoute, String glavnaGrupa, String nadgrupa, String grupa, String brandName, String customName,
+            String customImageUrl) {
         if (priority == null) {
             priority = 1;
         }
@@ -574,8 +580,17 @@ public class VendorService {
                 featureType.name(),
                 priority,
                 validFrom,
-                validTo
-        );
+                validTo,
+                itemType,
+                subtitle,
+                buttonText,
+                buttonRoute,
+                glavnaGrupa,
+                nadgrupa,
+                grupa,
+                brandName,
+                customName,
+                customImageUrl);
 
         // kreiramo objekat da vratimo klijentu
         FeaturedProduct fp = new FeaturedProduct();
@@ -585,14 +600,22 @@ public class VendorService {
         fp.setPriority(priority);
         fp.setValidFrom(validFrom);
         fp.setValidTo(validTo);
+        fp.setItemType(itemType);
+        fp.setSubtitle(subtitle);
+        fp.setButtonText(buttonText);
+        fp.setButtonRoute(buttonRoute);
+        fp.setGlavnaGrupa(glavnaGrupa);
+        fp.setNadgrupa(nadgrupa);
+        fp.setGrupa(grupa);
+        fp.setBrandName(brandName);
+        fp.setCustomName(customName);
+        fp.setCustomImageUrl(customImageUrl);
 
         return fp;
     }
 
-
     public List<FeaturedArtikalResponse> getActiveFeaturedArtikli() {
-        List<FeaturedProduct> featuredList =
-                featuredProductRepository.getAllActiveFeatured();
+        List<FeaturedProduct> featuredList = featuredProductRepository.getAllActiveFeatured();
 
         List<FeaturedArtikalResponse> result = new ArrayList<>();
 
@@ -604,13 +627,13 @@ public class VendorService {
             }
         }
 
-        return result;    }
+        return result;
+    }
 
     public List<FeaturedArtikalResponse> getActiveFeaturedArtikliByType(FeatureType type) {
 
         // 1. Prvo dohvati sve featured iz tabele
-        List<FeaturedProduct> featuredList =
-                featuredProductRepository.getActiveFeaturedByType(type.name());
+        List<FeaturedProduct> featuredList = featuredProductRepository.getActiveFeaturedByType(type.name());
 
         List<FeaturedArtikalResponse> result = new ArrayList<>();
 
@@ -626,14 +649,13 @@ public class VendorService {
         return result;
     }
 
-
-    public List<Map<String, Object>> getCountByGlavnaGrupaForBrand(Long vendorId, String brand, Double minCena, Double maxCena) {
+    public List<Map<String, Object>> getCountByGlavnaGrupaForBrand(Long vendorId, String brand, Double minCena,
+            Double maxCena) {
 
         // 1. Dohvati sve artikle tog brenda
         List<Artikal> artikli = getArtikliByBrand(vendorId, brand);
 
-        List<Artikal> filtrirani =
-                VendorController.filtrirajPoCeni(artikli, minCena, maxCena);
+        List<Artikal> filtrirani = VendorController.filtrirajPoCeni(artikli, minCena, maxCena);
 
         if (filtrirani == null || filtrirani.isEmpty()) {
             return Collections.emptyList();
@@ -653,7 +675,8 @@ public class VendorService {
             String glavnaGrupa = findGlavnaGrupaForNadgrupa(nadgrupa);
 
             // Ako nije pronađena, skip
-            if (glavnaGrupa == null) continue;
+            if (glavnaGrupa == null)
+                continue;
 
             // 4. Povećaj counter
             counter.merge(glavnaGrupa, 1, Integer::sum);
@@ -663,13 +686,13 @@ public class VendorService {
         return counter.entrySet().stream()
                 .map(e -> Map.<String, Object>of(
                         "glavnaGrupa", e.getKey(),
-                        "count", e.getValue()
-                ))
+                        "count", e.getValue()))
                 .toList();
     }
 
     private String findGlavnaGrupaForNadgrupa(String nadgrupa) {
-        if (nadgrupa == null) return null;
+        if (nadgrupa == null)
+            return null;
         String n = nadgrupa.trim().toUpperCase();
 
         for (Map.Entry<String, List<String>> entry : groupMap.entrySet()) {
@@ -684,7 +707,6 @@ public class VendorService {
         }
         return null;
     }
-
 
     public List<Artikal> getArtikliByBrandAndGlavnaGrupa(Long vendorId, String brand, String glavnaGrupa) {
 
@@ -708,14 +730,15 @@ public class VendorService {
             for (String xml : xmlList) {
                 Artikal a = (Artikal) unmarshaller.unmarshal(new StringReader(xml));
 
+                if (a.getCena() < 100)
+                    continue;
+
                 if (a.getProizvodjac() == null || a.getNadgrupa() == null)
                     continue;
 
-                boolean matchesBrand =
-                        a.getProizvodjac().trim().toUpperCase().equals(targetBrand);
+                boolean matchesBrand = a.getProizvodjac().trim().toUpperCase().equals(targetBrand);
 
-                boolean matchesGlavnaGrupa =
-                        nadgrupeSet.contains(a.getNadgrupa().trim().toUpperCase());
+                boolean matchesGlavnaGrupa = nadgrupeSet.contains(a.getNadgrupa().trim().toUpperCase());
 
                 if (matchesBrand && matchesGlavnaGrupa) {
                     result.add(a);
@@ -727,6 +750,73 @@ public class VendorService {
         }
 
         return result;
+    }
+
+    public com.tehno.tehnozonaspring.model.HomepageItem addHomepageItem(Long vendorId,
+            com.tehno.tehnozonaspring.dto.HomepageItemRequest request) {
+        com.tehno.tehnozonaspring.model.HomepageItem item = new com.tehno.tehnozonaspring.model.HomepageItem();
+        item.setVendorId(vendorId);
+        item.setItemType(request.getItemType());
+        item.setSection(request.getSection());
+        int priority = request.getPriority() != null ? request.getPriority() : 1;
+        item.setPriority(priority);
+
+        LocalDateTime from = request.getValidFrom() != null ? request.getValidFrom() : LocalDateTime.now();
+        LocalDateTime to = request.getValidTo() != null ? request.getValidTo() : LocalDateTime.now().plusMonths(1);
+        item.setValidFrom(from);
+        item.setValidTo(to);
+
+        // Ako dodajemo novi HERO, sklanjamo stare (postavljamo validTo na sadašnje vreme)
+        if (request.getSection() == com.tehno.tehnozonaspring.model.enums.HomepageSection.HERO) {
+            List<com.tehno.tehnozonaspring.model.HomepageItem> existingHeores = homepageItemRepository
+                .findByVendorIdAndSectionAndValidToAfter(vendorId, request.getSection(), LocalDateTime.now());
+            
+            for (com.tehno.tehnozonaspring.model.HomepageItem oldHero : existingHeores) {
+                oldHero.setValidTo(LocalDateTime.now());
+            }
+            homepageItemRepository.saveAll(existingHeores);
+        }
+
+        // Product fields
+        item.setBarcode(request.getBarcode());
+
+        // Category fields
+        item.setGlavnaGrupa(request.getGlavnaGrupa());
+        item.setNadgrupa(request.getNadgrupa());
+        item.setGrupa(request.getGrupa());
+
+        // Brand fields
+        item.setBrandName(request.getBrandName());
+
+        // Custom overriding fields
+        item.setCustomName(request.getCustomName());
+        item.setCustomImageUrl(request.getCustomImageUrl());
+        item.setSubtitle(request.getSubtitle());
+        item.setButtonText(request.getButtonText());
+        item.setButtonRoute(request.getButtonRoute());
+
+        return homepageItemRepository.save(item);
+    }
+
+    public List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> getActiveHomepageItems(Long vendorId) {
+        List<com.tehno.tehnozonaspring.model.HomepageItem> activeItems = homepageItemRepository
+                .findActiveItemsByVendorId(vendorId, LocalDateTime.now());
+
+        List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> responses = new ArrayList<>();
+
+        for (com.tehno.tehnozonaspring.model.HomepageItem item : activeItems) {
+            Artikal associatedArtikal = null;
+
+            // Ako je tip PRODUCT, povlačimo konkretan Artikal
+            if (item.getItemType() == com.tehno.tehnozonaspring.model.enums.ItemType.PRODUCT
+                    && item.getBarcode() != null) {
+                associatedArtikal = getProductByArtikalBarCode(vendorId, item.getBarcode());
+            }
+
+            responses.add(new com.tehno.tehnozonaspring.dto.HomepageItemResponse(item, associatedArtikal));
+        }
+
+        return responses;
     }
 
 }

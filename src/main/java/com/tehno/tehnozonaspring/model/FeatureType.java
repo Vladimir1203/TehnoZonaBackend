@@ -4,5 +4,9 @@ public enum FeatureType {
     TOP,
     SALE,
     NEW,
-    RECOMMENDED
+    RECOMMENDED,
+    BANNER,
+    PROMO,
+    HERO,
+    NEWS
 }

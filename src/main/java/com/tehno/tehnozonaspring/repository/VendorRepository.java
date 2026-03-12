@@ -283,17 +283,31 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     @Transactional
     @Query(value = """
     INSERT INTO featured_products 
-        (barcode, vendor_id, feature_type, priority, valid_from, valid_to)
+        (barcode, vendor_id, feature_type, priority, valid_from, valid_to,
+         item_type, subtitle, button_text, button_route, glavna_grupa, nadgrupa, grupa,
+         brand_name, custom_name, custom_image_url)
     VALUES 
-        (:barcode, :vendorId, :featureType, :priority, :validFrom, :validTo)
+        (:barcode, :vendorId, :featureType, :priority, :validFrom, :validTo,
+         :itemType, :subtitle, :buttonText, :buttonRoute, :glavnaGrupa, :nadgrupa, :grupa,
+         :brandName, :customName, :customImageUrl)
 """, nativeQuery = true)
     void insertFeaturedProduct(
             @Param("barcode") String barcode,
             @Param("vendorId") Long vendorId,
-            @Param("featureType") String featureType,  // ovo je tvoj 'name' parametar
+            @Param("featureType") String featureType,
             @Param("priority") Integer priority,
             @Param("validFrom") LocalDateTime validFrom,
-            @Param("validTo") LocalDateTime validTo
+            @Param("validTo") LocalDateTime validTo,
+            @Param("itemType") String itemType,
+            @Param("subtitle") String subtitle,
+            @Param("buttonText") String buttonText,
+            @Param("buttonRoute") String buttonRoute,
+            @Param("glavnaGrupa") String glavnaGrupa,
+            @Param("nadgrupa") String nadgrupa,
+            @Param("grupa") String grupa,
+            @Param("brandName") String brandName,
+            @Param("customName") String customName,
+            @Param("customImageUrl") String customImageUrl
     );
 
 }

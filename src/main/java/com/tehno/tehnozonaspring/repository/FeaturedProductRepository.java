@@ -19,7 +19,17 @@ public interface FeaturedProductRepository extends JpaRepository<FeaturedProduct
             feature_type,
             priority,
             valid_from,
-            valid_to
+            valid_to,
+            item_type,
+            subtitle,
+            button_text,
+            button_route,
+            glavna_grupa,
+            nadgrupa,
+            grupa,
+            brand_name,
+            custom_name,
+            custom_image_url
         FROM featured_products
         WHERE valid_from <= NOW()
           AND valid_to >= NOW()
@@ -35,7 +45,17 @@ public interface FeaturedProductRepository extends JpaRepository<FeaturedProduct
         feature_type,
         priority,
         valid_from,
-        valid_to
+        valid_to,
+        item_type,
+        subtitle,
+        button_text,
+        button_route,
+        glavna_grupa,
+        nadgrupa,
+        grupa,
+        brand_name,
+        custom_name,
+        custom_image_url
     FROM featured_products
     WHERE feature_type = :type
       AND valid_from <= NOW()

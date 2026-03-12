@@ -13,7 +13,7 @@ public class FeaturedProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String barcode;
 
     @Column(name = "vendor_id", nullable = false)
@@ -22,6 +22,33 @@ public class FeaturedProduct {
     @Enumerated(EnumType.STRING)
     @Column(name = "feature_type", nullable = false)
     private FeatureType featureType;
+
+    @Column(name = "item_type")
+    private String itemType;
+
+    private String subtitle;
+
+    @Column(name = "button_text")
+    private String buttonText;
+
+    @Column(name = "button_route")
+    private String buttonRoute;
+
+    @Column(name = "glavna_grupa")
+    private String glavnaGrupa;
+
+    private String nadgrupa;
+
+    private String grupa;
+
+    @Column(name = "brand_name")
+    private String brandName;
+
+    @Column(name = "custom_name")
+    private String customName;
+
+    @Column(name = "custom_image_url")
+    private String customImageUrl;
 
     // niži broj = viši prioritet
     private Integer priority;
@@ -60,6 +87,86 @@ public class FeaturedProduct {
 
     public void setFeatureType(FeatureType featureType) {
         this.featureType = featureType;
+    }
+
+    public String getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
+
+    public String getButtonText() {
+        return buttonText;
+    }
+
+    public void setButtonText(String buttonText) {
+        this.buttonText = buttonText;
+    }
+
+    public String getButtonRoute() {
+        return buttonRoute;
+    }
+
+    public void setButtonRoute(String buttonRoute) {
+        this.buttonRoute = buttonRoute;
+    }
+
+    public String getGlavnaGrupa() {
+        return glavnaGrupa;
+    }
+
+    public void setGlavnaGrupa(String glavnaGrupa) {
+        this.glavnaGrupa = glavnaGrupa;
+    }
+
+    public String getNadgrupa() {
+        return nadgrupa;
+    }
+
+    public void setNadgrupa(String nadgrupa) {
+        this.nadgrupa = nadgrupa;
+    }
+
+    public String getGrupa() {
+        return grupa;
+    }
+
+    public void setGrupa(String grupa) {
+        this.grupa = grupa;
+    }
+
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
+    public String getCustomName() {
+        return customName;
+    }
+
+    public void setCustomName(String customName) {
+        this.customName = customName;
+    }
+
+    public String getCustomImageUrl() {
+        return customImageUrl;
+    }
+
+    public void setCustomImageUrl(String customImageUrl) {
+        this.customImageUrl = customImageUrl;
     }
 
     public Integer getPriority() {

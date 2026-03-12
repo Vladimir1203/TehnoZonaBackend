@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -56,8 +55,7 @@ public class VendorController {
     @GetMapping("/artikli")
     public ResponseEntity<List<Artikal>> getArtikli(
             @RequestParam Long vendorId,
-            @RequestParam int limit
-    ) {
+            @RequestParam int limit) {
         List<Artikal> artikli = vendorService.getArtikli(vendorId, limit);
         if (artikli == null || artikli.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -83,8 +81,7 @@ public class VendorController {
     @GetMapping("/{id}/nadgrupa/{nadgrupa}/artikli")
     public ResponseEntity<List<Artikal>> getArtikliByNadgrupa(
             @PathVariable Long id,
-            @PathVariable String nadgrupa
-    ) {
+            @PathVariable String nadgrupa) {
         List<Artikal> artikli = vendorService.getArtikliByNadgrupa(id, nadgrupa);
         if (artikli == null || artikli.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -109,30 +106,33 @@ public class VendorController {
             @RequestParam(required = false) Double maxCena,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size,
-            @RequestParam(required = false) List<String> proizvodjaci
-    ) {
+            @RequestParam(required = false) List<String> proizvodjaci,
+            @RequestParam(required = false) String sort) {
         ProductPageResponse response = new ProductPageResponse();
 
-        List<Artikal> artikliPoCeni = vendorService.vratiArtiklePoGlavnojGrupiICeni(id, glavnaGrupa, minCena, maxCena
-                , 0, Integer.MAX_VALUE, null, response);
+        List<Artikal> artikliPoCeni = vendorService.vratiArtiklePoGlavnojGrupiICeni(id, glavnaGrupa, minCena, maxCena,
+                0, Integer.MAX_VALUE, null, response);
 
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikliPoCeni, proizvodjaci);
 
         double min, max;
-        if(proizvodjaci == null || proizvodjaci.isEmpty()) {
-            min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
-            max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
+        if (proizvodjaci == null || proizvodjaci.isEmpty()) {
+            min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getCena).min().orElse(0.0);
+            max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getCena).max().orElse(0.0);
         } else {
             min = minCena != null ? minCena : 0;
             max = maxCena != null ? maxCena : 0;
         }
 
-//        List<Artikal> sviArtikli = vendorService.getArtikliByGlavnaGrupa(id, glavnaGrupa, minCena, maxCena, page, size, proizvodjaci);
+        // List<Artikal> sviArtikli = vendorService.getArtikliByGlavnaGrupa(id,
+        // glavnaGrupa, minCena, maxCena, page, size, proizvodjaci);
         int totalCount = filtriraniPoProizvodjacima.size();
+
+        List<Artikal> sortirani = sortirajArtikle(filtriraniPoProizvodjacima, sort);
 
         int fromIndex = Math.min(page * size, totalCount);
         int toIndex = Math.min(fromIndex + size, totalCount);
-        List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
+        List<Artikal> paginated = sortirani.subList(fromIndex, toIndex);
 
         response.setProducts(paginated);
         response.setTotalCount(totalCount);
@@ -152,27 +152,28 @@ public class VendorController {
             @RequestParam(required = false) Double maxCena,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size,
-            @RequestParam(required = false) List<String> proizvodjaci) {
+            @RequestParam(required = false) List<String> proizvodjaci,
+            @RequestParam(required = false) String sort) {
         ProductPageResponse response = new ProductPageResponse();
 
         List<Artikal> artikals = vendorService.getArtikliByGrupa(id, nadgrupa, grupa, minCena, maxCena, response);
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikals, proizvodjaci);
 
-
         double min, max;
 
-        if(proizvodjaci == null || proizvodjaci.isEmpty()) {
-            min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
-            max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
+        if (proizvodjaci == null || proizvodjaci.isEmpty()) {
+            min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getCena).min().orElse(0.0);
+            max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getCena).max().orElse(0.0);
         } else {
             min = minCena != null ? minCena : 0;
             max = maxCena != null ? maxCena : 0;
         }
 
         int totalCount = filtriraniPoProizvodjacima.size();
+        List<Artikal> sortirani = sortirajArtikle(filtriraniPoProizvodjacima, sort);
         int fromIndex = Math.min(page * size, totalCount);
         int toIndex = Math.min(fromIndex + size, totalCount);
-        List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
+        List<Artikal> paginated = sortirani.subList(fromIndex, toIndex);
 
         response.setProducts(paginated);
         response.setTotalCount(totalCount);
@@ -183,10 +184,10 @@ public class VendorController {
     }
 
     public static List<Artikal> filtrirajPoProizvodjacima(List<Artikal> artikli, List<String> proizvodjaci) {
-        if(proizvodjaci == null || proizvodjaci.isEmpty()) {
+        if (proizvodjaci == null || proizvodjaci.isEmpty()) {
             return artikli;
         }
-//        proizvodjaci.add("Ugreen");
+        // proizvodjaci.add("Ugreen");
         // Pretvaramo u Set radi bržeg pretraživanja (O(1) lookup)
         Set<String> proizvodjaciSet = proizvodjaci.stream()
                 .filter(Objects::nonNull)
@@ -197,29 +198,58 @@ public class VendorController {
                 .forEach(a -> System.out.println("Proizvodjac: '" + a.getProizvodjac() + "'"));
         System.out.println("Proizvodjaci set: " + proizvodjaciSet);
 
-
-        List<Artikal> artikli1 =  artikli.stream()
+        List<Artikal> artikli1 = artikli.stream()
                 .filter(a -> a.getProizvodjac() != null
                         && proizvodjaciSet.contains(a.getProizvodjac().toLowerCase()))
                 .collect(Collectors.toList());
-         return artikli1;
+        return artikli1;
     }
 
     public static List<Artikal> filtrirajPoCeni(List<Artikal> artikli, Double minCena, Double maxCena) {
-        if (artikli == null || artikli.isEmpty()) return List.of();
+        if (artikli == null || artikli.isEmpty())
+            return List.of();
 
         double min = (minCena != null) ? minCena : Double.NEGATIVE_INFINITY;
         double max = (maxCena != null) ? maxCena : Double.POSITIVE_INFINITY;
 
         return artikli.stream()
                 .filter(a -> {
-                    double cena = a.getB2bcena();
-                    return cena >= min && cena <= max;
+                    double cena = a.getCena();
+                    return cena >= 100 && cena >= min && cena <= max;
                 })
                 .toList();
     }
 
-
+    public static List<Artikal> sortirajArtikle(List<Artikal> artikli, String sort) {
+        if (sort == null || sort.trim().isEmpty()) {
+            return artikli;
+        }
+        List<Artikal> sortirani = new ArrayList<>(artikli);
+        switch (sort.toLowerCase()) {
+            case "cena_asc":
+                sortirani.sort(Comparator.comparingDouble(Artikal::getCena));
+                break;
+            case "cena_desc":
+                sortirani.sort(Comparator.comparingDouble(Artikal::getCena).reversed());
+                break;
+            case "naziv_asc":
+                sortirani.sort(Comparator.comparing(
+                        a -> a.getNaziv() != null ? a.getNaziv().toLowerCase() : ""));
+                break;
+            case "naziv_desc":
+                sortirani.sort(Comparator.comparing(
+                        (Artikal a) -> a.getNaziv() != null ? a.getNaziv().toLowerCase() : "").reversed());
+                break;
+            case "najnovije":
+                // XML nema datum, pa ostavi originalni redosled
+                break;
+            default:
+                break;
+        }
+        System.out.println("sortirano (" + sort + ") cene: "
+                + sortirani.stream().map(a -> String.valueOf(a.getCena())).collect(Collectors.toList()));
+        return sortirani;
+    }
 
     @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/artikli")
     public ResponseEntity<ProductPageResponse> vratiArtiklePoNadgrupi(
@@ -229,30 +259,30 @@ public class VendorController {
             @RequestParam(required = false) Double maxCena,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size,
-            @RequestParam(required = false) List<String> proizvodjaci
-    ) {
+            @RequestParam(required = false) List<String> proizvodjaci,
+            @RequestParam(required = false) String sort) {
         ProductPageResponse response = new ProductPageResponse();
 
         List<Artikal> artikliPoNadgrupiICeni = vendorService.vratiArtiklePoNadgrupi(
-                vendorId, nadgrupa, minCena, maxCena, page, size, proizvodjaci, response
-        );
+                vendorId, nadgrupa, minCena, maxCena, page, size, proizvodjaci, response);
 
         List<Artikal> filtriraniPoProizvodjacima = filtrirajPoProizvodjacima(artikliPoNadgrupiICeni, proizvodjaci);
 
         double min, max;
 
-        if(proizvodjaci == null || proizvodjaci.isEmpty()) {
-            min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).min().orElse(0.0);
-            max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getB2bcena).max().orElse(0.0);
+        if (proizvodjaci == null || proizvodjaci.isEmpty()) {
+            min = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getCena).min().orElse(0.0);
+            max = filtriraniPoProizvodjacima.stream().mapToDouble(Artikal::getCena).max().orElse(0.0);
         } else {
             min = minCena != null ? minCena : 0;
             max = maxCena != null ? maxCena : 0;
         }
 
         int totalCount = filtriraniPoProizvodjacima.size();
+        List<Artikal> sortirani = sortirajArtikle(filtriraniPoProizvodjacima, sort);
         int fromIndex = Math.min(page * size, totalCount);
         int toIndex = Math.min(fromIndex + size, totalCount);
-        List<Artikal> paginated = filtriraniPoProizvodjacima.subList(fromIndex, toIndex);
+        List<Artikal> paginated = sortirani.subList(fromIndex, toIndex);
 
         response.setProducts(paginated);
         response.setTotalCount(totalCount);
@@ -262,7 +292,6 @@ public class VendorController {
         return ResponseEntity.ok(response);
     }
 
-
     @GetMapping("/{vendorId}/glavne_grupe_i_nadgrupe")
     public ResponseEntity<Map<String, List<String>>> getAllGroupsAndSubgroups(@PathVariable Long vendorId) {
         Map<String, List<String>> groups = vendorService.getAllGroupsAndSubgroups();
@@ -270,13 +299,14 @@ public class VendorController {
     }
 
     @GetMapping("/{vendorId}/nadgrupe_sa_svojim_grupama/{glavnaGrupa}")
-    public ResponseEntity<Map<String, List<String>>> vratiSveNadgrupeSaNjihovimGrupama(@PathVariable Long vendorId, @PathVariable String glavnaGrupa) {
+    public ResponseEntity<Map<String, List<String>>> vratiSveNadgrupeSaNjihovimGrupama(@PathVariable Long vendorId,
+            @PathVariable String glavnaGrupa) {
         Map<String, List<String>> groups = vendorService.vratiSveNadgrupeSaNjihovimGrupama(glavnaGrupa);
         return ResponseEntity.ok(groups);
     }
 
     @GetMapping("/{vendorid}/svi_idjevi")
-    public ResponseEntity<List<Long>> vratiSveIdjeve(){
+    public ResponseEntity<List<Long>> vratiSveIdjeve() {
         List<Long> idjevi = vendorService.vratiSveIdjeve();
         return ResponseEntity.ok(idjevi);
     }
@@ -284,8 +314,7 @@ public class VendorController {
     @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/proizvodjaci")
     public ResponseEntity<List<String>> getProizvodjaciByGlavnaGrupa(
             @PathVariable Long vendorId,
-            @PathVariable String glavnaGrupa
-    ) {
+            @PathVariable String glavnaGrupa) {
         List<String> proizvodjaci = vendorService.getProizvodjaciByGlavnaGrupa(vendorId, glavnaGrupa);
         if (proizvodjaci.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -301,12 +330,13 @@ public class VendorController {
             @RequestParam(required = false) Double maxCena,
             @RequestParam(required = false) List<String> nadgrupe,
             @RequestParam(required = false) String grupa) {
-        List<Artikal> artikli = vendorService.vratiArtiklePoGlavnojGrupiICeni(vendorId, glavnaGrupa, minCena, maxCena, 0, 0,
+        List<Artikal> artikli = vendorService.vratiArtiklePoGlavnojGrupiICeni(vendorId, glavnaGrupa, minCena, maxCena,
+                0, 0,
                 null, new ProductPageResponse());
         Map<String, Integer> rezultat = new HashMap<>();
-        if(grupa == null ||  grupa.equals("null")) {
+        if (grupa == null || grupa.equals("null")) {
             rezultat = izvuciProizvodjacePoNadgrupama(artikli, nadgrupe);
-        } else{
+        } else {
             rezultat = izvuciProizvodjacePoGrupama(artikli, grupa);
         }
         return rezultat.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(rezultat);
@@ -337,10 +367,8 @@ public class VendorController {
                 .collect(Collectors.groupingBy(
                         p -> p,
                         TreeMap::new,
-                        Collectors.summingInt(x -> 1)
-                ));
+                        Collectors.summingInt(x -> 1)));
     }
-
 
     public static Map<String, Integer> izvuciProizvodjacePoNadgrupama(List<Artikal> artikals, List<String> nadgrupe) {
         if (artikals == null || artikals.isEmpty()) {
@@ -368,10 +396,8 @@ public class VendorController {
                         p -> p,
                         p -> 1,
                         Integer::sum,
-                        TreeMap::new
-                ));
+                        TreeMap::new));
     }
-
 
     // ne radi kako treba
     @GetMapping("/{vendorId}/max-price")
@@ -401,18 +427,60 @@ public class VendorController {
     }
 
     @GetMapping("/artikli/proizvodjac")
-    public ResponseEntity<List<Artikal>> getArtikliByProizvodjac(@RequestParam String proizvodjac) {
+    public ResponseEntity<ProductPageResponse> getArtikliByProizvodjac(
+            @RequestParam String proizvodjac,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena,
+            @RequestParam(required = false) String sort) {
         if (proizvodjac == null || proizvodjac.trim().isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
 
         List<Artikal> artikli = vendorService.getArtikliByProizvodjac(proizvodjac);
 
-        if (artikli.isEmpty()) {
+        // DEBUG: ispisi sve cene za svaki artikal
+        for (Artikal a : artikli) {
+            System.out.println("DEBUG CENE: " + a.getNaziv() + " | mpcena=" + a.getMpcena() + " | webCena="
+                    + a.getWebCena() + " | b2bcena=" + a.getB2bcena() + " | getCena()=" + a.getCena());
+        }
+
+        // Ukupan raspon cena PRE filtriranja (za price slider na frontu)
+        double initialMin = artikli.stream().mapToDouble(Artikal::getCena).min().orElse(0.0);
+        double initialMax = artikli.stream().mapToDouble(Artikal::getCena).max().orElse(0.0);
+        System.out.println("DEBUG: initialMin=" + initialMin + " initialMax=" + initialMax);
+
+        List<Artikal> filtriraniPoCeni = filtrirajPoCeni(artikli, minCena, maxCena);
+
+        if (filtriraniPoCeni.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
 
-        return ResponseEntity.ok(artikli);
+        double min, max;
+        if (minCena == null && maxCena == null) {
+            min = initialMin;
+            max = initialMax;
+        } else {
+            min = minCena != null ? minCena : 0;
+            max = maxCena != null ? maxCena : 0;
+        }
+
+        int totalCount = filtriraniPoCeni.size();
+        List<Artikal> sortirani = sortirajArtikle(filtriraniPoCeni, sort);
+        int fromIndex = Math.min(page * size, totalCount);
+        int toIndex = Math.min(fromIndex + size, totalCount);
+        List<Artikal> paginated = sortirani.subList(fromIndex, toIndex);
+
+        ProductPageResponse response = new ProductPageResponse();
+        response.setProducts(paginated);
+        response.setTotalCount(totalCount);
+        response.setMinCena(min);
+        response.setMaxCena(max);
+        response.setInitialMinCena(initialMin);
+        response.setInitialMaxCena(initialMax);
+
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/{vendorId}/grupa/{grupa}/artikli")
@@ -423,16 +491,15 @@ public class VendorController {
             @RequestParam(required = false) Double maxCena,
             @RequestParam(required = false) String nadgrupa) {
 
-        List<Artikal> artikals = vendorService.getArtikliByGrupa(vendorId, nadgrupa, grupa, minCena, maxCena, new ProductPageResponse());
+        List<Artikal> artikals = vendorService.getArtikliByGrupa(vendorId, nadgrupa, grupa, minCena, maxCena,
+                new ProductPageResponse());
         List<Artikal> artikli = filtrirajPoCeni(artikals, minCena, maxCena);
-
 
         if (artikli == null || artikli.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(artikli);
     }
-
 
     @GetMapping("/{vendorId}/glavnaGrupa/{glavnaGrupa}/nadgrupa/{nadgrupa}/proizvodjaci-count")
     public ResponseEntity<Map<String, Integer>> getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(
@@ -442,15 +509,15 @@ public class VendorController {
             @RequestParam(required = false) Double minCena,
             @RequestParam(required = false) Double maxCena) {
 
-        Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(vendorId, glavnaGrupa, nadgrupa, minCena, maxCena);
+        Map<String, Integer> result = vendorService.getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(vendorId,
+                glavnaGrupa, nadgrupa, minCena, maxCena);
         return result.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(result);
     }
 
     @GetMapping("/{vendorId}/artikli/search")
     public ResponseEntity<List<Artikal>> searchArtikliByNazivOrProizvodjac(
             @PathVariable Long vendorId,
-            @RequestParam String query
-    ) {
+            @RequestParam String query) {
         if (query == null || query.trim().isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
@@ -467,39 +534,88 @@ public class VendorController {
     @GetMapping("/{vendorId}/artikal/{artikalBarCode}")
     public ResponseEntity<Artikal> getProductByArtikalBarCode(
             @PathVariable Long vendorId,
-            @PathVariable String artikalBarCode
-    ){
+            @PathVariable String artikalBarCode) {
         Artikal artikal = vendorService.getProductByArtikalBarCode(vendorId, artikalBarCode);
 
         return ResponseEntity.ok(artikal);
     }
 
     @GetMapping("/{vendorId}/artikli/brand/{brand}")
-    public ResponseEntity<List<Artikal>> getArtikliByBrand(
+    public ResponseEntity<ProductPageResponse> getArtikliByBrand(
             @PathVariable Long vendorId,
-            @PathVariable String brand
-    ) {
+            @PathVariable String brand,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false) Double minCena,
+            @RequestParam(required = false) Double maxCena,
+            @RequestParam(required = false) String sort) {
         List<Artikal> artikli = vendorService.getArtikliByBrand(vendorId, brand);
-        return ResponseEntity.ok(artikli);
+
+        double initialMin = artikli.stream().mapToDouble(Artikal::getCena).min().orElse(0.0);
+        double initialMax = artikli.stream().mapToDouble(Artikal::getCena).max().orElse(0.0);
+
+        List<Artikal> filtriraniPoCeni = filtrirajPoCeni(artikli, minCena, maxCena);
+
+        double min, max;
+        if (minCena == null && maxCena == null) {
+            min = initialMin;
+            max = initialMax;
+        } else {
+            min = minCena != null ? minCena : 0;
+            max = maxCena != null ? maxCena : 0;
+        }
+
+        int totalCount = filtriraniPoCeni.size();
+        List<Artikal> sortirani = sortirajArtikle(filtriraniPoCeni, sort);
+        int fromIndex = Math.min(page * size, totalCount);
+        int toIndex = Math.min(fromIndex + size, totalCount);
+        List<Artikal> paginated = sortirani.subList(fromIndex, toIndex);
+
+        ProductPageResponse response = new ProductPageResponse();
+        response.setProducts(paginated);
+        response.setTotalCount(totalCount);
+        response.setMinCena(min);
+        response.setMaxCena(max);
+        response.setInitialMinCena(initialMin);
+        response.setInitialMaxCena(initialMax);
+
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/{vendorId}/featured")
     public ResponseEntity<FeaturedProduct> addFeaturedProduct(
             @PathVariable Long vendorId,
-            @RequestParam String barcode,
-            @RequestParam FeatureType featureType,
-            @RequestParam(required = false) Integer priority,
-            @RequestParam(required = false) String validFrom,
-            @RequestParam(required = false) String validTo
-    ) {
+            @RequestBody com.tehno.tehnozonaspring.dto.HomepageItemRequest request) {
+        
+        // Mapiramo HomepageSection (koji dolazi sa fronta) u FeatureType (kao što beka očekuje)
+        // ili koristimo direktno FeatureType ako je tako poslato. 
+        // Na frontu itemType=BANNER, section=HERO. 
+        // Na beku FeatureType dobija vrednosti BANNER, HERO...
+        
+        FeatureType ft;
+        try {
+            ft = FeatureType.valueOf(request.getSection().name());
+        } catch (Exception e) {
+            ft = FeatureType.valueOf(request.getItemType().name());
+        }
+
         FeaturedProduct fp = vendorService.addFeaturedProduct(
                 vendorId,
-                barcode,
-                featureType,
-                priority,
-                validFrom != null ? LocalDateTime.parse(validFrom) : null,
-                validTo != null ? LocalDateTime.parse(validTo) : null
-        );
+                request.getBarcode(),
+                ft,
+                request.getPriority(),
+                request.getValidFrom(),
+                request.getValidTo(),
+                request.getItemType() != null ? request.getItemType().name() : null,
+                request.getSubtitle(),
+                request.getButtonText(),
+                request.getButtonRoute(),
+                request.getGlavnaGrupa(),
+                request.getNadgrupa(),
+                request.getGrupa(),
+                request.getBrandName(),
+                request.getCustomName(),
+                request.getCustomImageUrl());
 
         return ResponseEntity.ok(fp);
     }
@@ -511,8 +627,7 @@ public class VendorController {
 
     @GetMapping("/featured")
     public ResponseEntity<List<FeaturedArtikalResponse>> getFeaturedByType(
-            @RequestParam FeatureType type
-    ) {
+            @RequestParam FeatureType type) {
         return ResponseEntity.ok(vendorService.getActiveFeaturedArtikliByType(type));
     }
 
@@ -521,9 +636,9 @@ public class VendorController {
             @PathVariable Long vendorId,
             @PathVariable String brand,
             @RequestParam(required = false) Double minCena,
-            @RequestParam(required = false) Double maxCena
-    ) {
-        List<Map<String, Object>> result = vendorService.getCountByGlavnaGrupaForBrand(vendorId, brand, minCena, maxCena);
+            @RequestParam(required = false) Double maxCena) {
+        List<Map<String, Object>> result = vendorService.getCountByGlavnaGrupaForBrand(vendorId, brand, minCena,
+                maxCena);
 
         if (result.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -540,8 +655,8 @@ public class VendorController {
             @RequestParam(required = false) Double minCena,
             @RequestParam(required = false) Double maxCena,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size
-    ) {
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false) String sort) {
         ProductPageResponse response = new ProductPageResponse();
 
         List<Artikal> artikli = vendorService.getArtikliByBrandAndGlavnaGrupa(vendorId, brand, glavnaGrupa);
@@ -550,21 +665,22 @@ public class VendorController {
 
         // 3. Računanje min/max nakon filtriranja
         double min = filtriraniPoCeni.stream()
-                .mapToDouble(Artikal::getB2bcena)
+                .mapToDouble(Artikal::getCena)
                 .min()
                 .orElse(0.0);
 
         double max = filtriraniPoCeni.stream()
-                .mapToDouble(Artikal::getB2bcena)
+                .mapToDouble(Artikal::getCena)
                 .max()
                 .orElse(0.0);
 
         // 4. Paginacija
         int totalCount = filtriraniPoCeni.size();
+        List<Artikal> sortirani = sortirajArtikle(filtriraniPoCeni, sort);
         int fromIndex = Math.min(page * size, totalCount);
         int toIndex = Math.min(fromIndex + size, totalCount);
 
-        List<Artikal> paginated = filtriraniPoCeni.subList(fromIndex, toIndex);
+        List<Artikal> paginated = sortirani.subList(fromIndex, toIndex);
 
         // 5. Upis u response
         response.setProducts(paginated);
@@ -573,6 +689,35 @@ public class VendorController {
         response.setMaxCena(max);
 
         return ResponseEntity.ok(response);
+    }
+    // ===============================================
+    // HOMEPAGE ITEMS API
+    // ===============================================
+
+    @PostMapping("/{vendorId}/homepage-items")
+    public ResponseEntity<com.tehno.tehnozonaspring.model.HomepageItem> addHomepageItem(
+            @PathVariable Long vendorId,
+            @RequestBody com.tehno.tehnozonaspring.dto.HomepageItemRequest request) {
+
+        try {
+            com.tehno.tehnozonaspring.model.HomepageItem item = vendorService.addHomepageItem(vendorId, request);
+            return ResponseEntity.ok(item);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @GetMapping("/homepage-items/all")
+    public ResponseEntity<List<com.tehno.tehnozonaspring.dto.HomepageItemResponse>> getAllHomepageItems(
+            @RequestParam(required = false, defaultValue = "1") Long vendorId) {
+
+        try {
+            List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> items = vendorService
+                    .getActiveHomepageItems(vendorId);
+            return ResponseEntity.ok(items);
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().build();
+        }
     }
 
 }
