@@ -10,8 +10,10 @@ import java.util.List;
 
 public interface HomepageItemRepository extends JpaRepository<HomepageItem, Long> {
 
-    @Query("SELECT h FROM HomepageItem h WHERE h.vendorId = :vendorId " +
-            "AND h.validFrom <= :now AND h.validTo >= :now " +
+    @Query("SELECT h FROM HomepageItem h " +
+            "WHERE h.vendorId = :vendorId " +
+            "AND (h.validFrom IS NULL OR h.validFrom <= :now) " +
+            "AND (h.validTo IS NULL OR h.validTo >= :now) " +
             "ORDER BY h.priority ASC")
     List<HomepageItem> findActiveItemsByVendorId(@Param("vendorId") Long vendorId, @Param("now") LocalDateTime now);
 

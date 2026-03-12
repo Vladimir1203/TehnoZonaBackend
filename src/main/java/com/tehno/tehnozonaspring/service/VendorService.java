@@ -795,8 +795,23 @@ public class VendorService {
     }
 
     public List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> getActiveHomepageItems(Long vendorId) {
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("HOMEPAGE DEBUG: Trenutno vreme servera: " + now);
+        
         List<com.tehno.tehnozonaspring.model.HomepageItem> activeItems = homepageItemRepository
-                .findActiveItemsByVendorId(vendorId, LocalDateTime.now());
+                .findActiveItemsByVendorId(vendorId, now);
+                
+        if (activeItems.isEmpty()) {
+            System.out.println("HOMEPAGE DEBUG: Nema aktivnih itema. Proveravam sve iteme za vendorId=" + vendorId);
+            List<com.tehno.tehnozonaspring.model.HomepageItem> allVendorItems = homepageItemRepository.findAll().stream()
+                .filter(i -> i.getVendorId().equals(vendorId))
+                .collect(Collectors.toList());
+            System.out.println("HOMEPAGE DEBUG: Ukupno itema za vendorId=" + vendorId + " (bez obzira na datum): " + allVendorItems.size());
+            for (com.tehno.tehnozonaspring.model.HomepageItem i : allVendorItems) {
+                System.out.println("  - Item ID: " + i.getId() + " | Section: " + i.getSection() + 
+                                   " | ValidFrom: " + i.getValidFrom() + " | ValidTo: " + i.getValidTo());
+            }
+        }
 
         List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> responses = new ArrayList<>();
 
