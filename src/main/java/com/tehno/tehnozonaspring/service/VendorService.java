@@ -13,6 +13,7 @@ import com.tehno.tehnozonaspring.model.Artikal;
 import com.tehno.tehnozonaspring.model.Vendor;
 import com.tehno.tehnozonaspring.repository.VendorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 import java.io.StringReader;
@@ -23,6 +24,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class VendorService {
+
+    @PostConstruct
+    public void init() {
+        TimeZone.setDefault(TimeZone.getTimeZone("Europe/Belgrade"));
+        System.out.println("HOMEPAGE: Vremenska zona aplikacije postavljena na Europe/Belgrade. Sat: " + LocalDateTime.now());
+    }
 
     private final VendorRepository vendorRepository;
     private final FeaturedProductRepository featuredProductRepository;
@@ -796,42 +803,21 @@ public class VendorService {
 
     public List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> getActiveHomepageItems(Long vendorId) {
         LocalDateTime now = LocalDateTime.now();
-        System.out.println("HOMEPAGE DEBUG: Trenutno vreme servera: " + now);
-        
         List<com.tehno.tehnozonaspring.model.HomepageItem> activeItems = homepageItemRepository
                 .findActiveItemsByVendorId(vendorId, now);
-                
-        if (activeItems.isEmpty()) {
-            System.out.println("HOMEPAGE DEBUG: Nema aktivnih itema. Proveravam sve iteme za vendorId=" + vendorId);
-            List<com.tehno.tehnozonaspring.model.HomepageItem> allVendorItems = homepageItemRepository.findAll().stream()
-                .filter(i -> i.getVendorId().equals(vendorId))
-                .collect(Collectors.toList());
-            System.out.println("HOMEPAGE DEBUG: Ukupno itema za vendorId=" + vendorId + " (bez obzira na datum): " + allVendorItems.size());
-            for (com.tehno.tehnozonaspring.model.HomepageItem i : allVendorItems) {
-                System.out.println("  - Item ID: " + i.getId() + " | Section: " + i.getSection() + 
-                                   " | ValidFrom: " + i.getValidFrom() + " | ValidTo: " + i.getValidTo());
-            }
-        }
 
         List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> responses = new ArrayList<>();
 
         for (com.tehno.tehnozonaspring.model.HomepageItem item : activeItems) {
             Artikal associatedArtikal = null;
-
-            // Ako je tip PRODUCT, povlačimo konkretan Artikal
             if (item.getItemType() == com.tehno.tehnozonaspring.model.enums.ItemType.PRODUCT
                     && item.getBarcode() != null) {
                 associatedArtikal = getProductByArtikalBarCode(vendorId, item.getBarcode());
             }
-
             responses.add(new com.tehno.tehnozonaspring.dto.HomepageItemResponse(item, associatedArtikal));
         }
 
-        System.out.println("HOMEPAGE: Povučeni homepage items za vendorId=" + vendorId + ". Broj: " + responses.size());
-        for (com.tehno.tehnozonaspring.dto.HomepageItemResponse res : responses) {
-             System.out.println("  - Item: " + res.getHomepageItem().getSection() + " | Type: " + res.getHomepageItem().getItemType());
-        }
-        
+        System.out.println("HOMEPAGE: Povučeni homepage items za vendorId=" + vendorId + " (Vreme: " + now + "). Broj: " + responses.size());
         return responses;
     }
 
