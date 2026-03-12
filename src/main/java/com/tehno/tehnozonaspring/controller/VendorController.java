@@ -586,12 +586,13 @@ public class VendorController {
     public ResponseEntity<FeaturedProduct> addFeaturedProduct(
             @PathVariable Long vendorId,
             @RequestBody com.tehno.tehnozonaspring.dto.HomepageItemRequest request) {
-        
-        // Mapiramo HomepageSection (koji dolazi sa fronta) u FeatureType (kao što beka očekuje)
-        // ili koristimo direktno FeatureType ako je tako poslato. 
-        // Na frontu itemType=BANNER, section=HERO. 
+
+        // Mapiramo HomepageSection (koji dolazi sa fronta) u FeatureType (kao što beka
+        // očekuje)
+        // ili koristimo direktno FeatureType ako je tako poslato.
+        // Na frontu itemType=BANNER, section=HERO.
         // Na beku FeatureType dobija vrednosti BANNER, HERO...
-        
+
         FeatureType ft;
         try {
             ft = FeatureType.valueOf(request.getSection().name());
@@ -622,13 +623,17 @@ public class VendorController {
 
     @GetMapping("/featured/all")
     public ResponseEntity<List<FeaturedArtikalResponse>> getAllFeatured() {
-        return ResponseEntity.ok(vendorService.getActiveFeaturedArtikli());
+        List<FeaturedArtikalResponse> result = vendorService.getActiveFeaturedArtikli();
+        System.out.println("CONTROLLER: Šaljem " + result.size() + " istaknutih artikala frontu.");
+        return ResponseEntity.ok(result);
     }
 
     @GetMapping("/featured")
     public ResponseEntity<List<FeaturedArtikalResponse>> getFeaturedByType(
             @RequestParam FeatureType type) {
-        return ResponseEntity.ok(vendorService.getActiveFeaturedArtikliByType(type));
+        List<FeaturedArtikalResponse> result = vendorService.getActiveFeaturedArtikliByType(type);
+        System.out.println("CONTROLLER: Šaljem " + result.size() + " istaknutih artikala tipa " + type + " frontu.");
+        return ResponseEntity.ok(result);
     }
 
     @GetMapping("/{vendorId}/brand/{brand}/glavnaGrupa/count")
@@ -714,6 +719,7 @@ public class VendorController {
         try {
             List<com.tehno.tehnozonaspring.dto.HomepageItemResponse> items = vendorService
                     .getActiveHomepageItems(vendorId);
+            System.out.println("CONTROLLER: Šaljem " + items.size() + " homepage stavki frontu.");
             return ResponseEntity.ok(items);
         } catch (Exception e) {
             return ResponseEntity.internalServerError().build();

@@ -121,7 +121,9 @@ public class VendorService {
     }
 
     public List<String> getGlavneGrupe() {
-        return new ArrayList<>(groupMap.keySet());
+        List<String> groups = new ArrayList<>(groupMap.keySet());
+        System.out.println("HOMEPAGE: Povučene glavne grupe: " + groups);
+        return groups;
     }
 
     public List<Artikal> getArtikliByNadgrupa(Long id, String nadgrupa) {
@@ -317,8 +319,6 @@ public class VendorService {
 
         // Dobavljanje nadgrupa
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
-        System.out.println("Nadgrupe: " + Arrays.toString(nadgrupe));
-
         // Poziv repository metode
         List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe, minCena,
                 maxCena);
@@ -332,16 +332,12 @@ public class VendorService {
         // Mapiranje rezultata u Map<String, Integer>
         Map<String, Integer> rezultat = resultList.stream()
                 .filter(arr -> arr[0] != null && !arr[0].equals("/") && !arr[0].equals("-")) // Izbacujemo "/" i "-"
-                .peek(arr -> System.out.println("Filtrirani proizvođač: " + arr[0] + ", Broj artikala: " + arr[1]))
                 .collect(Collectors.toMap(
                         arr -> arr[0].toString(), // Key: Naziv proizvođača
                         arr -> Integer.parseInt(arr[1].toString()), // Value: Broj artikala
                         (oldValue, newValue) -> oldValue, // Ako ima duplikata, zadrži prvi (ne bi trebalo da ih bude)
                         TreeMap::new // Sortira mapu po ključu
                 ));
-
-        System.out.println("Konačan rezultat: " + rezultat);
-        System.out.println("==== KRAJ getProizvodjaciWithCountByGlavnaGrupa ====");
 
         return rezultat;
     }
@@ -470,9 +466,6 @@ public class VendorService {
                 rezultat.put(proizvodjac, (int) filtriraniBroj);
             }
         }
-
-        System.out.println("Konačan rezultat: " + rezultat);
-        System.out.println("==== KRAJ getProizvodjaciWithCountByGlavnaGrupaAndNadgrupa ====");
 
         return rezultat;
     }
@@ -627,6 +620,7 @@ public class VendorService {
             }
         }
 
+        System.out.println("HOMEPAGE: Povučeni svi istaknuti artikli. Broj: " + result.size());
         return result;
     }
 
@@ -646,6 +640,7 @@ public class VendorService {
             }
         }
 
+        System.out.println("HOMEPAGE: Povučeni istaknuti artikli tipa " + type + ". Broj: " + result.size());
         return result;
     }
 
@@ -766,11 +761,12 @@ public class VendorService {
         item.setValidFrom(from);
         item.setValidTo(to);
 
-        // Ako dodajemo novi HERO, sklanjamo stare (postavljamo validTo na sadašnje vreme)
+        // Ako dodajemo novi HERO, sklanjamo stare (postavljamo validTo na sadašnje
+        // vreme)
         if (request.getSection() == com.tehno.tehnozonaspring.model.enums.HomepageSection.HERO) {
             List<com.tehno.tehnozonaspring.model.HomepageItem> existingHeores = homepageItemRepository
-                .findByVendorIdAndSectionAndValidToAfter(vendorId, request.getSection(), LocalDateTime.now());
-            
+                    .findByVendorIdAndSectionAndValidToAfter(vendorId, request.getSection(), LocalDateTime.now());
+
             for (com.tehno.tehnozonaspring.model.HomepageItem oldHero : existingHeores) {
                 oldHero.setValidTo(LocalDateTime.now());
             }
@@ -816,6 +812,11 @@ public class VendorService {
             responses.add(new com.tehno.tehnozonaspring.dto.HomepageItemResponse(item, associatedArtikal));
         }
 
+        System.out.println("HOMEPAGE: Povučeni homepage items za vendorId=" + vendorId + ". Broj: " + responses.size());
+        for (com.tehno.tehnozonaspring.dto.HomepageItemResponse res : responses) {
+             System.out.println("  - Item: " + res.getHomepageItem().getSection() + " | Type: " + res.getHomepageItem().getItemType());
+        }
+        
         return responses;
     }
 
