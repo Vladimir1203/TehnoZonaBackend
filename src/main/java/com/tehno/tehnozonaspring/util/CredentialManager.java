@@ -8,6 +8,7 @@ public class CredentialManager {
     private static final String MASKED_USPON_PASS = "==ANyAjMpBXYu9me";
     private static final String MASKED_LINKOM_PASS = "t92aulGb";
     private static final String MASKED_MAIL_PASS = "==QblV2ag0WYiZHIppnYmBycndHd";
+    private static final String MASKED_AVTERA_PASS = "==ANy4SYu9mW";
 
     public static String getMailPass() {
         return unmask(MASKED_MAIL_PASS);
@@ -19,6 +20,10 @@ public class CredentialManager {
 
     public static String getLinkomParams() {
         return "korisnickoime=" + unmask(MASKED_USPON_USER) + "&lozinka=" + unmask(MASKED_LINKOM_PASS);
+    }
+
+    public static String getAvteraParams() {
+        return "email=" + unmask(MASKED_USPON_USER) + "&password=" + unmask(MASKED_AVTERA_PASS);
     }
 
     private static String unmask(String masked) {

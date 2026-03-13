@@ -1,0 +1,4468 @@
+<artikli>
+<artikal>
+<sifra>1</sifra>
+<barkod>8606017680000</barkod>
+<naziv>USB 2.0 kabl A-B 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>Kablovi za štampače</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>55</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 2.0 kabl A-B služi za povezivaje kompjutera i &amp;scaron;tampača, dužine 1,8m, crne boje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/60.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>43</sifra>
+<barkod>8606017680420</barkod>
+<naziv>RJ-11 6/4 konektor cat.5e</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Konektori</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 1cm  &lt;/li>         &lt;li> Visina: 1.3cm  &lt;/li>         &lt;li> Dubina: 1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>1</kolicina>
+<valuta>RSD</valuta>
+<cena>4.19</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>RJ11, konektor 6/4, sluzi za krimpovanje telefonskog cetvorozilnog kabla.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5036.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>2</sifra>
+<barkod>8606017680017</barkod>
+<naziv>USB 2.0 kabl A-B 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>Kablovi za štampače</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>104.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 2.0 kabl A-B služi za povezivaje kompjutera i &amp;scaron;tampača, dužine 3m, crne boje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2160.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>763</sifra>
+<barkod>8606017685814</barkod>
+<naziv>TV nosa&amp;#269; ZGLOBNI 17"- 55"do 30kg Vesa 400*400</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NOSAČI ZA TELEVIZORE</grupa>
+<proizvodjac>Dowell</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>2274</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1084.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">Tip : Nosač za televizore ZGLOBNI 17" do 55"&amp;nbsp;&lt;br />Montiranje na zid : VESA 400x400&lt;/div>&lt;div class="block-content ">Podržane dijagonale : 17" do 55"&lt;/div>&lt;div class="block-content ">Nosivost : do 30 kg&lt;/div>&lt;div class="block-content ">Rastojanje od zida : 60-400 mm&lt;/div>&lt;div class="block-content ">Pomeranje : &amp;plusmn; 90&amp;deg;&amp;nbsp;&lt;/div>&lt;div class="block-content ">Uglovi pomeranja : Nagib +5&amp;deg;~-15&amp;deg;&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3928.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>613</sifra>
+<barkod>8606017684503</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K  (m/m) 1,3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>88</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>178.02</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI kabl velike brzine, podržava 3D TV i 4K rezoluciju, pozlaćeni konektori za savr&amp;scaron;eni kvalitet slike. Kabl je kompatibilan sa svim uređajima koji podržavaju HDMI tipove ulaza.Dužine 1,3m, kabl je crne boje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1911.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>44</sifra>
+<barkod>8606017680437</barkod>
+<naziv>RJ-45 8/8 konektor cat.5e</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Konektori</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>5</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>5.24</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Konektor RJ-45 za UTP, FTP, SFTP kabl kategorije 5.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5037.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>57</sifra>
+<barkod>8606017680567</barkod>
+<naziv>Kabl S-ATA data 0,4m pod uglom</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>16</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 14cm  &lt;/li>         &lt;li> Visina: 4cm  &lt;/li>         &lt;li> Dubina: 0.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>KABL SATA data 0, 4m pod uglom, Kompjuterski, Dužina 0, 4 m, Boja crna&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/15.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>54</sifra>
+<barkod>8606017680536</barkod>
+<naziv>UTP kabl WALL cat. 6 (305m)</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Mrežni kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>12000</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 39cm  &lt;/li>         &lt;li> Visina: 39cm  &lt;/li>         &lt;li> Dubina: 23.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>19.9</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP WALL mrežni kabl, cat.6e ,pun presek.Idealan za horizontalno i vertikalno strukturno kabliranje u objektima.Kabl je sive boje,kotur 305m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5464.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>752</sifra>
+<barkod>8606017685708</barkod>
+<naziv>Patch Cord cat.6A SFTP 3m crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>60</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>226.69</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Boja kabla: Crna , Dužina kabla: 3m , Konektor 1: RJ-45 , Konektor 2: RJ-45 , Pol konektora 1: Mu&amp;scaron;ki , Pol konektora 2: Mu&amp;scaron;ki , Standard kabla: Cat6A&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3461.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>340</sifra>
+<barkod>8606017681694</barkod>
+<naziv>USB 3.0 nastavak A-A 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>USB KABLOVI + ADAPTERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>38</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB kabl (nastavak) uglavnom sluzi za produzavanje USB A-B kablova,u plavoj boji, dužine 1.8m.Konektor USB 3.0 je uvek u plavoj boji .Razlikuje se od USB 2.0 konektora u brzini prenosa podataka.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4670.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>287</sifra>
+<barkod>8606017681755</barkod>
+<naziv>Patch Cord cat.6 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>138</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>136.14</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 5m cat.6e. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4166.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>593</sifra>
+<barkod>8606017684312</barkod>
+<naziv>Produ&amp;#382;ni kabl 6r/3m sa prekidacem i za&amp;#353;titom 3x1,5mm (Linkom) - beli</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>PRODUŽNI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>325</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>942.48</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Kvalitetan naponski produžni kabl sa prekidačem i za&amp;scaron;titom, 6 utičnica, dužina 3m, za struju do 16A, napon 230V~ i snagu do 3500W, Presek kabla: 3 X 1.5mm2, bele boje. Produžni kabl dolazi u pvc foliji sa kukicom za kačenje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3607.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>303</sifra>
+<barkod>8606017682950</barkod>
+<naziv>Patch Cord cat.6 15m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>327</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16cm  &lt;/li>         &lt;li> Visina: 16cm  &lt;/li>         &lt;li> Dubina: 4.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>303.69</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 15m cat.6e. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/67.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>116</sifra>
+<barkod>8606017681106</barkod>
+<naziv>Adapter za napajanje S-ATA HDD-A  0,15m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>16</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>S-ATA adapter (15 pina) sa molex konektora na SATA napojni konektor. Koristi se za povezivanje SATA uređaja na napajanje koje ima molex konektore.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/22.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>501</sifra>
+<barkod>8606017683537</barkod>
+<naziv>Adapter TIP C na 3.5mm stereo jack m/z</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>12</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>104.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB tip-C utikač na 3,5mm audio adapter. Omogucava povezivanje slu&amp;scaron;alica koje koriste 3,5 mm audio prikljucak na nove mobilne uredaje. Nije podržan na Samsung telefonima.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/97.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>663</sifra>
+<barkod>8606017685067</barkod>
+<naziv>Adapter za napajanje VGA 6 pina na 1 x Molex</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>9</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15cm  &lt;/li>         &lt;li> Visina: 10cm  &lt;/li>         &lt;li> Dubina: 0.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Napojni adapter sa jedan Molex konektorom na jedan 6pin PCI Express konektor za grafičku kartu&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2050.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>632</sifra>
+<barkod>8606017684749</barkod>
+<naziv>Adapter-konvertor HDMI na HDMI+VGA+Micro+Audio</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>101</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 17.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 3cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>3</kolicina>
+<valuta>RSD</valuta>
+<cena>1047.2</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Adapter konvertor daje mogućnost da HDMI signal po potrebi pretvorite u VGA, a da pritom ujedno koristite i HDMI priključak za druge radnje uz jos jedan mikro i audio ulaz.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2106.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>596</sifra>
+<barkod>8606017684343</barkod>
+<naziv>Adapter Iphone na 3,5mm stereo d&amp;#382;ek m/&amp;#382;</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>9</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 10cm  &lt;/li>         &lt;li> Visina: 6.5cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>261.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Ovaj adapter iphone mu&amp;scaron;ki na 3,5mm stereo jack zenski služi za povezivanje va&amp;scaron;eg mobilnog telefona i nekog audio uređaja.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2113.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>683</sifra>
+<barkod>8606017685272</barkod>
+<naziv>Auto Bluetooth-Muzicki Risiver</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>RAZNO</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>30</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>628.32</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Odličan i pouzdan bluetooth prijemnik zvuka. Povezuje se sa va&amp;scaron;im telefonom putem 5.0 bluetooth verzije i odličan je za pu&amp;scaron;tanje muzike ili razgovor dok se vozite autom.&lt;/div>&lt;div class="block-content ">Dolazi i micro usb kabl za napajanje uredjaja&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2235.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>597</sifra>
+<barkod>8606017684350</barkod>
+<naziv>Adapter Iphone na 3,5mm stereo d&amp;#382;ek + Iphone</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>16</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 18cm  &lt;/li>         &lt;li> Visina: 5.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>293.22</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Namena: Povezivanje va&amp;scaron;eg Iphone mobilnog telefona sa nekim audio uređajem Konektor 1: Iphone mu&amp;scaron;ki Konektor 2: 3.5 mm jack Boja: bela&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2112.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>699</sifra>
+<barkod>8606017685432</barkod>
+<naziv>Auto drzac za mobilni Jourgo RM-C06 REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Auto držači</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>96</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 9.5cm  &lt;/li>         &lt;li> Dubina: 5.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>293.22</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Auto držač za telefone: 4,7 - 7,2 inča, rotacija od 360&amp;deg;, horizontalna/vertikalna upotreba, dodir i zaključavanje, jednostavan za upotrebu, stabilno stezanje, silikon koji ne klizi, pogled bez blokova, jednostavna instalacija.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2086.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>723</sifra>
+<barkod>8595217455689</barkod>
+<naziv>Data kabl tekstil USB na iPhone 1.2m crveni, SWISSTEN</naziv>
+<pdv>20</pdv>
+<nadgrupa>SWISSTEN</nadgrupa>
+<grupa>Kablovi Swissten</grupa>
+<proizvodjac>Swissten</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>50</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 13.5cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>267.34</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Visokokvalitetni tekstilni kabl za prenos podataka USB / USB-C dužine 1,2 m. Kabl je ojačan da isporučuje veću struju (do 3A) i može da podnese brzi prenos podataka od 480 Mb/s.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2272.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>762</sifra>
+<barkod>8606017685807</barkod>
+<naziv>TV nosa&amp;#269; TILT 37"- 75"do 50kg Vesa 600*400</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NOSAČI ZA TELEVIZORE</grupa>
+<proizvodjac>Dowell</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1750</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>689.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">Tip : Nosač za televizore TILT 32" do 70"&lt;/div>&lt;div class="block-content ">Montiranje na zid : VESA 600x400&lt;/div>&lt;div class="block-content ">Podržane dijagonale : 32" do 70"&lt;/div>&lt;div class="block-content ">Nosivost : do 50 kg&lt;/div>&lt;div class="block-content ">Rastojanje od zida : 25 mm&lt;/div>&lt;div class="block-content ">Uglovi pomeranja : Nagib 0&amp;deg;~-10&amp;deg;&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3927.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>662</sifra>
+<barkod>8606017685050</barkod>
+<naziv>Adapter za napajanje VGA 6 pina na 2 x Molex</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>12</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15cm  &lt;/li>         &lt;li> Visina: 10cm  &lt;/li>         &lt;li> Dubina: 0.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>62.83</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Napojni adapter sa dva Molex konektora na jedan 6pin PCI Express konektor za grafičku kartu.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2097.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>819</sifra>
+<barkod>8606017686194</barkod>
+<naziv>Masazer za lice</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>RAZNO</grupa>
+<proizvodjac>Nedefinisan</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>150</tezina>
+<dimenzije/>
+<kolicina>5</kolicina>
+<valuta>RSD</valuta>
+<cena>2042.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>EMS mikrostrujna zvučna masaža - slaba struja može aktivirati ćelije mi&amp;scaron;ića lica i podstaći metabolizam. Ovaj multifunkcionalni masažert za lice i vrat može podstaći cirkulaciju krvi, podstaći metabolizam kože i ukloniti bore na licu i vratu kroz 10.000 brzih zvučnih vibracija u minuti.&lt;br />Zagrevanje na konstantnoj temperaturi - ovaj masažer za lice i vrat ima funkciju grejanja od 45 stepeni, &amp;scaron;to podstiče cirkulaciju krvi i rast fibroplasta i kolagena, ubrzava apsorpciju hranjivih materija i izbacuje otpad. Pobolj&amp;scaron;ava fine linije, bore, opu&amp;scaron;tenost, melanin i ožiljke,&amp;nbsp;&lt;br />Crveni režim: crveno svetlo (620nm) može efikasno da aktivira kolagen, pobolj&amp;scaron;a fine bore i vrati elastičnost kože.&lt;br />Plavi režim: plavo svetlo (470nm) inhibira rast bakterija i smanjuje akne i bubuljice&amp;nbsp;&lt;br />Zeleni režim: zeleno svetlo (520nm) može umiriti kožu i učiniti je čvrstom, glatkom i nežnom.&amp;nbsp;&lt;br />Puni se sa usb c kablom - u pakovanju&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5552.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>612</sifra>
+<barkod>8606017684534</barkod>
+<naziv>Kabl HDMI na (Micro+Tip C+Iphone) povezuje TV + mob, 2m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Veza TV + mobilni</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>111</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12.5cm  &lt;/li>         &lt;li> Visina: 12.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1108.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">USB3.1 Tip-c/Micro/Iphone na HDMI video kabl, 3.1 verzija, podr&amp;scaron;ka za 1080P, 4K, služi da prenese signal sa Va&amp;scaron;eg mobilnog telefona na TV uredjaj, crne boje dužine 2m.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2056.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>15</sifra>
+<barkod>8606017680147</barkod>
+<naziv>VGA kabl HiQu sa feritima (m/m) 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>VGA / DVI KABLOVI</nadgrupa>
+<grupa>VGA kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>410</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 21cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>4</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>VGA kablovi omogucavaju jednostavno povezivanje monitora ili televizora sa vasim racunarom. Feritna jezgra sa obe strane kabla , duzine 5m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/53.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>52</sifra>
+<barkod>8606017680512</barkod>
+<naziv>UTP kabl WALL cat. 5e (305m)</naziv>
+<pdv>20</pdv>
+<nadgrupa>MREZNA OPREMA</nadgrupa>
+<grupa>MREZNI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>3100</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 35cm  &lt;/li>         &lt;li> Visina: 36cm  &lt;/li>         &lt;li> Dubina: 21cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>15.71</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP WALL mrežni kabl, cat.5e ,pun presek.Idealan za horizontalno i vertikalno strukturno kabliranje u objektima.Kabl je sive boje,kotur 305m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/13.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>656</sifra>
+<barkod>8606017684992</barkod>
+<naziv>Kabl TIP C na Display Port (m/m) 1.8m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>KABLOVI KONVERTERI ADAPTERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>65</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 23cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 3.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>680.68</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Preslikajte displej svog Tip-C laptopa na bilo koji monitor sa DisplayPort ulazom, uz pomoć ovog USB 3.1 tip-C / DisplayPort kabla.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2099.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>286</sifra>
+<barkod>8606017681885</barkod>
+<naziv>Patch Cord cat.6 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>100</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>104.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 3m cat.6e. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/61.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>760</sifra>
+<barkod>8606017685784</barkod>
+<naziv>TV nosa&amp;#269; FIKSNI 23"- 42"do 30kg Vesa 200*200</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NOSAČI ZA TELEVIZORE</grupa>
+<proizvodjac>Dowell</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>567</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>295.68</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">Tip : Nosač za televizore FIKSNI 23" do 42"&lt;/div>&lt;div class="block-content ">Montiranje na zid : VESA 200x200&lt;/div>&lt;div class="block-content ">Podržane dijagonale : 23" do 42"&lt;/div>&lt;div class="block-content ">Nosivost : do 30 kg&lt;/div>&lt;div class="block-content ">Rastojanje od zida : 20 mm&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3925.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>108</sifra>
+<barkod>8606017681021</barkod>
+<naziv>Kabl za napajanje racunara 3x0.75mm, 1.8m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NAPONSKI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>210</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Naponski kabl, služi za napajanje računara, crne boje, dužina 1,8m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2176.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>288</sifra>
+<barkod>8606017682943</barkod>
+<naziv>Patch Cord cat.6 10m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>262</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 18cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>219.91</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 10m cat.6e. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3427.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>439</sifra>
+<barkod>8606017682868</barkod>
+<naziv>Adapter TIP C na USB 3.0 (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>15</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 3.0 tip-C (mu&amp;scaron;ki) do utikač tipa A (ženski). Omogućava povezivanje bilo kog standardnog USB 3.0 ili 2.0 uređaja sa novim USB portovima tipa C Interfejs: USB 3.0, kompatibilan s USB 2.0. Konektori: USB Tip-C (mu&amp;scaron;ki), USB Tip-A (ženski). Brzina prenosa podataka: do 5Gb/s. Težina: 9g.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2135.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>537</sifra>
+<barkod>8606017683773</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K (m/m) 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>168</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>261.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI kabl velike brzine, podržava 3D TV i 4K rezoluciju, pozlaćeni konektori za savr&amp;scaron;eni kvalitet slike. Kabl je kompatibilan sa svim uređajima koji podržavaju HDMI tipove ulaza. Dužine 3m, kabl je crne boje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2127.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>3</sifra>
+<barkod>8606017680024</barkod>
+<naziv>USB 2.0 kabl A-B 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>Kablovi za štampače</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>114</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 2.0 kabl A-B služi za povezivaje kompjutera i &amp;scaron;tampača, dužine 5m, crne boje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2283.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>241</sifra>
+<barkod>8606017684497</barkod>
+<naziv>USB 2.0 kabl A-A (mu&amp;#353;ko-mu&amp;#353;ki) 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>Kablovi za štampače</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>150</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 23.5cm  &lt;/li>         &lt;li> Visina: 8.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>59.14</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB kabl dužine 5m musko-muski, koristi se za prebacivanje podataka povezivanjem uredjaja sa USB priključcima uglavnom računara.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4081.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>5</sifra>
+<barkod>8606017680048</barkod>
+<naziv>USB 2.0 nastavak A-A 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>Kablovi za štampače</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>61</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 14cm  &lt;/li>         &lt;li> Visina: 8.5cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>104.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB kabl (nastavak) A-A služi da se produži USB kabl ili kabl za &amp;scaron;tampač, dužine 3m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/57.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>437</sifra>
+<barkod>8606017682820</barkod>
+<naziv>Adapter Tip C na Micro USB (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>30.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Linkom adapter USB 3.1 tip C na Micro USB (m/z) blister&amp;nbsp;&lt;/p>&lt;p>Tip: USB adapter u blisteru&amp;nbsp;&lt;/p>&lt;p>Konektor 1: USB 3.1 tip C mu&amp;scaron;ki&amp;nbsp;&lt;/p>&lt;p>Konektor 2: Micro USB ženski&amp;nbsp;&lt;/p>&lt;p>Boja: crna&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3615.png</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>432</sifra>
+<barkod>8606017682783</barkod>
+<naziv>USB 3.1 TIP C na 3xHUB + RJ45</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>132</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1256.64</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Uz pomoć ovog adaptera od jednog USB 3.1 porta dobijate 3 x USB porta + LAN priključak.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2137.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>133</sifra>
+<barkod>8606017681274</barkod>
+<naziv>Adapter-konvertor Display Port na HDMI (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>50</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter-konvertor služi za pretvaranje DisplayPort-a na HDMI port. Idealan za povezivanje računara ili laptopa na HD televizor ili monitor sa HDMI ulazom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/29.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>42</sifra>
+<barkod>8606017680413</barkod>
+<naziv>Patch Cord cat.5e 20m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>367</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 5.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>345.58</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 20m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>36</sifra>
+<barkod>8606017680352</barkod>
+<naziv>Patch Cord cat.5e 1m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>42</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 13.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 3m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2163.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>445</sifra>
+<barkod>8606017682912</barkod>
+<naziv>Patch Cord cat.6 1m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>41</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>68.07</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 1m cat.6e Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/85.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>112</sifra>
+<barkod>8606017681069</barkod>
+<naziv>Kabl za LAP TOP i TV - osmica 1,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NAPONSKI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>92</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>73.3</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Strujni kabal sa kojim ćete moći da povežete sve uređaje koji imaju takozvani konektor &amp;ldquo;osmicu&amp;rdquo;. Na primer kasetofon, ili strujni adapter laptopa.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1562.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>37</sifra>
+<barkod>8606017680369</barkod>
+<naziv>Patch Cord cat.5e 2m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>64</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>62.83</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 2m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/10.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>141</sifra>
+<barkod>8606017682523</barkod>
+<naziv>Adapter-konvertor DVI-D na VGA (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>DVI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>DVI konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>65</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter konvertor DVI-D na VGA se koristi za povezivanje računara sa monitorima, televizorima ili projektorima.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/32.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>4</sifra>
+<barkod>8606017680031</barkod>
+<naziv>USB 2.0 nastavak A-A 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>Kablovi za štampače</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>44</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 14cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB kabl (nastavak) A-A služi da se produži USB kabl ili kabl za &amp;scaron;tampač, dužine 1,8m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5641.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>26</sifra>
+<barkod>8606017680253</barkod>
+<naziv>HDMI na HDMI kabl 1.4 (m/m) 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>203</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12.5cm  &lt;/li>         &lt;li> Visina: 17cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>219.91</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>High Definition Multimedia Interface ( HDMI ), je najče&amp;scaron;ći kabl za digitalno audio i video povezivanje televizora, set top box-ova i drugih audio video uređaja. HDMI kabl ver. 1.4 omogućuje reprodukciju filmova na 2160p 60Hz, 3D sadržaje na 1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/49.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>461</sifra>
+<barkod>8606017683117</barkod>
+<naziv>Zvucna kartica USB 2.0  7.1 ch  METALNA</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>RAZNO</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>23</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15cm  &lt;/li>         &lt;li> Visina: 7.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>366.52</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 7.1ch zvučna kartica je veoma fleksibilan audio interfejs koji može da se koristi na desktop i notebook sistemima. Kvalitetna zvučna kartica u metalnom kući&amp;scaron;tu.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/92.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>341</sifra>
+<barkod>8606017681700</barkod>
+<naziv>USB 2.0 kabl A-B 1,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>USB 2.0 to serial</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>62.83</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Priključak A: 1 x USB 2.0 A utikač, Priključak B: 1 x USB 2.0 B utikač, USB kabel za prenos podataka, Uglavnom se koristi za spajanje &amp;scaron;tampača ili skenera sa računarom, Boja: Crna, Dužina: 1.5m&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2265.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>10</sifra>
+<barkod>8606017680093</barkod>
+<naziv>USB 2.0 Mini kabl (za Dig.foto-aparat) 1.5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>KABLOVI KONVERTERI ADAPTERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>50</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>73.3</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Kabl se najče&amp;scaron;će koristi za povezivanje digitalnih foto aparata, čitača kartica, navigacija i drugih uređaja koji su imaju Mini USB ulaz sa punjacem ili racunarom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2161.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>630</sifra>
+<barkod>8606017684725</barkod>
+<naziv>Adapter HDMI na VGA 1080P</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>60</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15.5cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>462</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter HDMI na VGA 1080P FullHD&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3609.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>40</sifra>
+<barkod>8606017680390</barkod>
+<naziv>Patch Cord cat.5e 10m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>246</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 18cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>178.02</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 10m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>27</sifra>
+<barkod>8606017680260</barkod>
+<naziv>HDMI na HDMI kabl 1.4 (m/m) 10m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>600</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15cm  &lt;/li>         &lt;li> Visina: 17cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>596.9</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>High Definition Multimedia Interface ( HDMI ), je najče&amp;scaron;ći kabl za digitalno audio i video povezivanje televizora, set top box-ova i drugih audio video uređaja. HDMI kabl ver. 1.4 omogućuje reprodukciju filmova na 2160p 60Hz, 3D sadržaje na 1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/50.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>638</sifra>
+<barkod>8606017684800</barkod>
+<naziv>HDMI switch 3x1, 4Kx2K 3D Activ</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Switch</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>212</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 17cm  &lt;/li>         &lt;li> Dubina: 5.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1256.64</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Pomoću ovog HDMI Ultra HD Switch-a povežite svoje konzole za igranje, laptop, PC radnu povr&amp;scaron;inu i druge uredjaje kompatibilne sa HDMI konektorom na svoj televizor visoke rezolucije. Podržava full 3D i HD rezolucije do 4Kx2K.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2107.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>785</sifra>
+<barkod>8606017685593</barkod>
+<naziv>USB 3.0 Gigabit Ethernet  adapter metal sivi</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Mrežni adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>40</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1047.2</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter USB3.0 na ženski RJ45, 10/100/1.000Mbps Ethernet protok, Mrežni standard: 802.3, Boja: Siva&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5503.</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>301</sifra>
+<barkod>8606017681472</barkod>
+<naziv>USB 3.0 na micro USB A-B (za ext. hard disc) 1.8 m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>USB 3.0 kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>104</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>251.33</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB Micro 3.0 kabl u crnoj boji za povezivanje sa PC/Laptop racunarom preko USB 3.0 ulaza sa mp3 plejerom, digitalnom kamerom, eksternim hard diskom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/64.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>457</sifra>
+<barkod>8606017683070</barkod>
+<naziv>Adapter-konvertor VGA na HDMI plug in (new) m/z</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>55</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 13.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>523.6</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter-konvertor VGA na HDMI (m/ž) plug in +audio služi da analogni VGA signal uređaja pretvori u digitalni HDMI. Podržava pun 1080p signal.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/90.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>788</sifra>
+<barkod>8606017685623</barkod>
+<naziv>Kabl TIP C na 3.5mm (m/m)  1m, beli</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>21</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>240.86</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter Type C kabal na Aux 3.5mm JH-030 bele boje. Dužina 1m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2254.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>502</sifra>
+<barkod>8606017683544</barkod>
+<naziv>Adapter TIP C na 3.5mm stereo jack + TIP C</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>12</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>157.08</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB tip-C utikač na 3,5mm audio adapter. Omogućava povezivanje slu&amp;scaron;alica koje koriste 3,5 mm audio priključak na nove mobilne uredaje sa dodatnim Tip C ženskim priključkom. Nije podržan na Samsung telefonima.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/98.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>25</sifra>
+<barkod>8606017680246</barkod>
+<naziv>HDMI na HDMI kabl 1.4 (m/m) 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>140</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>167.55</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>High Definition Multimedia Interface ( HDMI ), je najče&amp;scaron;ći kabl za digitalno audio i video povezivanje televizora, set top box-ova i drugih audio video uređaja. HDMI kabl ver. 1.4 omogućuje reprodukciju filmova na 2160p 60Hz, 3D sadržaje na 1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/48.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>777</sifra>
+<barkod>8606017685951</barkod>
+<naziv>HDMI Spliter 1x16 1080P (ver 1.4) Activ</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Spliteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1967</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>3560.48</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">Rad i povezivanje:&amp;nbsp;&lt;/div>&lt;div class="block-content ">1. Povežite 1 HDMI kabl sa HDMI izvora na ulaz HDMI Splittera.&lt;br />2. Povežite do 16 HDMI kablova sa svakog displeja (monitora ili projektora) u izlaze HDMI Splittera.&lt;br />3. Povežite 12V napajanje na HDMI razdelnik 1x16.&lt;/div>&lt;div class="block-content ">Specifikacija:&lt;/div>&lt;div class="block-content ">Maksimalni propusni opseg: 320MHz&lt;br />Maksimalni propusni opseg prenosa: 3,2 Gbps&lt;br />HDMI verzija: HDMI 1.4v&lt;br />Format adaptera za napajanje: DC 12V/3A&lt;br />Podržava audio format: DTS-HD/Dolbi-trueHD/ DTS/Dolbi-AC3/DSD&lt;/div>&lt;div class="block-content ">Paket sadrži:&lt;/div>&lt;div class="block-content ">1 x 4K 16 port HDMI razdelnik&lt;br />1 x 12V DC napajanje&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3711.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>355</sifra>
+<barkod>8606017681939</barkod>
+<naziv>Mini Display port na HDMI (m/m) kabl 1.8 m</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Kabl izradjen od jako kvalitetnog materijala, konvertuje signal sa MAC PC-a koji ima MiniDP port na HDTV monitor ili projektor sa HDMI portom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3601.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>76</sifra>
+<barkod>8606017680758</barkod>
+<naziv>Audio kabl (3.5mm stereo jack na 2 RCA jack) 1,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>36</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16cm  &lt;/li>         &lt;li> Visina: 7.5cm  &lt;/li>         &lt;li> Dubina: 3cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Najrasprostranjeniji tip audio priključka, koristi se za povezivanje različitih vrsta audio uređaja sa zvučnicima, pojačalom ili nekim drugim uređajem sa 3.5mm ulazom&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2164.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>688</sifra>
+<barkod>8606017685326</barkod>
+<naziv>Adapter USB 2.0 na TIP-C m/&amp;#382;</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>9</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11cm  &lt;/li>         &lt;li> Visina: 6.5cm  &lt;/li>         &lt;li> Dubina: 0.1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Omogućava povezivanje bilo kojeg USB Type-C kabla sa USB -om računara za punjenje ili sinhronizaciju podataka.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2062.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>357</sifra>
+<barkod>8606017681953</barkod>
+<naziv>Display Port na HDMI kabl  (m/m) 1.8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>100</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>1</kolicina>
+<valuta>RSD</valuta>
+<cena>366.52</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Konvertuje signal sa PC-a koji ima DisplayPort port na HDTV monitor ili projektor sa HDMI portom&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/73.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>41</sifra>
+<barkod>8606017680406</barkod>
+<naziv>Patch Cord cat.5e 15m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>340</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 18cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>282.74</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 15m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/6.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>117</sifra>
+<barkod>8606017681113</barkod>
+<naziv>Adapter Euro utikac-USA uti&amp;#269;nica (&amp;#353;ever)</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>RAZNO</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>14</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter USA(sever) utikač koji pretvara u Euro utikač. Ovaj adapter ne menja napon.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2179.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>130</sifra>
+<barkod>8606017681243</barkod>
+<naziv>Adapter HDMI na Mini HDMI (&amp;#382;/m)</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>15</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>94.25</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Mu&amp;scaron;ki mini HDMI na ženski full size HDMI, služi za povezivanje portabl HDTV DVs, kamere, igračke konzole sa va&amp;scaron;im HDTV sa pravom HD konekcijom. HDMI signal se prenosi digitalnim putem bez ikakvih deformacija i smetnji.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/28.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>226</sifra>
+<barkod>8606017682738</barkod>
+<naziv>Adapter DVI (24+5) na HDMI (m/&amp;#382; ) crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>DVI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>DVI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>38</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>104.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Konvertuje digitalni video signal sa HDMI (ženski) na DVI (mu&amp;scaron;ki), DVI je verzija DVI-I Dual link. Adapter je crne boje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/35.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>765</sifra>
+<barkod>8606017685838</barkod>
+<naziv>TV nosa&amp;#269; ZGLOBNI 32"- 55"do 45kg Vesa 400*400</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NOSAČI ZA TELEVIZORE</grupa>
+<proizvodjac>Dowell</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>3790</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1724.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">Tip : Nosač za televizore ZGLOBNI 32" do 55"&lt;br />Montiranje na zid : VESA 400x400&lt;/div>&lt;div class="block-content ">Podržane dijagonale : 32" do 55"&lt;/div>&lt;div class="block-content ">Nosivost : do 45 kg&lt;/div>&lt;div class="block-content ">Rastojanje od zida : 70-360 mm&amp;nbsp;&lt;/div>&lt;div class="block-content ">Pomeranje : &amp;nbsp;&amp;plusmn; 90&amp;deg;&amp;nbsp;&lt;/div>&lt;div class="block-content ">Uglovi pomeranja : Nagib +20&amp;deg;~-20&amp;deg;&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3924.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>496</sifra>
+<barkod>8606017683483</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI+2xUSB 3.0+SD+TIP C+RJ45</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>77</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 8cm  &lt;/li>         &lt;li> Visina: 15cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>3141.6</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite Va&amp;scaron; laptop koji ima Tip C port na TV, projektor, monitor, čitač kartica itd. Sastoji se od 2xUSB 3.0, HDMI, Tip c, SD/Micro SD i RJ45 ulaza.&lt;/p>&lt;p>Metalno kuciste sive boje&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5468.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>310</sifra>
+<barkod>8606017681489</barkod>
+<naziv>Adapter-konvertor HDMI na VGA (m/&amp;#382;)+ audio</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>HDMI KONVERTERI + ADAPTERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Služi da digitalni signal sa HDMI uređaja pretvori u analogni VGA. Može Va&amp;scaron; novi uređaj povezati na stari VGA, monitor, televizor, projektor, poseduje dodatni audio kabl. Podržava pun 1080p signal.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/66.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>741</sifra>
+<barkod>8595217471429</barkod>
+<naziv>USB 3.1 TIP C na 4xHUB 3.0 +3xTIP C</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Swissten</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>92</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 19.5cm  &lt;/li>         &lt;li> Visina: 9.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1937.32</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ovaj USB TIP C 3.1 HUB, je vrlo pogodan kada imate na laptopu, kompjuteru ili nekom drugom uredjaju jedan ili dva USB porta, a potreban vam je veci broj, tako da od jednog TIP C 3.1 dobijate 4x USB3.0 porta i 3x USB TIP C porta&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5505.</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>48</sifra>
+<barkod>8606017680475</barkod>
+<naziv>RJ-45 8/8 nastavak (&amp;#382;/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Konektori</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>15</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>41.89</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="post-content">&lt;p style="margin-bottom: 20px;">Nastavak za RJ-45 konektor (žensko-ženski) kat 5, sluzi za nastavljanje mreznog kabla.&lt;/p>&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/45.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>434</sifra>
+<barkod>8606017682844</barkod>
+<naziv>USB 3.1 TIP C na 4xHUB 3.0</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>28</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1151.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Uz pomoć ovog adaptera od jednog USB 3.1 Tip C porta dobijate 4 x USB 3.0 porta.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3600.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>538</sifra>
+<barkod>8606017683780</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K (m/m) 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>264</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI kabl velike brzine, podržava 3D TV i 4K rezoluciju, pozlaćeni konektori za savr&amp;scaron;eni kvalitet slike. Kabl je kompatibilan sa svim uređajima koji podržavaju HDMI tipove ulaza, kabl je crne boje, 5m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2126.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>38</sifra>
+<barkod>8606017680376</barkod>
+<naziv>Patch Cord cat.5e 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>84</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 3m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/11.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>813</sifra>
+<barkod>8606017686149</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K (m/m) 15m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1059</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1478.4</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">HDMI Gold kabl velike brzine 4k rezolucije&lt;br />Konektor 1: HDMI A - mu&amp;scaron;ki&lt;/div>&lt;div class="block-content ">Konektor 2: HDMI A - mu&amp;scaron;ki&amp;nbsp;&lt;/div>&lt;div class="block-content ">Dužina kabla: 15m&amp;nbsp;&lt;/div>&lt;div class="block-content ">Boja: crna&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4787.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>77</sifra>
+<barkod>8606017680765</barkod>
+<naziv>Audio kabl (3,5mm stereo jack na 2 RCA jack) 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>63</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>62.83</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Najrasprostranjeniji tip audio priključka, koristi se za povezivanje različitih vrsta audio uređaja sa zvučnicima, pojačalom, ili nekim drugim uređajem sa 3.5mm ulazom&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1560.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>837</sifra>
+<barkod>8606017686361</barkod>
+<naziv>HDMI na HDMI kabl M/M Ultra HD 4K Optical Fiber 50m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>HDMI KABLOVI + SPLITERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1200</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>5236</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI Opticki kabl verzija v2.0, podržava visoku 4K rezoluciju sa brzom stopom osvežavanja uz dinamičku HDR podr&amp;scaron;ku koja omogućava da se svaki trenutak video snimka prikaže u idelanim vrednostima za impresivnu sliku bez gubitka kvaliteta. Kabl je crne boje dužine 50m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5636.png</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>618</sifra>
+<barkod>8606017684596</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI 4K+VGA+1xUSB 3.0+TIP C</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>58</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>9</kolicina>
+<valuta>RSD</valuta>
+<cena>1361.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C na TV, projektor, monitor, čitač kartice itd. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Sadrzi HDMI 4K, VGA, TIP C i USB 3.0 ulaz.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2111.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>504</sifra>
+<barkod>8606017683568</barkod>
+<naziv>DATA kabl ARMOR za Iphone crni 1m, REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Data kablovi za Iphone</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>36</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 8cm  &lt;/li>         &lt;li> Visina: 16cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>155.23</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ovaj ARMOR Data kabl Iphone možete koristiti za prenos podataka sa Va&amp;scaron;eg mobilnog uredjaja na računar i obrnuto i u isto vreme puniti bateriju, crne je boje, dužine 1m. Cena ovog kabla je vrlo povoljna.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/100.png</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>467</sifra>
+<barkod>8606017683339</barkod>
+<naziv>HDMI EXTENDER 60M</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>198</tezina>
+<dimenzije/>
+<kolicina>4</kolicina>
+<valuta>RSD</valuta>
+<cena>2303.84</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Omogucava produžavanje HDMI signala do 60m&lt;br />Digitalno pojacalo pobolj&amp;scaron;ava kvalitet signala i povecava udaljenost prenosa&lt;br />Radi preko jednog CAT6 LAN kabla, ukljucujuci EDID prenos podataka&lt;/p>&lt;p>Sadrži po&amp;scaron;iljaoca i prijemnik i 2 adaptera za napajanje&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4314.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>791</sifra>
+<barkod>8606017685630</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI+2xUSB 3.0+TF/SD+2xTIP C+RJ45</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>112</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>2408.56</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C ulaz na TV, projektor, monitor, čitač kartice itd. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Sadrži HDMI, dva USB 3.0, SD/mikro, dva Tip C, SD/TF i RJ45 modul za povezivanje na mrežu.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2080.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>584</sifra>
+<barkod>8606017684213</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI+VGA+4xUSB 3.0+SD/Micro SD+TIP C+AUDIO+RJ45</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>109</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 23cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 3.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>3351.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C na TV, projektor, monitor, čitač kartice itd. Odlikuje ga izuzetan kvalitet, metalno kući&amp;scaron;te, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Pomoću Tip C ulaza koristite veliki izbor dodatnih priključaka kao &amp;scaron;to su HDMI, 4xUSB 3.0, Tip C, SD/Mikro SD kartice, Audio, VGA i LAN slot.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2118.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>781</sifra>
+<barkod>8606017685555</barkod>
+<naziv>Kabl TIP C na TIP C 5Gbps 1 m,  beli</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>36</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 24cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>188.5</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Visokokvalitetni beli kabl za prenos podataka USB-C 3.0/USB-C 3.0 dužine 1,0 m. Protok 5GBps.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2065.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>135</sifra>
+<barkod>8606017681298</barkod>
+<naziv>Adapter-konvertor Mini Display Port na DVI (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>Mini DisplayPort</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>41</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>8</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Koristi se za povezivanje savremenih laptop i desktop računara sa Mini Display port ulazom na monitore i televizore sa DVI priključcima. Adapter-konvertor je izradjen od kvalitetnog materijala, podržava visoku video rezoluciju 1920*1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2143.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>677</sifra>
+<barkod>8606017685210</barkod>
+<naziv>Display Port na HDMI+USB 2.0  kabl (m/m) 1.8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>94</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1884.96</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Povežite se sa uredjajima za prikaz, kao &amp;scaron;to su tv, monitor, projektor preko ovog adapterskog kabla sa napajanjem,a zatim konvertujte u displayport signale i podržavajte 4k 60hz&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2092.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>675</sifra>
+<barkod>8606017685197</barkod>
+<naziv>Adapter TIP C HUB na HDMI+VGA+ 4xUSB+SD/micro+RJ45+ PD+Audio-11u1</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>294</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 35cm  &lt;/li>         &lt;li> Visina: 10cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>4712.4</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C ulaz na TV, projektor, monitor itd. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Sadrži 4x USB 3.0, MICRO SD/SD , RJ45, Audio, HDMI, VGA i TIP C PD&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2094.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>660</sifra>
+<barkod>8606017685036</barkod>
+<naziv>Adapter za napajanje VGA 6 pina na 2 x Sata</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>18</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20.5cm  &lt;/li>         &lt;li> Visina: 4cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Dva sata power konektora na PCI &amp;ndash; Express 6-pinski adapter za napajanje grafičkih kartica.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2096.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>783</sifra>
+<barkod>8606017685579</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI+VGA+1xUSB 3.0+TIP C+AUDIO</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>60</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>8</kolicina>
+<valuta>RSD</valuta>
+<cena>1612.69</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Dodajte dodatne ekrane svom racunaru pomocu USB Tip C. Lako povežite racunar na VGA ili HDMI ekran + dodatni ulazi za USB, tip C i audio.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3599.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>658</sifra>
+<barkod>8606017685012</barkod>
+<naziv>Kabl TIP C na HDMI 60Hz, 1.8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>70</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1099.56</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Preslikajte displej svog mobilnog telefona ili tip-C laptopa na bilo koji TV, projektor ili monitor sa HDMI ulazom, uz pomoć ovog USB 3.1 tip-C / HDMI kabla.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2058.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>358</sifra>
+<barkod>8606017681960</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI (m/&amp;#382;) metal</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>43</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>733.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter omogućava povezivanje telefona, tableta i kompjutera na HDTV monitor, 4K LED display monitora ili projektora sa HDMI ulazom. USB konektor tipa C je potpuno simetričan i ulazi u port sa bilo koje strane da se okrene.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/74.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>582</sifra>
+<barkod>8606017684190</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI+2xUSB 3.0+SD/Micro SD</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1780.24</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C na TV, projektor, monitor, čitač kartice itd. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Pomoću Tip C ulaza koristite HDMI, 2xUSB 3.0 i SD/Mikro SD karticu.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4196.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>28</sifra>
+<barkod>8606017680277</barkod>
+<naziv>HDMI na HDMI kabl 1.4 (m/m) 15m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>HDMI KABLOVI + SPLITERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>870</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 17cm  &lt;/li>         &lt;li> Visina: 17cm  &lt;/li>         &lt;li> Dubina: 6cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>994.84</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>High Definition Multimedia Interface ( HDMI ), je najče&amp;scaron;ći kabl za digitalno audio i video povezivanje televizora, set top box-ova i drugih audio video uređaja. HDMI kabl ver. 1.4 omogućuje reprodukciju filmova na 2160p 60Hz, 3D sadržaje na 1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2162.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>714</sifra>
+<barkod>8595217451865</barkod>
+<naziv>Auto punjac 1xUSB + TIP C kabl 2.4A SWISSTEN</naziv>
+<pdv>20</pdv>
+<nadgrupa>SWISSTEN</nadgrupa>
+<grupa>Punjači Swissten</grupa>
+<proizvodjac>Swissten</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>64</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 13cm  &lt;/li>         &lt;li> Visina: 9.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>388.08</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Visokokvalitetni auto punjač sa USB-C konektorom iz serije modela SWISSTEN. Sa izlaznom strujom do 2,4 A, možete puniti pametne telefone i tablete. Uređaj takođe ima izlazni USB port koji vam omogućava punjenje do dva uređaja.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2247.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>684</sifra>
+<barkod>8606017685289</barkod>
+<naziv>Adapter TIP C na SATA (2,5/3.5 Incha)</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>94</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20.5cm  &lt;/li>         &lt;li> Visina: 9.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>837.76</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div>&lt;div class="block-content ">Tip : Adapter&amp;nbsp;&lt;/div>&lt;div class="block-content ">Priključci na jednoj strani: Usb C&lt;/div>&lt;div class="block-content ">Priključci na drugoj strani: SATA (mu&amp;scaron;ki)&lt;/div>&lt;div class="block-content ">Napomena: SATA 2.5"/3.5"&lt;/div>&lt;div class="block-content ">Boja: Crna&lt;/div>&lt;/div>&lt;div>&amp;nbsp;&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1938.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>91</sifra>
+<barkod>8606017680901</barkod>
+<naziv>USB 2.0 SERIJSKI ADAPTER to RS232 (Linkom)</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>USB 2.0 to serial</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>44</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 10.5cm  &lt;/li>         &lt;li> Visina: 16cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>523.6</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 2.0 (mu&amp;scaron;ki) konvertor na serijski RS232 (9-pinac, mu&amp;scaron;ki). Pogodan za kase koje imaju ovaj serijski port.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2172.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>145</sifra>
+<barkod>8606017682646</barkod>
+<naziv>USB 2.0 na 3xHUB 2.0 + RJ45</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>80</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 19.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>1</kolicina>
+<valuta>RSD</valuta>
+<cena>837.76</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Uz pomoć ovog adaptera od jednog USB 2.0 porta dobijate 3 x USB 2.0 porta + LAN priključak.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/33.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>665</sifra>
+<barkod>8606017685098</barkod>
+<naziv>HDMI Spliter 1x4  2.0V (4K @ 60Hz)</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Spliteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>417</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 21.5cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 8cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>5</kolicina>
+<valuta>RSD</valuta>
+<cena>2722.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Hdmi spliter 1&amp;times;4 omogućava da se jedan HDMI uređaj lako podeli na 4 HDMI kompatibilna monitora ili projektora. Rezolucija ovog hdmi razdelnika može biti do 3840Ks2160/60Hz&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2199.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>807</sifra>
+<barkod>8606017686088</barkod>
+<naziv>Adapter-konvertor TIP C na 2xHDMI 4K+USB 3.0+TIP C</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>3</kolicina>
+<valuta>RSD</valuta>
+<cena>2021.1</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C na TV, projektor, monitor, telefon. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Sadrzi 2xHDMI 4K, TIP C i USB 3.0 ulaz.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4083.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>636</sifra>
+<barkod>8606017684787</barkod>
+<naziv>Adapter-konvertor TIP C na Display Port</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>31</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>733.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Tip: Adapter - konvertor , Priključci na jednoj strani: USB 3.1 tip C , Priključci na drugoj strani: DisplayPort (ženski) , Boja: Crna&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4067.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>56</sifra>
+<barkod>8606017680550</barkod>
+<naziv>UTP kabl FLY cat. 6e (305m)</naziv>
+<pdv>20</pdv>
+<nadgrupa>MREZNA OPREMA</nadgrupa>
+<grupa>MREZNI KABLOVI</grupa>
+<proizvodjac>KSIX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>3540</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>21.99</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP kabl FLY&amp;nbsp; cat.6e ,pun presek. Kabl je plave boje,kotur 305m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5463.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>45</sifra>
+<barkod>8606017680444</barkod>
+<naziv>RJ-45 8/8 konektor cat.5 (oklopljen)</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Konektori</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 1.1cm  &lt;/li>         &lt;li> Visina: 1.3cm  &lt;/li>         &lt;li> Dubina: 1.1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>13.62</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ovaj RJ-45 8/8 konektor cat.5, je oklopljen sto znaci da se nalazi u metalnom kucistu.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1552.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>666</sifra>
+<barkod>8606017685104</barkod>
+<naziv>HDMI Spliter 1x8  2.0V (4K @ 60Hz)</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Spliteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>955</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 31cm  &lt;/li>         &lt;li> Visina: 16.5cm  &lt;/li>         &lt;li> Dubina: 8.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>3769.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Hdmi spliter 1&amp;times;8 omogucava da jedan HDMI uredjaj lako podeli video i audio signal na 8 kompatibilna monitora ili projektora istovremeno uz održavanje kvaliteta signala. Kompatibilan sa HDMI 2. 0a, HDCP 2. 2/1. 4, podržava do 4K @ 60 Hz.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2271.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>685</sifra>
+<barkod>8606017685296</barkod>
+<naziv>Adapter TIP C na SATA BOX (2,5 Incha)</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>94</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20.5cm  &lt;/li>         &lt;li> Visina: 9.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>837.76</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter za povezivanje HDD ili SSD uređaja sa računarom preko USB 3.0 konektora sa fiokom za skladi&amp;scaron;tenje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2082.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>836</sifra>
+<barkod>8606017686354</barkod>
+<naziv>HDMI na HDMI kabl M/M Ultra HD 4K Optical Fiber 30m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>HDMI KABLOVI + SPLITERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>900</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>4502.96</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI Opticki kabl verzija v2.0, podržava visoku 4K rezoluciju sa brzom stopom osvežavanja uz dinamičku HDR podr&amp;scaron;ku koja omogućava da se svaki trenutak video snimka prikaže u idelanim vrednostima za impresivnu sliku bez gubitka kvaliteta. Kabl je crne boje dužine 30m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5635.png</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>668</sifra>
+<barkod>8606017685128</barkod>
+<naziv>Audio kabl (2x3,5mm stereo jack muski na 3,5mm stereo zenski) 20cm</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>8</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 10.5cm  &lt;/li>         &lt;li> Visina: 6.5cm  &lt;/li>         &lt;li> Dubina: 1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Za kori&amp;scaron;ćenje novih slu&amp;scaron;alica sa mikrofonom i slu&amp;scaron;alica za mobilne telefone sa 1x3.5mm konektorom na računarima sa 2x3.5mm konektorima.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2200.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>739</sifra>
+<barkod>8595217471412</barkod>
+<naziv>TIP C HUB  4 in 1 aluminijum sivi, SWISSTEN</naziv>
+<pdv>20</pdv>
+<nadgrupa>SWISSTEN</nadgrupa>
+<grupa>Tip C HUB Swissten</grupa>
+<proizvodjac>Swissten</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>90</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 19.5cm  &lt;/li>         &lt;li> Visina: 9.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>6</kolicina>
+<valuta>RSD</valuta>
+<cena>1884.96</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Aluminijumski USB-C HUB Swissten 4u1 sa 4k USB 3.0 izlazom sa brzinom prenosa podataka 5G/s.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2224.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>637</sifra>
+<barkod>8606017684794</barkod>
+<naziv>Adapter-konvertor VGA na HDMI+Micro+Audio</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>57</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>471.24</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Služi da analogni signal sa vga uređaja pretvori u digitalni hdmi. Poseduje dodatni audio i micro kabal. Podržava pun 1080p signal.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4443.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>674</sifra>
+<barkod>8606017685180</barkod>
+<naziv>RJ-10 4/4 konektor</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Konektori</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 1cm  &lt;/li>         &lt;li> Visina: 1.3cm  &lt;/li>         &lt;li> Dubina: 1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>5.24</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Telefonski prikljucak RJ-10 4/4, sa pozlacenim kontaktima.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2093.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>795</sifra>
+<barkod>8606017685968</barkod>
+<naziv>Kabl TIP C na TIP C 4.0 8K/60hz (m/m) 1m, crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>33</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1151.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Data kabl Tip C na Tip C dužine 1m. Podržava jednu 8K (7680k4320) pri 60Hz ili dvostruku 4K (3840k2160) pri 60Hz rezoluciji, PD240W, 40Gbps pružajući iskustvo gledanja visokog kvaliteta.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3587.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>147</sifra>
+<barkod>8606017681380</barkod>
+<naziv>USB 2.0 mre&amp;#382;ni adapter (plavi)</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Mrežni adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>31</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 13cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>3</kolicina>
+<valuta>RSD</valuta>
+<cena>366.52</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Mrežni adapter USB 2.0, drajveri za instalaciju se nalaze na samom uredjaju, u zavisnosti od pode&amp;scaron;avanja računara drajveri se automatski otvore ili ih je potrebno pokrenuti u &amp;ldquo;My computer&amp;rdquo; novom disku koji se u medjuvremenu pojavio. Postiže brzinu od 10/100Mb koristeći USB 2.0 port.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/34.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>440</sifra>
+<barkod>8606017682974</barkod>
+<naziv>HDMI na Mini HDMI kabl (m/m) 1,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>88</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>209.44</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite va&amp;scaron; PC, laptop ,kameru ili gejmersku konzolu sa monitorom, projektorom ili televizorom, prenesite video i audio signal jednim kablom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/88.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>78</sifra>
+<barkod>8606017680772</barkod>
+<naziv>Audio kabl (3,5mm stereo jack na 2 RCA jack) 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>98</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15.5cm  &lt;/li>         &lt;li> Visina: 6.5cm  &lt;/li>         &lt;li> Dubina: 5.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Najrasprostranjeniji tip audio priključka, koristi se za povezivanje različitih vrsta audio uređaja sa zvučnicima, pojačalom, ili nekim drugim uređajem sa 3.5mm ulazom, dužine 5m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2165.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>796</sifra>
+<barkod>8606017685975</barkod>
+<naziv>Adapter Display Port na HDMI (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>32</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>293.22</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ovaj adapter služi za pretvaranje DisplayPort-a na HDMI port. Idealan za povezivanje računara ili laptopa na HD televizor ili monitor sa HDMI ulazom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3589.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>687</sifra>
+<barkod>8606017685319</barkod>
+<naziv>Adapter TIP C na HDMI Video Capture 4K 60 Hz m/z</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>28</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>9</kolicina>
+<valuta>RSD</valuta>
+<cena>1151.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ovaj Hdmi stick može se koristiti za prenos video signala, na primer sa digitalne kamere na računar ili laptop sa TIP C ulazom. Hdmi stick omogućava snimanje sa hdmi izvora sa maksimalnom rezolucijom od 4k 60hz. Snimak je komprimovan do 1080p 30hz.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2061.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>817</sifra>
+<barkod>8606017686170</barkod>
+<naziv>Kabl za napajanje racunara 3x0.75mm, 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NAPONSKI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>99</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>178.02</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Naponski kabl, služi za napajanje računara, crne boje, dužina 3m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4756.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>680</sifra>
+<barkod>8606017685241</barkod>
+<naziv>Adapter TIP C HUB 9u1+ Wireless Punjenje</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>126</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 17cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>2</kolicina>
+<valuta>RSD</valuta>
+<cena>3141.6</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C ulaz na TV, projektor, monitor itd. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Sadrži HDMI, 2x USB 3.0, 1xTip C, VGA , AUDIO, MICRO SD/SD i RJ45 I WIRELESS PUNJENJE UREĐAJA&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2230.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>342</sifra>
+<barkod>8606017681731</barkod>
+<naziv>Adapter Euro utikac-UK uticnica</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>RAZNO</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>34</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 13.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>94.25</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter koji UK (britanski) utikač pretvara u Euro utikač. Ovaj adapter ne menja napon.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5131.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>522</sifra>
+<barkod>8606017683742</barkod>
+<naziv>Adapter-konvertor Display Port na HDMI 4 K</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>45</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>418.88</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter-konvertor služi za pretvaranje DisplayPort-a na HDMI port. Idealan za povezivanje računara ili laptopa na 4k televizor ili 4k monitor sa HDMI ulazom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2129.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>778</sifra>
+<barkod>8606017686019</barkod>
+<naziv>USB 3.1 na 3xHUB 3.0+RJ45 metal</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>99</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1151.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">Tip: Adapter - konverter&lt;br />Priključci na jednoj strani: USB tip C (mu&amp;scaron;ki)&lt;/div>&lt;div class="block-content ">Priključci na drugoj strani: 3xUSB 3.1 tip A (ženski), LAN priključak&lt;/div>&lt;div class="block-content ">Fizičke karakteristike - Boja: siva&lt;/div>&lt;div class="block-content ">&amp;nbsp;&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3735.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>363</sifra>
+<barkod>8606017682011</barkod>
+<naziv>HDMI Spliter 1x4 1080P (ver 1.4) Activ</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Spliteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>233</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 17cm  &lt;/li>         &lt;li> Dubina: 5.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1256.64</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI spliter 1 ulaz / 4 izlaza &amp;ndash; pouzdan razdelnik jedan HDMI na četiri HDMI izlaza. Veliki prenos signala postiže preko vi&amp;scaron;e kaskadnih HDMI spliter pojačivača. Podržavane rezolucije: 720p/1080i/1080p 3D kompatibilan.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/72.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>55</sifra>
+<barkod>8606017680543</barkod>
+<naziv>FTP kabl WALL cat. 5e (305m)</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Mrežni kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>10000</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 36cm  &lt;/li>         &lt;li> Visina: 35.5cm  &lt;/li>         &lt;li> Dubina: 21.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>18.85</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>FTP mrežni, wall kabl, punog preseka cat.5e. Kotur 305m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2076.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>362</sifra>
+<barkod>8606017682004</barkod>
+<naziv>HDMI Spliter 1x2 1080P (ver1.4) Activ</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Spliteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>213</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 17cm  &lt;/li>         &lt;li> Visina: 12cm  &lt;/li>         &lt;li> Dubina: 5.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>942.48</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI spliter 1 ulaz / 2 izlaza &amp;ndash; pouzdan razdelnik jedan HDMI na dva HDMI izlaza. Veliki prenos signala postiže preko vi&amp;scaron;e kaskadnih HDMI spliter pojačivača. Podržavane rezolucije: 720p/1080i/1080p 3D kompatibilan.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/71.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>115</sifra>
+<barkod>8606017681090</barkod>
+<naziv>Kabl S-ATA data 0,4m (crveni,crni)</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>15</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>KABL SATA data 0, 4m, Kompjuterski, Dužina 0, 4 m, Boja crvena&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/21.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>772</sifra>
+<barkod>8606017685906</barkod>
+<naziv>TIP C na HDMI 4K  kabl  100W  2m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>68</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1151.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Kabl USB3.1 Tip-c na HDMI video kabl &lt;a href="mailto:PD20V@5A">PD20V@5A&lt;/a> max 100w verzija, podr&amp;scaron;ka za 1080P, 4K, služi da prenese signal sa Va&amp;scaron;eg mobilnog telefona na TV uredjaj, crvene boje dužine 2m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3593.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>616</sifra>
+<barkod>8606017684565</barkod>
+<naziv>DATA kabl Kerolla Iphone 2.4A 1m beli RC-094i  REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Data kablovi za Iphone</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>36</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 2.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>92.4</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">DATA kabl Kerolla full speed za Iphone je jedan od najkvalitetnijih i najboljih REMAX kablova, brz i &amp;scaron;irmovan, 1m bele boje.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3849.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>825</sifra>
+<barkod>8606017686248</barkod>
+<naziv>DATA kabl Prime TIP C RC-C167 66W 1.2m crni, REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Data kablovi tip C</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>82</tezina>
+<dimenzije/>
+<kolicina>6</kolicina>
+<valuta>RSD</valuta>
+<cena>324.63</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Visoko kvalitetan kabl USB A na Tip C, Model: Remax RC-C167 , Boja: crna, Materijal: TPE, Dužina kabla: 1.2m, Fast Charge 66W, Prenos podataka - 480 Mbps/s.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5361.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>803</sifra>
+<barkod>8606017686040</barkod>
+<naziv>Auto Punjac  1XUSB+1XTIP C  QC 30W  RCC338, crni REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Auto i kućni punjači</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>492.18</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Sadrži 2 izlazna porta ( USB A+TIP C ), punjenje dva uređaja u isto vreme.&lt;/p>&lt;p>Podržava protokole kao sto su PD2.0/PD3.0&lt;/p>&lt;p>Malih dimenzija, pametan, &amp;scaron;tedi prostor i omogućava stabilno punjenje na neravnom putu.&lt;/p>&lt;p>Napon: 12-24V.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3829.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>786</sifra>
+<barkod>8606017685609</barkod>
+<naziv>TIP C Gigabit Ethernet adapter metal   sivi</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Mrežni adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>37</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1047.2</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Tip Mrežni adapter, Priključci na jednoj strani RJ-45 (ženski), Priključci na drugoj strani USB tip C (Mu&amp;scaron;ki), Boja: Bela, Brzina: 1000 Mbps&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5504.</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>669</sifra>
+<barkod>8606017685142</barkod>
+<naziv>HDMI na HDMI kabl 2.1 GOLD  8K  (m/m) 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>236</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>731.99</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">HDMI kabl verzija 2.1, podržava visoku 8K rezoluciju sa brzom stopom osvežavanja uz dinamičku HDR podr&amp;scaron;ku koja omogućava da se svaki trenutak video snimka prikaže u idelanim vrednostima za impresivnu sliku. Kabl je crne boje dužine 3m.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3923.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>140</sifra>
+<barkod>8606017681342</barkod>
+<naziv>Adapter-konvertor HDMI na VGA (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>50</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>272.27</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Služi da digitalni signal sa HDMI uređaja pretvori u analogni VGA. Može da Va&amp;scaron; novi uređaj poveže na stari VGA, monitor, televizor, projektor. Podržava pun 1080p signal.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4195.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>539</sifra>
+<barkod>8606017683797</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K (m/m) 10m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>636</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 17.5cm  &lt;/li>         &lt;li> Visina: 17.5cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>837.76</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">HDMI Gold kabl velike brzine 4k rezolucije&amp;nbsp;&lt;/div>&lt;div class="block-content ">Konektor 1: HDMI A - mu&amp;scaron;ki&lt;/div>&lt;div class="block-content ">Konektor 2: HDMI A - mu&amp;scaron;ki&amp;nbsp;&lt;/div>&lt;div class="block-content ">Duzina: 10m&lt;/div>&lt;div class="block-content ">Boja : crna&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2077.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>12</sifra>
+<barkod>8606017680116</barkod>
+<naziv>Skart-skart razvodni kabl 1,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>137</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>115.19</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Audio video kabl skart na skart m/m 21 pin , dužine 1,5m. Kabl koji će vam omogućiti da sa Va&amp;scaron;im televizorom povezujete DVD/BluRay plejere, konzole i druge slične uređaje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1557.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>833</sifra>
+<barkod>8606017686323</barkod>
+<naziv>Kabl TIP C na TIP C 1.20m,(za nosenje oko vrata) sareni</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Auto i kućni punjači</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>68</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>481.71</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Sareni pleteni kvalitetan kabl Tip C na Tip C 60w duzine 1.2m&amp;nbsp;&lt;/p>&lt;p>Poseduje kopce koje pretvaraju kabl u kais za nosenje telefona oko vrata ili tela&amp;nbsp;&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5603.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>816</sifra>
+<barkod>8606017686163</barkod>
+<naziv>Preciscivac hrane</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>RAZNO</grupa>
+<proizvodjac>Fabenix</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>500</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1696.46</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Uredjaj za či&amp;scaron;ćenje voća i povrća, uredjaj za dezinfekciju u obliku kapsule. Tehnologija preči&amp;scaron;ćavanja OH-jona.&lt;/p>&lt;p>Efikasno preči&amp;scaron;ćavanje: Ma&amp;scaron;ina za pranje voća i povrća. Koristi vodu kao sirovinu i usvaja visokoenergetsku tehnologiju preči&amp;scaron;ćavanja jona da brzo razgradi &amp;scaron;tetne supstance u hrani i duboko razgradi ostatke i &amp;scaron;tetne sastojke na hrani.&amp;nbsp;&lt;br />&amp;Scaron;iroki spektar upotrebe: efikasno čisti sve ostatke na voću i povrću, mesu, pirinču, žitaricama, posudju, fla&amp;scaron;i za mleko, kuhinjskom priboru i nakitu. Može da prečisti vi&amp;scaron;e od 99% zaostalih &amp;scaron;tetnih sastojaka.&lt;br />Jednostavan za upotrebu i či&amp;scaron;ćenje: Postavite aparat za pranje voća i povrća u posudu napunjenu vodom. Pritisnite prekidač dok se ne upali zeleno svetlo. Preči&amp;scaron;ćivač počinje da radi automatski. Može očistiti hranu za 10min. Preporuka je da količina vode ne prelazi 3L i da temperatura ne prelazi 40&lt;span class="Y2IQFc">&amp;deg;&lt;/span> C.&amp;nbsp;&lt;br />Može se koristiti do 30 puta sa jednim punjenjem. Dolazi sa postoljem za punjenje i tip c kablom.&lt;br />Dimenzije: 15x5cm&lt;/p>&lt;pre id="tw-target-rmn" class="tw-data-text tw-text-small tw-ta" dir="ltr" data-placeholder="">&amp;nbsp;&lt;/pre>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5551.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>267</sifra>
+<barkod>8606017681441</barkod>
+<naziv>Adapter-konvertor Display Port na VGA (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>48</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter-konvertor služi za pretvaranje DisplayPort-a na VGA. Idealan za povezivanje računara ili laptopa na HD televizor ili monitor sa VGA ulaz&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/41.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>124</sifra>
+<barkod>8606017681182</barkod>
+<naziv>Adapter DVI (24+5) na VGA (m/&amp;#382;) crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>DVI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>DVI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>38</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>104.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="post-content">&lt;p style="margin-bottom: 20px;">Adapter konvertor za povezivanje TFT monitora sa DVI konektorom na klasičnu grafičku karticu sa analognim VGA izlazom.&lt;/p>&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/23.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>834</sifra>
+<barkod>8606017686330</barkod>
+<naziv>Strujni Fast punjac 1xUSB+ 1xTIP C 20W</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Auto i kućni punjači</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>48</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>785.4</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Strujni fast punjac nudi brzo i efikasno punjenje vaseg mobilnog telefona u kuci, kancelariji ili na putu, bele boje.&lt;/p>&lt;p>Sadrzi 1xUSB A + 1xUSB C 20W&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5604.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>14</sifra>
+<barkod>8606017680130</barkod>
+<naziv>VGA kabl HiQu sa feritima (m/m) 3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>VGA / DVI KABLOVI</nadgrupa>
+<grupa>VGA kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>259</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>261.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>VGA kablovi omogućavaju jednostavno povezivanje monitora ili televizora sa va&amp;scaron;im računarom. Feritna jezgra sa obe strane kabla , dužine 3m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/54.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>34</sifra>
+<barkod>8606017680338</barkod>
+<naziv>Display Port na Display Port kabl  (m/m) 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>142</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>261.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Priključite desktop ili laptop računar sa DisplayPort digitalnim izlazom na neki od kompatibilnih uređaja za prikaz koji poseduju DisplayPort&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/9.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>314</sifra>
+<barkod>8606017682967</barkod>
+<naziv>Patch Cord cat.6 20m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>420</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 16cm  &lt;/li>         &lt;li> Visina: 16cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>387.46</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 20m cat.6e. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/68.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>824</sifra>
+<barkod>8606017686231</barkod>
+<naziv>DATA kabl Prime TIP C na TIP C  RC-C166 60W, 1.2m crni  REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Data kablovi tip C</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>76</tezina>
+<dimenzije/>
+<kolicina>4</kolicina>
+<valuta>RSD</valuta>
+<cena>293.22</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Visoko kvalitetan kabl Tip C na Tip C, Model: Remax RC-C166 , Boja: crna, Materijal: TPE, Pleteni kabl, Dužina kabla: 1.2m, Fast Charge 60W, 20V, 4A , Prenos podataka - 480 Mbps/s.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5362.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>293</sifra>
+<barkod>8606017681717</barkod>
+<naziv>Patch Cord cat.5e 0,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>MREZNA OPREMA</nadgrupa>
+<grupa>MREZNI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>35</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 13.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>41.89</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 0,5m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/63.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>446</sifra>
+<barkod>8606017682929</barkod>
+<naziv>Patch Cord cat.6 2m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>70</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>94.25</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 2m cat.6e. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/87.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>784</sifra>
+<barkod>8606017685586</barkod>
+<naziv>USB 3.0 na 4xHUB 3.0 metal sivi</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>35</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 13.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>628.32</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">USB 3.0 HUB na 4x USB 3.0&lt;/div>&lt;div class="block-content ">Nije potrebno spoljno napajanje&lt;/div>&lt;div class="block-content ">Opremljen sa četiri seta USB utičnice sa funkcijom hot plug&lt;/div>&lt;div class="block-content ">Funkcija za&amp;scaron;tite struje&lt;/div>&lt;div class="block-content ">Podržava napon preopterećenja i za&amp;scaron;titu od trenutne struje&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2252.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>805</sifra>
+<barkod>8606017686064</barkod>
+<naziv>USB 3.1 na 5xHUB+3xTIP C</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1937.32</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ovaj USB TIP C 3.1 HUB, je vrlo pogodan kada imate na laptopu, kompjuteru ili nekom drugom uredjaju jedan ili dva USB porta, a potreban vam je veci broj, tako da od jednog TIP C 3.1 dobijate 5x USB 3.0 porta i 3x USB TIP C porta&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5506.</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>460</sifra>
+<barkod>8606017683100</barkod>
+<naziv>Adapter S-ATA to USB 2.0+USB 3.0</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>48</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 13.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>733.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter za povezivanje HDD ili SSD uredjaja sa racunarom preko USB2.0 ili USB 3.0 konektora. Vrlo koristan i praktican adapter za servisere.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2270.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>793</sifra>
+<barkod>8606017685654</barkod>
+<naziv>Slusalice bubice zicane TIP C crne, REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Slusalice Bubice Remax</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>45</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>277.2</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Zicane bubice sa mikrofonom, sa konektorom TIP C.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3827.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>679</sifra>
+<barkod>8606017685234</barkod>
+<naziv>Adapter TIP C Docking Station 15 u 1</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>500</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 13cm  &lt;/li>         &lt;li> Visina: 12cm  &lt;/li>         &lt;li> Dubina: 7cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>3</kolicina>
+<valuta>RSD</valuta>
+<cena>11519.2</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C ulaz na TV, projektor, monitor itd. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Sadrži 2x HDMI, 4x USB 3.0, 2x USB 2.0, 3xTip C, PD 3.0, VGA, AUDIO i RJ45 modul za povezivanje na mrežu.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2228.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>82</sifra>
+<barkod>8606017680819</barkod>
+<naziv>Audio AUX kabl (3,5mm stereo jack-3,5mm stereo jack ) m/m 2,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>68</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>62.83</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>AUX audio kabl 3,5mm na 3,5mm crne boje, dužine 2,5m.&amp;nbsp;Stereo&amp;nbsp;&lt;em>kablovi&lt;/em>&amp;nbsp;i adapteri sa&amp;nbsp;&lt;em>3.5mm&lt;/em> konektorom, poznati i kao stereo banana ili samo bananica.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5483.jpeg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>649</sifra>
+<barkod>8606017684923</barkod>
+<naziv>Adapter Micro USB na TIP C (m/z)</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>8</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 13.5cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 0.1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Adapter koji služi da tip c kabl za mobilni telefon pretvori u micro. U Blister pakovanju.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2053.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>639</sifra>
+<barkod>8606017684824</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K  (m/m) 20m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>HDMI KABLOVI + SPLITERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1361</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 21.5cm  &lt;/li>         &lt;li> Visina: 21.5cm  &lt;/li>         &lt;li> Dubina: 7cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1872.64</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">HDMI Gold kabl velike brzine 4k rezolucije&lt;br />Konektor 1: HDMI A - mu&amp;scaron;ki&lt;/div>&lt;div class="block-content ">Konektor 2: HDMI A - mu&amp;scaron;ki&amp;nbsp;&lt;/div>&lt;div class="block-content ">Dužina kabla: 20m&lt;/div>&lt;div class="block-content ">Boja: crna&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4445.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>125</sifra>
+<barkod>8606017681199</barkod>
+<naziv>Adapter DVI (24+1) na HDMI (m/&amp;#382;) crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>DVI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>DVI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>38</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Konvertuje digitalni video signal sa HDMI (ženski) na DVI (mu&amp;scaron;ki), adapter je crne boje. DVI je verzija DVI-D Dual link.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/24.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>6</sifra>
+<barkod>8606017680055</barkod>
+<naziv>USB 2.0 nastavak A-A 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>Kablovi za štampače</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>93</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 14.5cm  &lt;/li>         &lt;li> Visina: 10cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB kabl (nastavak) A-A služi da se produži USB kabl ili kabl za &amp;scaron;tampač, dužine 5m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/58.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>317</sifra>
+<barkod>8606017681434</barkod>
+<naziv>HDMI na HDMI kabl 1.4 (m/m) 1,3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>82</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>104.72</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>High Definition Multimedia Interface ( HDMI ), je najče&amp;scaron;ći kabl za digitalno audio i video povezivanje televizora, set top box-ova i drugih audio video uređaja. HDMI kabl ver. 1.4 omogućuje reprodukciju filmova na 2160p 60Hz, 3D sadržaje na 1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/69.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>806</sifra>
+<barkod>8606017686071</barkod>
+<naziv>USB 3.1 TIP C+USB 3.0 na 4xHUB 3.0 metal</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>85</tezina>
+<dimenzije/>
+<kolicina>7</kolicina>
+<valuta>RSD</valuta>
+<cena>837.76</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB Tip C sa USB 3.0 adapterom na 4x USB 3.0, Nije potrebno spoljno napajanje, Opremljen sa četiri seta USB utičnice sa funkcijom hot plug, Funkcija za&amp;scaron;tite struje, podržava napon preopterećenja i za&amp;scaron;titu od trenutne struje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5465.png</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>405</sifra>
+<barkod>8606017682455</barkod>
+<naziv>HDMI Spliter 1x8 1080P (ver 1.4) Activ</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Spliteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>993</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 22cm  &lt;/li>         &lt;li> Visina: 31cm  &lt;/li>         &lt;li> Dubina: 5.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>3</kolicina>
+<valuta>RSD</valuta>
+<cena>2513.28</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI spliter 1 ulaz / 8 izlaza &amp;ndash; pouzdan razdelnik jedan HDMI na osam HDMI izlaza. Veliki prenos signala postiže preko vi&amp;scaron;e kaskadnih HDMI spliter pojačivača. Podržavane rezolucije: 720p/1080i/1080p 3D kompatibilan.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/81.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>481</sifra>
+<barkod>8606017683247</barkod>
+<naziv>USB 2.0 to 4xHUB 2.0</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB HUB</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>34</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 23cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 3.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>733.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ovaj USB 2.0 HUB, je vrlo pogodan kada imate na laptopu, kompjuteru ili nekom drugom uredjaju jedan ili dva USB porta, a potreban vam je veci broj, tako da od jednog usb dobijate 4x USB 2.0 porta.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/94.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>87</sifra>
+<barkod>8606017680864</barkod>
+<naziv>Cinc-cinc kabl (3RCA-3RCA) 1,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>61</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 17cm  &lt;/li>         &lt;li> Visina: 6cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Kabl A-V (3RCA-3RCA) dužina 1,5m.&lt;br />Audio/video kabl sa 3x RCA (činč) konektorima na krajevima, pogodan za povezivanje video plejera na televizor ili AV risiver.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2169.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>787</sifra>
+<barkod>8606017685616</barkod>
+<naziv>Kabl TIP C na TIP C 4.0 8k/60Hz (m/m), 1.8m, crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>102</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 19cm  &lt;/li>         &lt;li> Visina: 14cm  &lt;/li>         &lt;li> Dubina: 1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1884.96</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Data kabl Tip C na Tip C dužine 1.8m. Podržava jednu 8K (7680k4320) pri 60Hz ili dvostruku 4K (3840k2160) pri 60Hz rezoluciji, pružajući iskustvo gledanja visokog kvaliteta.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2279.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>462</sifra>
+<barkod>8606017683124</barkod>
+<naziv>HDMI switch 3x1, 4KX2K 3D</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>Switch</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>105</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 13.5cm  &lt;/li>         &lt;li> Visina: 17.8cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>628.32</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Pametno i automatsko upravljanje. Povezuje do 3 HDMI komponente na jedan HDMI ekran za besprekorni prelazak izmedju uredjaja za igranje, DVD uredjaja i jo&amp;scaron; mnogo toga.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2133.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>394</sifra>
+<barkod>8606017682325</barkod>
+<naziv>USB 2.0 kabl za iPhone 2A 1m (beli)</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>26</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>51.74</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Data kabl Iphone možete koristiti za prenos podataka sa Va&amp;scaron;eg mobilnog uredjaja na računar i obrnuto i u isto vreme puniti bateriju, bele je boje, dužine 1m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2138.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>686</sifra>
+<barkod>8606017685302</barkod>
+<naziv>Adapter-konvertor TIP C na 2xUSB 3.0+TIP C</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MOBILNI TEL.</nadgrupa>
+<grupa>Kablovi + Adapter</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>26</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15.5cm  &lt;/li>         &lt;li> Visina: 7.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>5</kolicina>
+<valuta>RSD</valuta>
+<cena>733.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Povežite mobilni telefon, tablet ili laptop sa tip c izlazom sa dodatnim uređajima preko 2xUSB 3.0 ili tip C ulaza.&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2081.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>792</sifra>
+<barkod>8606017685647</barkod>
+<naziv>Patch Cord cat 5e 0,3m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>14</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15.5cm  &lt;/li>         &lt;li> Visina: 11cm  &lt;/li>         &lt;li> Dubina: 1cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>31.42</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 0.3m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2079.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>359</sifra>
+<barkod>8606017681977</barkod>
+<naziv>Adapter-konvertor TIP C na VGA (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>43</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7cm  &lt;/li>         &lt;li> Visina: 20cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>523.6</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter omogućava povezivanje telefona, tableta i kopmjutera na HDTV monitor, 4K LED display monitora ili projektor sa VGA ulazom. USB konektor tipa C je potpuno simetričan i ulazi u port sa bilo koje strane da ga okrenete.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4447.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>8</sifra>
+<barkod>8606017680079</barkod>
+<naziv>USB 3.0 kabl A-B 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>USB KABLOVI + ADAPTERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>38</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>184.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB kabl A-B sluzi za povezivanje kompjutera i stampaca,u crnoj boji, dužine 1.8m. Konektor USB 3.0 je uvek u plavoj boji . Razlikuje se od USB 2.0 konektora u brzini prenosa podataka.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4306.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>79</sifra>
+<barkod>8606017680789</barkod>
+<naziv>Audio kabl (3,5mm stereo jack na 2 RCA jack) 10m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>177</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 18cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 6cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>167.55</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Najrasprostranjeniji tip audio priključka, koristi se za povezivanje različitih vrsta audio uređaja sa zvučnicima, pojačalom, ili nekim drugim uređajem sa 3.5mm ulazom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1561.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>567</sifra>
+<barkod>8606017684046</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K  (m/m) 1,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>138</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>188.5</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI kabl velike brzine, podržava 3D TV i 4K rezoluciju, pozlaćeni konektori za savr&amp;scaron;eni kvalitet slike. Kabl je kompatibilan sa svim uređajima koji podržavaju HDMI tipove ulaza.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/93.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>748</sifra>
+<barkod>8606017685449</barkod>
+<naziv>Auto punjac 1xUSB+1xTIP C  30W  RCC231, crni  REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Auto i kućni punjači</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>30</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 14cm  &lt;/li>         &lt;li> Visina: 6.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>575.96</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Izuzetan dizajn, lako prenosiv, dvostruki USB, vrhunski materijal, vi&amp;scaron;estruka sigurnosna za&amp;scaron;tita, bezbedno za upotrebu, 2USB izlaza podržavaju punjenje dva uređaja u isto vreme, Podržava iPhone 12 (22,5 V)&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2277.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>53</sifra>
+<barkod>8606017680529</barkod>
+<naziv>UTP kabl FLY cat. 5e (305m)</naziv>
+<pdv>20</pdv>
+<nadgrupa>MREZNA OPREMA</nadgrupa>
+<grupa>MREZNI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>5000</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>18.85</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP kabl FLY cat.5e .Kabl je sive boje,kotur 305m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3893.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>93</sifra>
+<barkod>8606017680918</barkod>
+<naziv>USB 2.0 SERIJSKI ADAPTER to RS232 (Digitus)</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KABLOVI + ADAPTERI</nadgrupa>
+<grupa>USB 2.0 to serial</grupa>
+<proizvodjac>Digitus</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>79</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 3cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1309</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 2.0 (mu&amp;scaron;ki) konvertor na serijski RS232 (9-pinac, mu&amp;scaron;ki). Pogodan za kase koje imaju ovaj serijski port. Digitus&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/19.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>750</sifra>
+<barkod>8606017685685</barkod>
+<naziv>Patch Cord cat.6A SFTP 1m  crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>25</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>118.27</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Boja kabla: Crna , Dužina kabla: 1m , Konektor 1: RJ-45 , Konektor 2: RJ-45 , Pol konektora 1: Mu&amp;scaron;ki , Pol konektora 2: Mu&amp;scaron;ki , Standard kabla: Cat6A&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3459.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>812</sifra>
+<barkod>8606017686132</barkod>
+<naziv>Patch Cord cat.6 0.5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>20</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 0.5m cat.6e Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4669.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>780</sifra>
+<barkod>8606017685548</barkod>
+<naziv>Adapter USB 3.0 na TIP C m/z</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>11</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 11.5cm  &lt;/li>         &lt;li> Visina: 6.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Omogućava povezivanje bilo kojeg USB Type-C kabla sa USB -om 3.0 računara za punjenje ili sinhronizaciju podataka.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2064.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>673</sifra>
+<barkod>8606017685173</barkod>
+<naziv>Audio AUX nastavak (3,5mm stereo jack-3,5mm stereo) m/z 2,5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>58</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15.5cm  &lt;/li>         &lt;li> Visina: 5.5cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>52.36</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div id="product-product" class="container">&lt;div class="row">&lt;div id="content" class="">&lt;div class="product-info has-extra-button ">&lt;div class="product-right">&lt;div class="product-blocks blocks-bottom">&lt;div class="product_extra product_blocks product_blocks-bottom">&lt;div class="product_extra-283">&lt;div class="block-body expand-block">&lt;div class="block-wrapper">&lt;div class="block-content ">Tip: Stereo kabl. Priključci na jednoj strani: 3.5mm stereo (ženski). Priključci na drugoj strani: 3.5mm stereo (mu&amp;scaron;ki). Fizičke karakteristike &amp;ndash; Dužina: 2.5m, Boja: Crna&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;footer>&lt;div class="grid-rows">&lt;div class="grid-row grid-row-1">&lt;div class="grid-cols">&lt;div class="grid-col grid-col-1">&amp;nbsp;&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;/footer>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1915.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>348</sifra>
+<barkod>8606017681847</barkod>
+<naziv>DB9 Serial Port Bracket</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>S-ATA KABL. / KONTROLERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>30</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 15cm  &lt;/li>         &lt;li> Visina: 11cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>73.92</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Konektor 1:DB9- mu&amp;scaron;ki konektor na metalnom nosaču. Konektor 2:IDC-10pin ( ženski ) unutra&amp;scaron;nji ravan kabl za povezivanje na matičnu ploču.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2267.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>356</sifra>
+<barkod>8606017681946</barkod>
+<naziv>Adapter-konvertor Micro HDMI na VGA  (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>HDMI KONVERTERI + ADAPTERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>52</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>314.16</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter Micro HDMI na VGA povezuje tablet, Ultrabook ili pametni telefon sa Micro HDMI izlazom na VGA monitor za 1080p video.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3702.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>24</sifra>
+<barkod>8606017680239</barkod>
+<naziv>HDMI na HDMI kabl 1.4 (m/m) 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>97</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>125.66</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>High Definition Multimedia Interface ( HDMI ), je najče&amp;scaron;ći kabl za digitalno audio i video povezivanje televizora, set top box-ova i drugih audio video uređaja. HDMI kabl ver. 1.4 omogućuje reprodukciju filmova na 2160p 60Hz, 3D sadržaje na 1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/47.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>633</sifra>
+<barkod>8606017684756</barkod>
+<naziv>Adapter-konvertor Display Port na HDMI 4K+VGA, metal</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>69</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 17.5cm  &lt;/li>         &lt;li> Visina: 8cm  &lt;/li>         &lt;li> Dubina: 3cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1047.2</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Tip: Adapter/Konvertor , Konektor 1: DisplayPort mu&amp;scaron;ki , Konektor 2: HDMI A ženski , Boja: Crna&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1797.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>774</sifra>
+<barkod>8606017685920</barkod>
+<naziv>Display Port na VGA  kabl  (m/m) 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>DisplayPort kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>0</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>471.24</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>DisplayPort na VGA kabl za prenos slike sa grafičkih kartica na LCD monitore. Ostvarite pun kvalitet digitalne slike sa ovim kablom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3590.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>753</sifra>
+<barkod>8606017685715</barkod>
+<naziv>Patch Cord cat.6A SFTP 5m  crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>79</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>315.39</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Boja kabla: Crna , Dužina kabla: 5m , Konektor 1: RJ-45 , Konektor 2: RJ-45 , Pol konektora 1: Mu&amp;scaron;ki , Pol konektora 2: Mu&amp;scaron;ki , Standard kabla: Cat6A&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3462.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>773</sifra>
+<barkod>8606017685913</barkod>
+<naziv>Adapter-konvertor TIP C na Mini Display Port</naziv>
+<pdv>20</pdv>
+<nadgrupa>DISPLAY PORT KONVERTERI</nadgrupa>
+<grupa>Mini DisplayPort</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>74</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>733.04</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB TIP C na Mini DisplayPort adapter povezuje računar ili host pametnog telefona sa USB-Type-C portom na monitor sa Mini DisplayPort ulazom.&lt;br />&lt;br />&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3592.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>75</sifra>
+<barkod>8606017680741</barkod>
+<naziv>Zvucna kartica USB 2.0  7.1 ch</naziv>
+<pdv>20</pdv>
+<nadgrupa>USB KONVERTERI + HUB</nadgrupa>
+<grupa>USB 2.0 konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>19</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 14.5cm  &lt;/li>         &lt;li> Visina: 10cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>9</kolicina>
+<valuta>RSD</valuta>
+<cena>209.44</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>USB 7.1ch zvučna kartica je veoma fleksibilan audio interfejs koji može da se koristi i na desktop i notebook sistemima. Kompatibilna je sa svim glavnim operativnim sistemima (Windows 98SE/ME/2000/XP/Vista, Linux, Mac OS).&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/18.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>498</sifra>
+<barkod>8606017683506</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI+VGA+2xUSB 3.0+SD/Micro SD+TIP C+RJ 45</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>152</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 7.5cm  &lt;/li>         &lt;li> Visina: 16cm  &lt;/li>         &lt;li> Dubina: 3cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>3246.32</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite Va&amp;scaron; laptop koji ima Tip C port na TV, projektor, monitor, čitač kartica itd. Sastoji se od 2xUSB 3.0, HDMI, Tip c, VGA, SD/Micro SD i RJ45 ulaza.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/96.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>499</sifra>
+<barkod>8606017683513</barkod>
+<naziv>Adapter-konvertor TIP C na HDMI+3xUSB 3.0+SD/Micro SD+RJ45+TIP C</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>104</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 8.5cm  &lt;/li>         &lt;li> Visina: 16cm  &lt;/li>         &lt;li> Dubina: 2.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>3246.32</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Povežite Va&amp;scaron; Mac ili drugi latop koji ima tip C ulaz na TV, projektor, monitor, čitač kartice itd. Odlikuje ga izuzetan kvalitet, omogućuje korisniku kori&amp;scaron;ćenje drugih ulaza po velikim brzinama i na taj način olak&amp;scaron;ava rad u zahtevnim programima. Sadrži HDMI, tri USB 3.0, SD/mikro, Tip C i RJ45 modul za povezivanje na mrežu.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2130.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>758</sifra>
+<barkod>8606017685760</barkod>
+<naziv>Kabl za napajanje racunara 3x1mm, 1.8m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>NAPONSKI KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>159</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 9cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>178.02</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Kabl strujni za napajanje računara 220V, dužine 1,5m crne boje. Presek kabla 3x1mm.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2281.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>670</sifra>
+<barkod>8606017685159</barkod>
+<naziv>HDMI na HDMI kabl 2.1 GOLD 8K  (m/m) 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>HDMI KABLOVI + SPLITERI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>412</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1780.24</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI kabl verzija 2.1, podržava visoku 8K rezoluciju sa brzom stopom osvežavanja uz dinamičku HDR podr&amp;scaron;ku koja omogućava da se svaki trenutak video snimka prikaže u idelanim vrednostima za impresivnu sliku. Kabl je crne boje dužine 5m.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3922.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>536</sifra>
+<barkod>8606017683766</barkod>
+<naziv>HDMI na HDMI kabl 2.0 GOLD 4K  (m/m) 1,8m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>120</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>198.97</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI kabl visoke brzine, podržava 3D TV i 4K rezoluciju, pozlaćeni konektori za savr&amp;scaron;eni kvalitet slike Kabl je kompatibilan sa svim uređajima koji podržavaju HDMI tipove ulaza Povežite va&amp;scaron; PC, laptop ili gejmersku konzolu sa monitorom, projektorom ili televizorom, prenesite video i audio signal jednim kablom Verzija: HDMI 2.0 (4K @60fps) Konektor 1: HDMI A - mu&amp;scaron;ki Konektor 2: HDMI A - mu&amp;scaron;ki Pozlaćeni konektori: da Dužina: 1,8 m Boja: crna&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2128.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>39</sifra>
+<barkod>8606017680383</barkod>
+<naziv>Patch Cord cat.5e 5m</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.5</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>130</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 12cm  &lt;/li>         &lt;li> Visina: 21cm  &lt;/li>         &lt;li> Dubina: 5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>115.19</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>UTP Mrežni kabl sa konektorima dužine 5m. Koristi se za povezivanje na internet, IPTV, rutere, mrežne snimače, IP kamere, itd.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/12.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>46</sifra>
+<barkod>8606017680451</barkod>
+<naziv>RJ-45 8/8 konektor cat.6 (oklopljen)</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Konektori</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>8</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>17.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Oklopljeni konektor RJ-45 za UTP, FTP, SFTP kabl, kategorije 6.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/1575.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>29</sifra>
+<barkod>8606017680284</barkod>
+<naziv>HDMI na HDMI kabl 1.4 (m/m) 20m</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KABLOVI + SPLITERI</nadgrupa>
+<grupa>HDMI kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>1414</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 21.5cm  &lt;/li>         &lt;li> Visina: 21.5cm  &lt;/li>         &lt;li> Dubina: 7cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>1780.24</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>High Definition Multimedia Interface ( HDMI ), je najče&amp;scaron;ći kabl za digitalno audio i video povezivanje televizora, set top box-ova i drugih audio video uređaja. HDMI kabl ver. 1.4 omogućuje reprodukciju filmova na 2160p 60Hz, 3D sadržaje na 1080p.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/7.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>690</sifra>
+<barkod>8606017685340</barkod>
+<naziv>SET:Strujni punja&amp;#269; USB3.0+TIP C 18W+kabl TIPC na iPhone 1m, beli REMAX</naziv>
+<pdv>20</pdv>
+<nadgrupa>REMAX</nadgrupa>
+<grupa>Auto i kućni punjači</grupa>
+<proizvodjac>REMAX</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>62</tezina>
+<dimenzije/>
+<kolicina>1</kolicina>
+<valuta>RSD</valuta>
+<cena>795.87</cena>
+<mpcena>0</mpcena>
+<opis>&lt;div class="block-content ">Priključci: 1x USB-A i 1x USB-C , QC 3.0 PD, 18W&lt;/div>&lt;div class="block-content ">Punjenje dva uređaja istovremeno ,&lt;/div>&lt;div class="block-content ">Kabl Tip c na Iphone&amp;nbsp;&lt;/div>&lt;div class="block-content ">Brzo punjenje PD&lt;/div>&lt;div class="block-content ">Boja : Bela&lt;/div>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/4425.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>595</sifra>
+<barkod>8606017684336</barkod>
+<naziv>Audio opticki kabl 2,2mm (Toslink) 1m, crni</naziv>
+<pdv>20</pdv>
+<nadgrupa/>
+<grupa>AUDIO / VIDEO KABLOVI</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>10</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>167.55</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Toslink optički audio kabl&lt;br />Toslink kabl.&lt;br />Sa za&amp;scaron;titnim kapicama.&lt;br />&lt;br />Kvalitetan kabl debljine 2.2mm!&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3246.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>270</sifra>
+<barkod>8606017682653</barkod>
+<naziv>Adapter-konvertor TIP C na DVI (m/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>TIP-C KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>TIP C konverteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>50</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 20cm  &lt;/li>         &lt;li> Visina: 7cm  &lt;/li>         &lt;li> Dubina: 1.5cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>837.76</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter-konvertor koji Tip C mu&amp;scaron;ki pretvara u analogni DVI signal. Ovaj adapter je izradjen od kvalitetnog materijala bele boje.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/2141.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>128</sifra>
+<barkod>8606017681229</barkod>
+<naziv>Adapter HDMI na Micro HDMI (&amp;#382;/m)</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>15</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>94.25</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Ženski full size HDMI na mu&amp;scaron;ki mikro HDMI, služi za povezivanje portabl HDTV DVs, kamere, igračke konzole sa va&amp;scaron;im HDTV sa pravom HD konekcijom.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/27.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>22</sifra>
+<barkod>8606017680215</barkod>
+<naziv>VGA spliter (mu&amp;#353;ki/2 &amp;#382;enska)</naziv>
+<pdv>20</pdv>
+<nadgrupa>VGA / DVI KABLOVI</nadgrupa>
+<grupa>VGA kablovi</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>104</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 9cm  &lt;/li>         &lt;li> Visina: 23cm  &lt;/li>         &lt;li> Dubina: 4cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>261.8</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Spliterom razdvojite jedan signal sa računara na vi&amp;scaron;e istih signala, kako bi ste isti sadržaj prikazali na vi&amp;scaron;e monitora, TV-a, projektora ili kombinovano.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/51.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>751</sifra>
+<barkod>8606017685692</barkod>
+<naziv>Patch Cord cat.6A SFTP 2m  crni</naziv>
+<pdv>20</pdv>
+<nadgrupa>SVE ZA MREŽU</nadgrupa>
+<grupa>Patch kablovi cat.6</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>48</tezina>
+<dimenzije/>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>177.41</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Boja kabla: Crna , Dužina kabla: 2m , Konektor 1: RJ-45 , Konektor 2: RJ-45 , Pol konektora 1: Mu&amp;scaron;ki , Pol konektora 2: Mu&amp;scaron;ki , Standard kabla: Cat6A&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/3460.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>127</sifra>
+<barkod>8606017681212</barkod>
+<naziv>Adapter HDMI na HDMI nastavak (&amp;#382;/&amp;#382;)</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>15</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>83.78</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>HDMI adapter ženski na hdmi ženski,&amp;nbsp;1x ulaz ženski + 1x ulaz ulaz ženski.HDMI signal se prenosi digitalnim putem bez ikakvih deformacija i smetnji.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/26.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+<artikal>
+<sifra>126</sifra>
+<barkod>8606017681205</barkod>
+<naziv>Adapter HDMI na HDMI (m/&amp;#382;) pod uglom</naziv>
+<pdv>20</pdv>
+<nadgrupa>HDMI KONVERTERI + ADAPTERI</nadgrupa>
+<grupa>HDMI adapteri</grupa>
+<proizvodjac>Fast Asia</proizvodjac>
+<jedinica_mere>kom</jedinica_mere>
+<model/>
+<tezina>15</tezina>
+<dimenzije>&lt;ul>         &lt;li> Širina: 6.5cm  &lt;/li>         &lt;li> Visina: 11.5cm  &lt;/li>         &lt;li> Dubina: 2cm  &lt;/li>        &lt;/ul></dimenzije>
+<kolicina>10+</kolicina>
+<valuta>RSD</valuta>
+<cena>94.25</cena>
+<mpcena>0</mpcena>
+<opis>&lt;p>Adapter HDMI mu&amp;scaron;ki na HDMI ženski pod uglom od 90 stepeni. HDMI signal se prenosi digitalnim putem bez ikakvih deformacija i smetnji.&lt;/p>&lt;br></opis>
+<slike>
+<slika>https://www.linkom.rs/images/products/big/5606.jpg</slika>
+</slike>
+<karakteristike/>
+</artikal>
+</artikli>
