@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="artikli">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="artikal" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="sifra" type="xs:string"/>
+                            <xs:element name="barkod" type="xs:string" minOccurs="0"/>
+                            <xs:element name="naziv" type="xs:string" minOccurs="0"/>
+                            <xs:element name="pdv" type="xs:string" minOccurs="0"/>
+                            <xs:element name="nadgrupa" type="xs:string" minOccurs="0"/>
+                            <xs:element name="grupa" type="xs:string" minOccurs="0"/>
+                            <xs:element name="proizvodjac" type="xs:string" minOccurs="0"/>
+                            <xs:element name="jedinica_mere" type="xs:string" minOccurs="0"/>
+                            <xs:element name="model" type="xs:string" minOccurs="0"/>
+                            <xs:element name="tezina" type="xs:string" minOccurs="0"/>
+                            <xs:element name="dimenzije" type="xs:string" minOccurs="0"/>
+                            <xs:element name="kolicina" type="xs:string" minOccurs="0"/>
+                            <xs:element name="valuta" type="xs:string" minOccurs="0"/>
+                            <xs:element name="cena" type="xs:string" minOccurs="0"/>
+                            <xs:element name="mpcena" type="xs:string" minOccurs="0"/>
+                            <xs:element name="opis" type="xs:string" minOccurs="0"/>
+                            <xs:element name="slike" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="slika" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="karakteristike" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

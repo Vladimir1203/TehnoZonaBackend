@@ -117,7 +117,13 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO vendor (id, name, xml_data) VALUES (:id, :name, CAST(:xmlData AS xml))", nativeQuery = true)
+    @Query(value = """
+                INSERT INTO vendor (id, name, xml_data)
+                VALUES (:id, :name, CAST(:xmlData AS xml))
+                ON CONFLICT (id) DO UPDATE SET
+                    name = EXCLUDED.name,
+                    xml_data = EXCLUDED.xml_data
+            """, nativeQuery = true)
     void insertVendor(@Param("id") Long id, @Param("name") String name, @Param("xmlData") String xmlData);
 
     @Query(value = "SELECT id FROM vendor", nativeQuery = true)
