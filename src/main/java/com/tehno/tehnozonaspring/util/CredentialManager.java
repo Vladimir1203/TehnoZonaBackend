@@ -5,7 +5,7 @@ import java.util.Base64;
 public class CredentialManager {
 
     private static final String MASKED_USPON_USER = "t92YuwWah12ZAF2azFmch52b69mboVGd";
-    private static final String MASKED_USPON_PASS = "==ANyAjMpBXYu9me";
+    private static final String MASKED_USPON_PASS = "=QjMwITawFWYu9me";
     private static final String MASKED_LINKOM_PASS = "t92aulGb";
     private static final String MASKED_MAIL_PASS = "==QblV2ag0WYiZHIppnYmBycndHd";
     private static final String MASKED_AVTERA_PASS = "==ANy4SYu9mW";
