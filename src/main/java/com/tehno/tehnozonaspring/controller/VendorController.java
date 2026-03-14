@@ -32,6 +32,12 @@ public class VendorController {
         return vendorService.getAllBeans();
     }
 
+    @GetMapping("/duplicates")
+    public ResponseEntity<Map<String, List<Artikal>>> getDuplicates() {
+        Map<String, List<Artikal>> duplicates = vendorService.getDuplicateProducts();
+        return ResponseEntity.ok(duplicates);
+    }
+
     @GetMapping("/{id}/naziv")
     public String getArtikalNaziv(@PathVariable Long id) {
         return vendorService.findArtikliNaziviByGrupa(id);

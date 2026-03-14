@@ -103,7 +103,14 @@ public class SearchService {
     // ─── Helper methods ───────────────────────────────────────────────
 
     private List<Artikal> fetchArtikliForVendor(Long vendorId) {
-        List<String> xmlList = vendorRepository.findAllArtikliXmlByVendorId(vendorId);
+        List<String> xmlList;
+        if (vendorId == 0) {
+            // Unified search across all vendors with lowest price deduplication
+            xmlList = vendorRepository.findUnifiedArtikliXml();
+        } else {
+            xmlList = vendorRepository.findAllArtikliXmlByVendorId(vendorId);
+        }
+
         if (xmlList == null || xmlList.isEmpty()) {
             return Collections.emptyList();
         }

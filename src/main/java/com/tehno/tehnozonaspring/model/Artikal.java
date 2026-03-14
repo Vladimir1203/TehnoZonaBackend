@@ -1,5 +1,7 @@
 package com.tehno.tehnozonaspring.model;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElementWrapper;
 import jakarta.xml.bind.annotation.XmlRootElement;
@@ -8,7 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @XmlRootElement(name = "artikal")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Artikal {
+    @XmlElement(name = "vendorId")
+    private Long vendorId;
+
     @XmlElement(name = "sifra")
     private String sifra;
 

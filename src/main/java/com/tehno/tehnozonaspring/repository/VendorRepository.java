@@ -256,6 +256,113 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
             @Param("nadgrupa") String nadgrupa);
 
     @Query(value = """
+                SELECT original_xml
+                FROM (
+                    SELECT DISTINCT ON (barkod) *
+                    FROM unified_artikli
+                    WHERE barkod IS NOT NULL AND barkod != '' AND mpcena > 0
+                    AND nadgrupa = ANY(:nadgrupe)
+                    ORDER BY barkod, mpcena ASC
+                ) as best_deals
+            """, nativeQuery = true)
+    List<String> findUnifiedArtikliByGlavnaGrupa(@Param("nadgrupe") String[] nadgrupe);
+
+    @Query(value = """
+                SELECT original_xml
+                FROM (
+                    SELECT DISTINCT ON (barkod) *
+                    FROM unified_artikli
+                    WHERE barkod IS NOT NULL AND barkod != '' AND mpcena > 0
+                    AND nadgrupa = :nadgrupa
+                    ORDER BY barkod, mpcena ASC
+                ) as best_deals
+            """, nativeQuery = true)
+    List<String> findUnifiedArtikliByNadgrupa(@Param("nadgrupa") String nadgrupa);
+
+    @Query(value = """
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE UPPER(proizvodjac) = UPPER(:brand)
+                ORDER BY mpcena ASC
+            """, nativeQuery = true)
+    List<String> findUnifiedArtikliByBrand(@Param("brand") String brand);
+
+    @Query(value = """
+                SELECT
+                    UPPER(proizvodjac) as proizvodjac,
+                    COUNT(*) as broj_artikala,
+                    array_agg(mpcena) AS cene
+                FROM (
+                    SELECT DISTINCT ON (barkod) *
+                    FROM unified_artikli
+                    WHERE nadgrupa = :nadgrupa AND mpcena > 0
+                    ORDER BY barkod, mpcena ASC
+                ) as best_deals
+                GROUP BY proizvodjac
+                ORDER BY proizvodjac
+            """, nativeQuery = true)
+    List<Object[]> findUnifiedProizvodjaciWithCountByNadgrupa(@Param("nadgrupa") String nadgrupa);
+
+    @Query(value = """
+                SELECT barkod
+                FROM unified_artikli
+                WHERE barkod IS NOT NULL AND barkod != ''
+                GROUP BY barkod
+                HAVING count(DISTINCT vendor_id) > 1
+            """, nativeQuery = true)
+    List<String> findDuplicateBarkodovi();
+
+    @Query(value = """
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE nadgrupa = :nadgrupa AND grupa = :grupa
+                ORDER BY mpcena ASC
+            """, nativeQuery = true)
+    List<String> findUnifiedArtikliByNadgrupaAndGrupa(@Param("nadgrupa") String nadgrupa, @Param("grupa") String grupa);
+
+    @Query(value = """
+                SELECT MAX(mpcena) FROM unified_artikli
+            """, nativeQuery = true)
+    BigDecimal findUnifiedMaxPrice();
+
+    @Query(value = """
+                SELECT DISTINCT UPPER(proizvodjac)
+                FROM unified_artikli
+                WHERE nadgrupa IN :nadgrupe
+                ORDER BY 1
+            """, nativeQuery = true)
+    List<String> findUnifiedProizvodjaciByGlavnaGrupa(@Param("nadgrupe") List<String> nadgrupe);
+
+    @Query(value = """
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE barkod = :barkod
+                ORDER BY mpcena ASC
+            """, nativeQuery = true)
+    List<String> findArtikliByBarkod(@Param("barkod") String barkod);
+
+    @Query(value = """
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE barkod = :barkod
+                ORDER BY mpcena ASC
+                LIMIT 1
+            """, nativeQuery = true)
+    String findUnifiedArtikalByBarkod(@Param("barkod") String barkod);
+
+    @Query(value = """
+                SELECT original_xml
+                FROM (
+                    SELECT DISTINCT ON (barkod) *
+                    FROM unified_artikli
+                    WHERE barkod IS NOT NULL AND barkod != '' AND mpcena > 0
+                    OR ( (barkod IS NULL OR barkod = '') AND mpcena > 0 )
+                    ORDER BY barkod, mpcena ASC
+                ) as best_deals
+            """, nativeQuery = true)
+    List<String> findUnifiedArtikliXml();
+
+    @Query(value = """
                 SELECT unnest(xpath('/artikli/artikal', xml_data))::TEXT AS artikal_xml
                 FROM vendor
                 WHERE id = :vendorId

@@ -22,8 +22,8 @@ public class FeedSchedulerService {
         this.emailService = emailService;
     }
 
-    // Runs every 4 hours to check for updates
-    @Scheduled(cron = "0 0 */4 * * *")
+    // Runs every day at 03:00 AM (Serbian time)
+    @Scheduled(cron = "0 0 3 * * *", zone = "Europe/Belgrade")
     public void scheduleFeedRefresh() {
         List<FeedSource> sources = feedSourceRepository.findAll();
         for (FeedSource source : sources) {
