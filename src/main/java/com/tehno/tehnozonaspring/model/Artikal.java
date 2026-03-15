@@ -83,7 +83,15 @@ public class Artikal {
     @XmlElement(name = "filter_grupa")
     private List<FilterGrupa> filteri;
 
-    // GETTER METODE
+    // GETTER I SETTER METODE
+    public Long getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(Long vendorId) {
+        this.vendorId = vendorId;
+    }
+
     public String getSifra() {
         return sifra;
     }

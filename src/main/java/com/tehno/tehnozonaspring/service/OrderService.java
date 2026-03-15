@@ -63,11 +63,22 @@ public class OrderService {
         if (artikli != null && !artikli.isEmpty()) {
             sb.append("<ul>");
             for (Artikal artikal : artikli) {
+                String vendorName = "Nepoznato";
+                if (artikal.getVendorId() != null) {
+                    vendorName = switch (artikal.getVendorId().intValue()) {
+                        case 1 -> "Uspon";
+                        case 2 -> "Linkom";
+                        case 3 -> "Avtera";
+                        default -> "Nepoznato";
+                    };
+                }
+
                 sb.append("<li>")
                         .append("<strong>").append(artikal.getNaziv()).append("</strong>")
+                        .append(" [DOBAVLJAČ: ").append(vendorName.toUpperCase()).append("] ")
                         .append(" (Šifra: ").append(artikal.getSifra()).append(") — ")
-                        .append("Cena: ").append(artikal.getMpcena()).append(" ").append(" — ")
-                        .append("Kolicina: ").append(artikal.getKolicina()).append(" ")
+                        .append("Cena: ").append(artikal.getMpcena()).append(" RSD — ")
+                        .append("Količina: ").append(artikal.getKolicina())
                         .append("</li>");
             }
             sb.append("</ul>");
