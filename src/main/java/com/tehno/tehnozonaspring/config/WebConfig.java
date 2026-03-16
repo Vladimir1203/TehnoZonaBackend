@@ -30,4 +30,12 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/api/images/categories/**")
                 .addResourceLocations("file:" + path + "/");
     }
+
+    @org.springframework.context.annotation.Bean
+    public org.springframework.boot.web.server.WebServerFactoryCustomizer<org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory> tomcatCustomizer() {
+        return factory -> factory.addConnectorCustomizers(connector -> {
+            connector.setProperty("relaxedPathChars", "[]\\");
+            connector.setProperty("relaxedQueryChars", "[]\\");
+        });
+    }
 }
