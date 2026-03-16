@@ -92,7 +92,7 @@ public class FeedRefreshService {
         } else if (vendorName.contains("linkom")) {
             return baseUrl + connector + CredentialManager.getLinkomParams() + "&slike=1&opis=1&karakteristike=1";
         } else if (vendorName.contains("avtera")) {
-            return baseUrl + connector + CredentialManager.getAvteraParams();
+            return baseUrl + connector + CredentialManager.getAvteraParams() + "&slike=1&opis=1";
         }
 
         return baseUrl;

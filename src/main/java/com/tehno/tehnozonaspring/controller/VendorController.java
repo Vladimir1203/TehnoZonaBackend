@@ -1,6 +1,7 @@
 package com.tehno.tehnozonaspring.controller;
 
 import com.tehno.tehnozonaspring.dto.FeaturedArtikalResponse;
+import com.tehno.tehnozonaspring.dto.NadgrupaDTO;
 import com.tehno.tehnozonaspring.dto.ProductPageResponse;
 import com.tehno.tehnozonaspring.model.*;
 import com.tehno.tehnozonaspring.service.VendorService;
@@ -69,6 +70,11 @@ public class VendorController {
         return ResponseEntity.ok(artikli);
     }
 
+    @GetMapping("/menu-structure")
+    public ResponseEntity<List<Map<String, Object>>> getMenuStructure() {
+        return ResponseEntity.ok(vendorService.getFullMenuStructure());
+    }
+
     @GetMapping("/glavneGrupe")
     public ResponseEntity<List<String>> vratiGlavneGrupe() {
         List<String> glavneGrupe = vendorService.getGlavneGrupe();
@@ -78,6 +84,15 @@ public class VendorController {
     @GetMapping("/glavneGrupe/{glavnaGrupa}/nadgrupe")
     public ResponseEntity<List<String>> getNadgrupeByGlavnaGrupa(@PathVariable String glavnaGrupa) {
         List<String> nadgrupe = vendorService.getNadgrupeByGlavnaGrupa(glavnaGrupa);
+        if (nadgrupe.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(nadgrupe);
+    }
+
+    @GetMapping("/glavneGrupe/{glavnaGrupa}/nadgrupe-extended")
+    public ResponseEntity<List<NadgrupaDTO>> getNadgrupeExtendedByGlavnaGrupa(@PathVariable String glavnaGrupa) {
+        List<NadgrupaDTO> nadgrupe = vendorService.getNadgrupeWithImages(glavnaGrupa);
         if (nadgrupe.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
@@ -143,6 +158,8 @@ public class VendorController {
         response.setProducts(paginated);
         response.setTotalCount(totalCount);
         response.setMinCena(min);
+        response.setManufacturerCounts(izracunajManufacturerCounts(artikliPoCeni));
+
         response.setMaxCena(max);
 
         return ResponseEntity.ok(response);
@@ -186,29 +203,46 @@ public class VendorController {
         response.setMinCena(min);
         response.setMaxCena(max);
 
+        response.setManufacturerCounts(izracunajManufacturerCounts(artikals));
         return ResponseEntity.ok(response);
+
+    }
+
+    public static Map<String, Integer> izracunajManufacturerCounts(List<Artikal> artikli) {
+        if (artikli == null || artikli.isEmpty()) {
+            return Collections.emptyMap();
+        }
+        return artikli.stream()
+                .map(Artikal::getProizvodjac)
+                .filter(Objects::nonNull)
+                .map(String::trim)
+                .filter(p -> !p.isEmpty() && !p.equals("/") && !p.equals("-"))
+                .collect(Collectors.toMap(
+                        p -> p.toUpperCase(),
+                        p -> 1,
+                        Integer::sum,
+                        TreeMap::new));
     }
 
     public static List<Artikal> filtrirajPoProizvodjacima(List<Artikal> artikli, List<String> proizvodjaci) {
         if (proizvodjaci == null || proizvodjaci.isEmpty()) {
             return artikli;
         }
-        // proizvodjaci.add("Ugreen");
-        // Pretvaramo u Set radi bržeg pretraživanja (O(1) lookup)
-        Set<String> proizvodjaciSet = proizvodjaci.stream()
-                .filter(Objects::nonNull)
-                .map(p -> p.trim().toLowerCase()) // case-insensitive + trim
-                .collect(Collectors.toSet());
 
-        artikli.stream()
-                .forEach(a -> System.out.println("Proizvodjac: '" + a.getProizvodjac() + "'"));
-        System.out.println("Proizvodjaci set: " + proizvodjaciSet);
+        Set<String> set = new HashSet<>();
+        for (String p : proizvodjaci) {
+            if (p != null) {
+                for (String part : p.split(",")) {
+                    String s = part.trim().toLowerCase();
+                    if (!s.isEmpty())
+                        set.add(s);
+                }
+            }
+        }
 
-        List<Artikal> artikli1 = artikli.stream()
-                .filter(a -> a.getProizvodjac() != null
-                        && proizvodjaciSet.contains(a.getProizvodjac().toLowerCase()))
+        return artikli.stream()
+                .filter(a -> a.getProizvodjac() != null && set.contains(a.getProizvodjac().trim().toLowerCase()))
                 .collect(Collectors.toList());
-        return artikli1;
     }
 
     public static List<Artikal> filtrirajPoCeni(List<Artikal> artikli, Double minCena, Double maxCena) {
@@ -295,6 +329,7 @@ public class VendorController {
         response.setMinCena(min);
         response.setMaxCena(max);
 
+        response.setManufacturerCounts(izracunajManufacturerCounts(artikliPoNadgrupiICeni));
         return ResponseEntity.ok(response);
     }
 
@@ -371,7 +406,7 @@ public class VendorController {
                 .map(p -> p.trim().toUpperCase())
                 .filter(p -> !p.equals("/") && !p.equals("-") && !p.isEmpty())
                 .collect(Collectors.groupingBy(
-                        p -> p,
+                        p -> p.toUpperCase(),
                         TreeMap::new,
                         Collectors.summingInt(x -> 1)));
     }
@@ -399,7 +434,7 @@ public class VendorController {
                 .map(p -> p.trim().toUpperCase())
                 .filter(p -> !p.equals("/") && !p.equals("-"))
                 .collect(Collectors.toMap(
-                        p -> p,
+                        p -> p.toUpperCase(),
                         p -> 1,
                         Integer::sum,
                         TreeMap::new));
@@ -579,6 +614,8 @@ public class VendorController {
 
         ProductPageResponse response = new ProductPageResponse();
         response.setProducts(paginated);
+        response.setManufacturerCounts(izracunajManufacturerCounts(filtriraniPoCeni));
+
         response.setTotalCount(totalCount);
         response.setMinCena(min);
         response.setMaxCena(max);
@@ -695,6 +732,8 @@ public class VendorController {
 
         // 5. Upis u response
         response.setProducts(paginated);
+        response.setManufacturerCounts(izracunajManufacturerCounts(filtriraniPoCeni));
+
         response.setTotalCount(totalCount);
         response.setMinCena(min);
         response.setMaxCena(max);

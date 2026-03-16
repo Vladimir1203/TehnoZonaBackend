@@ -1,5 +1,7 @@
 package com.tehno.tehnozonaspring.service;
 
+import java.util.Arrays;
+
 import com.tehno.tehnozonaspring.controller.VendorController;
 import com.tehno.tehnozonaspring.dto.FeaturedArtikalResponse;
 import com.tehno.tehnozonaspring.dto.ProductPageResponse;
@@ -11,6 +13,7 @@ import jakarta.xml.bind.Unmarshaller;
 
 import com.tehno.tehnozonaspring.model.Artikal;
 import com.tehno.tehnozonaspring.model.Vendor;
+import com.tehno.tehnozonaspring.dto.NadgrupaDTO;
 import com.tehno.tehnozonaspring.repository.VendorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import jakarta.annotation.PostConstruct;
@@ -35,11 +38,13 @@ public class VendorService {
     private final VendorRepository vendorRepository;
     private final FeaturedProductRepository featuredProductRepository;
     private final com.tehno.tehnozonaspring.repository.HomepageItemRepository homepageItemRepository;
+    private final CategoryImageService categoryImageService;
+    private final Map<String, String> imagePathCache = new java.util.concurrent.ConcurrentHashMap<>();
 
     private final Map<String, List<String>> groupMap = Map.of(
             "BELA TEHNIKA I KUĆNI APARATI", List.of(
                     "BELA TEHNIKA", "MALI KUĆNI APARATI", "GREJANJE", "HLADNJACI", "KUĆNA BELA TEHNIKA",
-                    "Mali kuhinjski aparati", "Mali kucni aparati", "Klimatizacija i Grejanje"),
+                    "MALI KUHINJSKI APARATI", "KLIMATIZACIJA I GREJANJE"),
             "TV, FOTO, AUDIO I VIDEO", List.of(
                     "AUDIO, HI-FI", "TV, AUDIO, VIDEO", "FOTOAPARATI I KAMERE", "DIGITALNI SNIMAČI",
                     "PROJEKTORI I OPREMA", "ZVUČNICI", "SLUŠALICE I MIKROFONI", "KAMERE", "Televizori", "Commercial TV",
@@ -79,21 +84,64 @@ public class VendorService {
             "HUAWEI", "LG", "MIDEA", "PHILIPS", "SAMSUNG", "XIAOMI");
 
     public List<String> getNadgrupeByGlavnaGrupa(String glavnaGrupa) {
-        return groupMap.getOrDefault(glavnaGrupa.toUpperCase(), List.of());
+        return getFullMenuStructure().stream()
+                .filter(m -> m.get("name").toString().equalsIgnoreCase(glavnaGrupa))
+                .findFirst()
+                .map(m -> new ArrayList<>(((Map<String, List<String>>) m.get("nadgrupe")).keySet()))
+                .orElse(new ArrayList<>());
+    }
+
+    public List<NadgrupaDTO> getNadgrupeWithImages(String glavnaGrupa) {
+        List<String> names = getNadgrupeByGlavnaGrupa(glavnaGrupa);
+
+        Map<String, List<String>> structure = getFullMenuStructure().stream()
+                .filter(m -> m.get("name").toString().equalsIgnoreCase(glavnaGrupa))
+                .findFirst()
+                .map(m -> (Map<String, List<String>>) m.get("nadgrupe"))
+                .orElse(new HashMap<>());
+
+        return names.stream()
+                .map(name -> {
+                    String cacheKey = name.toUpperCase();
+                    String localImg = imagePathCache.get(cacheKey);
+
+                    if (localImg == null) {
+                        // 1. Proveri disk
+                        localImg = categoryImageService.getCachedImageUrl(name);
+
+                        // 2. Ako nema na disku, nađi sample iz baze (samo za tu jednu nadgrupu!)
+                        if (localImg == null) {
+                            String sampleUrl = vendorRepository.findSampleImageForNadgrupa(name);
+                            if (sampleUrl != null) {
+                                localImg = categoryImageService.getOrDownloadImage(name, sampleUrl);
+                            }
+                        }
+
+                        // Sačuvaj u keš ako smo našli
+                        if (localImg != null) {
+                            imagePathCache.put(cacheKey, localImg);
+                        }
+                    }
+
+                    List<String> grupe = structure.get(cacheKey);
+                    return new NadgrupaDTO(name, localImg, grupe);
+                })
+                .collect(Collectors.toList());
     }
 
     public String[] getNadgrupeByGlavnaGrupaArray(String glavnaGrupa) {
-        return groupMap.getOrDefault(glavnaGrupa.toUpperCase(), List.of())
-                .toArray(new String[0]); // Konvertuje List<String> u String[]
+        return getNadgrupeByGlavnaGrupa(glavnaGrupa).toArray(new String[0]);
     }
 
     @Autowired
     public VendorService(VendorRepository vendorRepository,
             FeaturedProductRepository featuredProductRepository,
-            com.tehno.tehnozonaspring.repository.HomepageItemRepository homepageItemRepository) {
+            com.tehno.tehnozonaspring.repository.HomepageItemRepository homepageItemRepository,
+            CategoryImageService categoryImageService) {
         this.vendorRepository = vendorRepository;
         this.featuredProductRepository = featuredProductRepository;
         this.homepageItemRepository = homepageItemRepository;
+        this.categoryImageService = categoryImageService;
     }
 
     public List<Vendor> getAllBeans() {
@@ -123,9 +171,7 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                if (artikal.getCena() >= 100) {
-                    artikli.add(artikal);
-                }
+                artikli.add(artikal);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -134,14 +180,54 @@ public class VendorService {
         return artikli;
     }
 
+    public List<Map<String, Object>> getFullMenuStructure() {
+        List<Object[]> rows = vendorRepository.findDistinctNadgrupeAndGrupe();
+        Map<String, Map<String, List<String>>> tree = new LinkedHashMap<>();
+        for (String glavna : groupMap.keySet()) {
+            tree.put(glavna, new LinkedHashMap<>());
+        }
+        for (Object[] row : rows) {
+            String nadgrupa = (row[0] != null) ? row[0].toString().trim().toUpperCase() : "";
+            String grupa = (row[1] != null) ? row[1].toString().trim() : "";
+            if (nadgrupa.isEmpty())
+                continue;
+            String parentGlavna = null;
+            for (Map.Entry<String, List<String>> entry : groupMap.entrySet()) {
+                if (entry.getValue().stream().anyMatch(s -> s.equalsIgnoreCase(nadgrupa))) {
+                    parentGlavna = entry.getKey();
+                    break;
+                }
+            }
+            if (parentGlavna != null) {
+                tree.get(parentGlavna)
+                        .computeIfAbsent(nadgrupa, k -> new ArrayList<>())
+                        .add(grupa);
+                Collections.sort(tree.get(parentGlavna).get(nadgrupa));
+            }
+        }
+        List<Map<String, Object>> result = new ArrayList<>();
+        for (Map.Entry<String, Map<String, List<String>>> entry : tree.entrySet()) {
+            if (entry.getValue().isEmpty())
+                continue;
+            Map<String, Object> node = new LinkedHashMap<>();
+            node.put("name", entry.getKey());
+            Map<String, List<String>> sortedNadgrupe = new TreeMap<>((a, b) -> a.compareToIgnoreCase(b));
+            sortedNadgrupe.putAll(entry.getValue());
+            node.put("nadgrupe", sortedNadgrupe);
+            result.add(node);
+        }
+        return result;
+    }
+
     public List<String> getGlavneGrupe() {
-        List<String> groups = new ArrayList<>(groupMap.keySet());
+        List<String> groups = getFullMenuStructure().stream().map(m -> m.get("name").toString())
+                .collect(Collectors.toList());
         System.out.println("HOMEPAGE: Povučene glavne grupe: " + groups);
         return groups;
     }
 
     public List<Artikal> getArtikliByNadgrupa(Long id, String nadgrupa) {
-        List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupa(id, nadgrupa);
+        List<String> artikalXmlList = vendorRepository.findArtikliByNadgrupa(id, nadgrupa.trim().toUpperCase());
         List<Artikal> artikli = new ArrayList<>();
 
         try {
@@ -151,9 +237,7 @@ public class VendorService {
             for (String artikalXml : artikalXmlList) {
                 StringReader reader = new StringReader(artikalXml);
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
-                if (artikal.getCena() >= 100) {
-                    artikli.add(artikal);
-                }
+                artikli.add(artikal);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -172,9 +256,11 @@ public class VendorService {
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
         List<String> artikalXmlList;
         if (vendorId == 0) {
-            artikalXmlList = vendorRepository.findUnifiedArtikliByGlavnaGrupa(nadgrupe);
+            artikalXmlList = vendorRepository.findUnifiedArtikliByGlavnaGrupa(
+                    Arrays.stream(nadgrupe).map(s -> s.trim().toUpperCase()).toArray(String[]::new));
         } else {
-            artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId, nadgrupe);
+            artikalXmlList = vendorRepository.findArtikliByGlavnaGrupa(vendorId,
+                    Arrays.stream(nadgrupe).map(s -> s.trim().toUpperCase()).toArray(String[]::new));
         }
         List<Artikal> artikli = new ArrayList<>();
 
@@ -190,8 +276,6 @@ public class VendorService {
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
                 double cena = artikal.getCena();
-                if (cena < 100)
-                    continue; // preskoci artikle sa cenom ispod 100
 
                 if (cena < globalMin) {
                     globalMin = cena;
@@ -227,7 +311,8 @@ public class VendorService {
         if (vendorId == 0) {
             artikliPoNadgrupi = vendorRepository.findUnifiedArtikliByNadgrupa(nadgrupa);
         } else {
-            artikliPoNadgrupi = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
+            artikliPoNadgrupi = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId,
+                    nadgrupa.trim().toUpperCase());
         }
 
         List<Artikal> artikliPoNadgrupiIceni = new ArrayList<>();
@@ -244,8 +329,6 @@ public class VendorService {
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
                 double cena = artikal.getCena();
-                if (cena < 100)
-                    continue; // preskoci artikle sa cenom ispod 100
 
                 if (cena < globalMin) {
                     globalMin = cena;
@@ -272,7 +355,7 @@ public class VendorService {
             throw new RuntimeException("Greška prilikom parsiranja artikala", e);
         }
 
-        return filtrirajPoProizvodjacima(artikliPoNadgrupiIceni, proizvodjaci);
+        return artikliPoNadgrupiIceni;
 
     }
 
@@ -350,8 +433,13 @@ public class VendorService {
         // Dobavljanje nadgrupa
         String[] nadgrupe = getNadgrupeByGlavnaGrupaArray(glavnaGrupa);
         // Poziv repository metode
-        List<Object[]> resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe, minCena,
-                maxCena);
+        List<Object[]> resultList;
+        if (vendorId == 0) {
+            resultList = vendorRepository.findUnifiedProizvodjaciWithCountByGlavnaGrupa(nadgrupe, minCena, maxCena);
+        } else {
+            resultList = vendorRepository.findProizvodjaciWithCountByGlavnaGrupa(vendorId, nadgrupe, minCena, maxCena);
+        }
+
         System.out.println("Broj rezultata iz repository-a: " + resultList.size());
 
         // Ispis rezultata za proveru
@@ -402,7 +490,7 @@ public class VendorService {
             artikli = artikalXmlList.stream()
                     .map(xml -> parseArtikal(xml, unmarshaller))
                     .filter(Objects::nonNull)
-                    .filter(a -> a.getCena() >= 100)
+
                     .collect(Collectors.toList());
 
         } catch (Exception e) {
@@ -427,11 +515,12 @@ public class VendorService {
             Double maxCena, com.tehno.tehnozonaspring.dto.ProductPageResponse response) {
         List<String> xmlList;
         if (vendorId == 0) {
-            xmlList = vendorRepository.findUnifiedArtikliByNadgrupaAndGrupa(nadgrupa, grupa);
+            xmlList = vendorRepository.findUnifiedArtikliByNadgrupaAndGrupa(nadgrupa.trim().toUpperCase(),
+                    grupa.trim().toUpperCase());
         } else {
             // Revert to searching by nadgrupa and then filtering by grupa in Java to
             // maintain existing repo behavior
-            xmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa);
+            xmlList = vendorRepository.findArtikliByNadgrupaAndVendorId(vendorId, nadgrupa.trim().toUpperCase());
         }
 
         List<Artikal> artikli = new ArrayList<>();
@@ -447,8 +536,6 @@ public class VendorService {
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(reader);
 
                 double cena = artikal.getCena();
-                if (cena < 100)
-                    continue;
 
                 if ((minCena == null || minCena == 0 || cena >= minCena) &&
                         (maxCena == null || maxCena == 0 || cena <= maxCena)) {
@@ -530,7 +617,7 @@ public class VendorService {
 
             for (String xml : allXml) {
                 Artikal artikal = parseArtikal(xml, unmarshaller);
-                if (artikal != null && artikal.getCena() >= 100) {
+                if (artikal != null) {
                     String naziv = Optional.ofNullable(artikal.getNaziv()).orElse("").toLowerCase();
                     String proizvodjac = Optional.ofNullable(artikal.getProizvodjac()).orElse("").toLowerCase();
 
@@ -575,7 +662,7 @@ public class VendorService {
         String target = brand.trim().toUpperCase();
         List<String> xmlList;
         if (vendorId == 0) {
-            xmlList = vendorRepository.findUnifiedArtikliByBrand(brand);
+            xmlList = vendorRepository.findUnifiedArtikliByBrand(brand.trim().toUpperCase());
         } else {
             xmlList = vendorRepository.findAllArtikliXmlByVendorId(vendorId);
         }
@@ -587,9 +674,6 @@ public class VendorService {
 
             for (String xml : xmlList) {
                 Artikal artikal = (Artikal) unmarshaller.unmarshal(new StringReader(xml));
-
-                if (artikal.getCena() < 100)
-                    continue;
 
                 if (artikal.getProizvodjac() != null &&
                         artikal.getProizvodjac().trim().toUpperCase().equals(target)) {
@@ -739,7 +823,7 @@ public class VendorService {
 
             String nadgrupa = artikal.getNadgrupa();
             if (nadgrupa == null || nadgrupa.trim().isEmpty()) {
-                continue;
+
             }
 
             // 3. Pronađi glavnu grupu kojoj pripada nadgrupa
@@ -747,10 +831,9 @@ public class VendorService {
 
             // Ako nije pronađena, skip
             if (glavnaGrupa == null)
-                continue;
 
-            // 4. Povećaj counter
-            counter.merge(glavnaGrupa, 1, Integer::sum);
+                // 4. Povećaj counter
+                counter.merge(glavnaGrupa, 1, Integer::sum);
         }
 
         // 5. Pretvori u listu mapova za frontend

@@ -199,7 +199,7 @@ public class SearchService {
             if (key.equals("/") || key.equals("-")) {
                 continue;
             }
-            counts.merge(key, 1L, Long::sum);
+            counts.merge(key, 1L, (oldValue, newValue) -> oldValue + newValue);
         }
         return counts;
     }

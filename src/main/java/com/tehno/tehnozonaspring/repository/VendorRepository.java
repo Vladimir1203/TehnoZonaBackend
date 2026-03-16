@@ -49,17 +49,17 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     String findDistinctGroupsByNadgrupa(@Param("id") Long id, @Param("nadgrupa") String nadgrupa);
 
     @Query(value = """
-                SELECT unnest(xpath('/artikli/artikal', xml_data))::TEXT AS artikal_xml
-                FROM vendor
-                WHERE id = :id
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE vendor_id = :id
                 LIMIT :limit
             """, nativeQuery = true)
     List<String> findLimitedArtikliByVendorId(@Param("id") Long id, @Param("limit") int limit);
 
     @Query(value = """
-                SELECT unnest(xpath(concat('/artikli/artikal[nadgrupa/text()="', :nadgrupa, '"]'), xml_data))::TEXT AS artikal_xml
-                FROM vendor
-                WHERE id = :id
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE vendor_id = :id AND UPPER(TRIM(nadgrupa)) = UPPER(TRIM(:nadgrupa))
             """, nativeQuery = true)
     List<String> findArtikliByNadgrupa(@Param("id") Long id, @Param("nadgrupa") String nadgrupa);
 
@@ -81,7 +81,7 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
                         xpath(
                             concat(
                                 '/artikli/artikal[',
-                                string_agg(concat('nadgrupa/text()="', nadgrupa, '"'), ' or '),
+                                string_agg(concat('translate(normalize-space(nadgrupa/text()), "abcdefghijklmnopqrstuvwxyz šćčđž", "ABCDEFGHIJKLMNOPQRSTUVWXYZ ŠĆČĐŽ")="', UPPER(nadgrupa), '"'), ' or '),
                                 ']'
                             ),
                             xml_data
@@ -100,16 +100,9 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
             @Param("nadgrupe") String[] nadgrupe);
 
     @Query(value = """
-            SELECT unnest(
-                       xpath(
-                           concat(
-                               '/artikli/artikal[normalize-space(nadgrupa/text())="', :nadgrupa, '"]'
-                           ),
-                           xml_data
-                       )
-                   )::TEXT AS artikal_xml
-            FROM vendor
-            WHERE vendor.id = :vendorId
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE vendor_id = :vendorId AND UPPER(TRIM(nadgrupa)) = UPPER(TRIM(:nadgrupa))
             """, nativeQuery = true)
     List<String> findArtikliByNadgrupaAndVendorId(
             @Param("vendorId") Long vendorId,
@@ -137,7 +130,7 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
                         xpath(
                             concat(
                                 '/artikli/artikal[',
-                                string_agg(concat('nadgrupa/text()="', nadgrupa, '"'), ' or '),
+                                string_agg(concat('translate(normalize-space(nadgrupa/text()), "abcdefghijklmnopqrstuvwxyz šćčđž", "ABCDEFGHIJKLMNOPQRSTUVWXYZ ŠĆČĐŽ")="', UPPER(nadgrupa), '"'), ' or '),
                                 ']/proizvodjac/text()'
                             ),
                             xml_data
@@ -173,7 +166,7 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
               AND (:minCena IS NULL OR cena_mp >= :minCena)
               AND (:maxCena IS NULL OR cena_mp <= :maxCena)
             GROUP BY subquery.proizvodjac_text
-            ORDER BY proizvodjac
+            ORDER BY UPPER(TRIM(proizvodjac))
             """, nativeQuery = true)
     List<Object[]> findProizvodjaciWithCountByGlavnaGrupa(
             @Param("vendorId") Long vendorId,
@@ -200,28 +193,64 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
                 LATERAL (
                     SELECT unnest(xpath('/artikli/artikal/proizvodjac/text()', xml_data))::TEXT AS proizvodjac_text
                 ) AS subquery
-                ORDER BY proizvodjac
+                ORDER BY UPPER(TRIM(proizvodjac))
             """, nativeQuery = true)
     List<String> findAllDistinctProizvodjaci();
 
     @Query(value = """
-                SELECT unnest(xpath(
-                    concat('/artikli/artikal[proizvodjac/text()="', :proizvodjac, '"]'), xml_data
-                ))::TEXT AS artikal_xml
-                FROM vendor
-                WHERE xml_data IS NOT NULL
+            SELECT
+                UPPER(TRIM(proizvodjac)) as proizvodjac,
+                COUNT(*) as broj_artikala
+            FROM (
+                SELECT DISTINCT ON (barkod) *
+                FROM unified_artikli
+                WHERE UPPER(TRIM(nadgrupa)) = ANY(:nadgrupe)
+                  AND mpcena > 0
+                  AND (:minCena IS NULL OR mpcena >= :minCena)
+                  AND (:maxCena IS NULL OR mpcena <= :maxCena)
+                ORDER BY barkod, mpcena ASC
+            ) as best_deals
+            GROUP BY UPPER(TRIM(proizvodjac))
+            ORDER BY UPPER(TRIM(proizvodjac))
+            """, nativeQuery = true)
+    List<Object[]> findUnifiedProizvodjaciWithCountByGlavnaGrupa(
+            @Param("nadgrupe") String[] nadgrupe,
+            @Param("minCena") Integer minCena,
+            @Param("maxCena") Integer maxCena);
+
+    @Query(value = """
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE UPPER(TRIM(proizvodjac)) = UPPER(TRIM(:proizvodjac))
             """, nativeQuery = true)
     List<String> findArtikliByProizvodjac(@Param("proizvodjac") String proizvodjac);
 
+    @Query(value = "SELECT DISTINCT nadgrupa, grupa FROM unified_artikli ", nativeQuery = true)
+    List<Object[]> findDistinctNadgrupeAndGrupe();
+
     @Query(value = """
-                SELECT unnest(xpath('/artikli/artikal', xml_data))::TEXT AS artikal_xml
-                FROM vendor
-                WHERE id = :vendorId
-                  AND EXISTS (
-                      SELECT 1
-                      FROM unnest(xpath('/artikli/artikal/grupa/text()', xml_data)) AS grupa_text
-                      WHERE grupa_text::TEXT = :grupa
-                  )
+            SELECT DISTINCT ON (UPPER(TRIM(nadgrupa)))
+                UPPER(TRIM(nadgrupa)) as name,
+                (xpath('//slika/text()', original_xml::xml))[1]::text as image
+            FROM unified_artikli
+            WHERE original_xml ~ '<slika>'
+              AND (xpath('//slika/text()', original_xml::xml))[1]::text IS NOT NULL
+            """, nativeQuery = true)
+    List<Object[]> findSampleImagesForNadgrupe();
+
+    @Query(value = """
+            SELECT (xpath('//slika/text()', original_xml::xml))[1]::text
+            FROM unified_artikli
+            WHERE UPPER(TRIM(nadgrupa)) = UPPER(TRIM(:nadgrupaName))
+              AND original_xml ~ '<slika>'
+              LIMIT 1
+            """, nativeQuery = true)
+    String findSampleImageForNadgrupa(@Param("nadgrupaName") String nadgrupaName);
+
+    @Query(value = """
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE vendor_id = :vendorId AND UPPER(TRIM(grupa)) = UPPER(TRIM(:grupa))
             """, nativeQuery = true)
     List<String> findArtikliByVendorAndGrupa(
             @Param("vendorId") Long vendorId,
@@ -244,12 +273,12 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
                   AND subquery.nadgrupa_text = :nadgrupa
             )
             SELECT
-                UPPER(proizvodjac) as proizvodjac,
+                UPPER(TRIM(proizvodjac)) as proizvodjac,
                 COUNT(*) as broj_artikala,
                 array_agg(cena) AS cene
             FROM artikli
-            GROUP BY proizvodjac
-            ORDER BY proizvodjac
+            GROUP BY UPPER(TRIM(proizvodjac))
+            ORDER BY UPPER(TRIM(proizvodjac))
             """, nativeQuery = true)
     List<Object[]> findProizvodjaciWithCountByGlavnaGrupaAndNadgrupa(
             @Param("vendorId") Long vendorId,
@@ -261,7 +290,7 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
                     SELECT DISTINCT ON (barkod) *
                     FROM unified_artikli
                     WHERE barkod IS NOT NULL AND barkod != '' AND mpcena > 0
-                    AND nadgrupa = ANY(:nadgrupe)
+                    AND UPPER(TRIM(nadgrupa)) = ANY(:nadgrupe)
                     ORDER BY barkod, mpcena ASC
                 ) as best_deals
             """, nativeQuery = true)
@@ -273,7 +302,7 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
                     SELECT DISTINCT ON (barkod) *
                     FROM unified_artikli
                     WHERE barkod IS NOT NULL AND barkod != '' AND mpcena > 0
-                    AND nadgrupa = :nadgrupa
+                    AND UPPER(TRIM(nadgrupa)) = UPPER(TRIM(:nadgrupa))
                     ORDER BY barkod, mpcena ASC
                 ) as best_deals
             """, nativeQuery = true)
@@ -282,24 +311,24 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     @Query(value = """
                 SELECT original_xml
                 FROM unified_artikli
-                WHERE UPPER(proizvodjac) = UPPER(:brand)
+                WHERE UPPER(TRIM(proizvodjac)) = UPPER(TRIM(:brand))
                 ORDER BY mpcena ASC
             """, nativeQuery = true)
     List<String> findUnifiedArtikliByBrand(@Param("brand") String brand);
 
     @Query(value = """
                 SELECT
-                    UPPER(proizvodjac) as proizvodjac,
+                    UPPER(TRIM(proizvodjac)) as proizvodjac,
                     COUNT(*) as broj_artikala,
                     array_agg(mpcena) AS cene
                 FROM (
                     SELECT DISTINCT ON (barkod) *
                     FROM unified_artikli
-                    WHERE nadgrupa = :nadgrupa AND mpcena > 0
+                    WHERE UPPER(TRIM(nadgrupa)) = UPPER(TRIM(:nadgrupa)) AND mpcena > 0
                     ORDER BY barkod, mpcena ASC
                 ) as best_deals
-                GROUP BY proizvodjac
-                ORDER BY proizvodjac
+                GROUP BY UPPER(TRIM(proizvodjac))
+                ORDER BY UPPER(TRIM(proizvodjac))
             """, nativeQuery = true)
     List<Object[]> findUnifiedProizvodjaciWithCountByNadgrupa(@Param("nadgrupa") String nadgrupa);
 
@@ -315,7 +344,7 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     @Query(value = """
                 SELECT original_xml
                 FROM unified_artikli
-                WHERE nadgrupa = :nadgrupa AND grupa = :grupa
+                WHERE UPPER(TRIM(nadgrupa)) = UPPER(TRIM(:nadgrupa)) AND UPPER(TRIM(grupa)) = UPPER(TRIM(:grupa))
                 ORDER BY mpcena ASC
             """, nativeQuery = true)
     List<String> findUnifiedArtikliByNadgrupaAndGrupa(@Param("nadgrupa") String nadgrupa, @Param("grupa") String grupa);
@@ -328,7 +357,7 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     @Query(value = """
                 SELECT DISTINCT UPPER(proizvodjac)
                 FROM unified_artikli
-                WHERE nadgrupa IN :nadgrupe
+                WHERE UPPER(TRIM(nadgrupa)) IN :nadgrupe
                 ORDER BY 1
             """, nativeQuery = true)
     List<String> findUnifiedProizvodjaciByGlavnaGrupa(@Param("nadgrupe") List<String> nadgrupe);
@@ -363,21 +392,16 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     List<String> findUnifiedArtikliXml();
 
     @Query(value = """
-                SELECT unnest(xpath('/artikli/artikal', xml_data))::TEXT AS artikal_xml
-                FROM vendor
-                WHERE id = :vendorId
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE vendor_id = :vendorId
             """, nativeQuery = true)
     List<String> findAllArtikliXmlByVendorId(@Param("vendorId") Long vendorId);
 
     @Query(value = """
-                SELECT unnest(
-                           xpath(
-                               concat('/artikli/artikal[barkod/text()="', :barCode, '"]'),
-                               xml_data
-                           )
-                       )::TEXT AS artikal_xml
-                FROM vendor
-                WHERE id = :vendorId
+                SELECT original_xml
+                FROM unified_artikli
+                WHERE vendor_id = :vendorId AND barkod = :barCode
             """, nativeQuery = true)
     List<String> getProductByArtikalBarCodeRaw(
             @Param("vendorId") Long vendorId,
