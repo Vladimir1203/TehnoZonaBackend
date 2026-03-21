@@ -239,6 +239,19 @@ Uspon nema ACTIVE zapis - vjerovatno bug u arhiviranju.
 - **Uzrok je server-side**: Avtera feed sadrži `EF BF BD` gdje bi trebalo biti `0x9A` (š), `0xB9` (č) itd.
 - Ovo je **bug na Avtera strani** - ne može se ispraviti client-side konverzijom. Treba kontaktirati Avtera.
 
+### ✅ Admin feed API - autentikacija
+- `AdminAuthFilter` (`OncePerRequestFilter`) štiti sve `/api/admin/**` endpointe
+- Zahtijeva `X-Admin-Key` header; 401 Unauthorized ako nedostaje ili je pogrešan
+- Ključ se čita iz `ADMIN_API_KEY` env varijable; ako nije postavljen, generiše se ephemeral random ključ pri startu i ispisuje u log
+- **Deploy instrukcija:** Na Render-u dodati `ADMIN_API_KEY` env varijablu sa sigurnom vrijednošću
+
+### ✅ Kredencijali u environment varijable
+- `CredentialManager` refaktorisan iz statičke klase u Spring `@Component` sa `@Value` injection
+- Env varijable: `VENDOR_USPON_USER`, `VENDOR_USPON_PASS`, `VENDOR_LINKOM_PASS`, `VENDOR_AVTERA_PASS`, `MAIL_GMAIL_PASSWORD`, `MAIL_GMAIL_USERNAME`, `NOTIFICATION_EMAIL`
+- Fallback na obfuskovane vrijednosti za lokalni razvoj bez env varijabli
+- `MailConfig`, `EmailService`, `OrderService`, `FeedRefreshService`, `FeedController` ažurirani da koriste injektovanu instancu umjesto statičkih poziva
+- Hardkodirane email adrese (`vladimir12934@gmail.com`, `bratislav.2000@gmail.com`) zamijenjene sa `credentialManager.getMailUser()` / `getNotificationRecipient()`
+
 ---
 
 ## PRIORITETI ISPRAVKI (prijedlog)
@@ -247,13 +260,13 @@ Uspon nema ACTIVE zapis - vjerovatno bug u arhiviranju.
 1. ~~Avtera `nadgrupa`/`grupa` parsing~~ ✅ Urađeno
 2. ~~Avtera encoding problem~~ ⚠️ Server-side bug, nije rješivo bez Avtera saradnje
 3. ~~Uspon ACTIVE status~~ ✅ Urađeno direktnim SQL na remote
-4. Admin feed API - dodati autentikaciju
+4. ~~Admin feed API - dodati autentikaciju~~ ✅ Urađeno
 
 ### Važno:
 5. ~~Ukloniti dead kod za vendor_id=4 ili dodati Spektar vendor~~ ✅ Urađeno
-6. ~~`@Transactional` na feed refresh operaciju~~ ✅ Urađeno (`saveAndActivate` je `@Transactional`)
-7. Kredencijali u environment varijable
-8. ~~Filtrirati artikle sa cijenom 0 iz prikaza~~ ✅ Urađeno (WHERE mpcena > 0 u view-u)
+6. ~~`@Transactional` na feed refresh operaciju~~ ✅ Urađeno
+7. ~~Kredencijali u environment varijable~~ ✅ Urađeno
+8. ~~Filtrirati artikle sa cijenom 0 iz prikaza~~ ✅ Urađeno
 
 ### Arhitekturno (dugoročno):
 9. Materijalizovati `unified_artikli` view
