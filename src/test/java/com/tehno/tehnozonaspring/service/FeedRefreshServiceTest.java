@@ -5,6 +5,7 @@ import com.tehno.tehnozonaspring.model.Vendor;
 import com.tehno.tehnozonaspring.repository.FeedSourceRepository;
 import com.tehno.tehnozonaspring.repository.VendorRepository;
 import com.tehno.tehnozonaspring.repository.XmlFeedHistoryRepository;
+import com.tehno.tehnozonaspring.util.CredentialManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -25,12 +26,13 @@ class FeedRefreshServiceTest {
     @Mock private VendorRepository vendorRepository;
     @Mock private EmailService emailService;
     @Mock private JdbcTemplate jdbcTemplate;
+    @Mock private CredentialManager credentialManager;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         feedRefreshService = new FeedRefreshService(
-                feedSourceRepository, historyRepository, vendorRepository, emailService, jdbcTemplate);
+                feedSourceRepository, historyRepository, vendorRepository, emailService, jdbcTemplate, credentialManager);
     }
 
     @Test

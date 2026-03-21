@@ -1,5 +1,6 @@
 package com.tehno.tehnozonaspring.service;
 
+import com.tehno.tehnozonaspring.util.CredentialManager;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -8,15 +9,17 @@ import org.springframework.stereotype.Service;
 public class EmailService {
 
     private final JavaMailSender mailSender;
+    private final CredentialManager credentialManager;
 
-    public EmailService(JavaMailSender mailSender) {
+    public EmailService(JavaMailSender mailSender, CredentialManager credentialManager) {
         this.mailSender = mailSender;
+        this.credentialManager = credentialManager;
     }
 
     public void sendErrorNotification(String vendorName, String errorMessage) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setTo("vladimir12934@gmail.com", "bratislav.2000@gmail.com");
+            message.setTo(credentialManager.getMailUser(), credentialManager.getNotificationRecipient());
             message.setSubject("ALARM: Feed Refresh Error - " + vendorName);
             message.setText(
                     "Došlo je do greške prilikom osvežavanja feed-a za " + vendorName + ".\n\nGreška: " + errorMessage);
@@ -29,7 +32,7 @@ public class EmailService {
     public void sendSuccessNotification(String vendorName, String hash) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setTo("vladimir12934@gmail.com", "bratislav.2000@gmail.com");
+            message.setTo(credentialManager.getMailUser(), credentialManager.getNotificationRecipient());
             message.setSubject("✅ USPEH: Osvežen feed - " + vendorName.toUpperCase());
 
             String timestamp = java.time.LocalDateTime.now()

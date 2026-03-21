@@ -11,15 +11,20 @@ import java.util.Properties;
 @Configuration
 public class MailConfig {
 
+    private final CredentialManager credentialManager;
+
+    public MailConfig(CredentialManager credentialManager) {
+        this.credentialManager = credentialManager;
+    }
+
     @Bean
     public JavaMailSender javaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("vladimir12934@gmail.com");
-        // Dinamičko ubacivanje šifre iz CredentialManagera u runtime-u
-        mailSender.setPassword(CredentialManager.getMailPass());
+        mailSender.setUsername(credentialManager.getMailUser());
+        mailSender.setPassword(credentialManager.getMailPass());
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");

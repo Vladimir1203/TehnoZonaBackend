@@ -2,10 +2,9 @@ package com.tehno.tehnozonaspring.service;
 
 import com.tehno.tehnozonaspring.model.Artikal;
 import com.tehno.tehnozonaspring.model.OrderRequest;
+import com.tehno.tehnozonaspring.util.CredentialManager;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -16,14 +15,15 @@ import java.util.List;
 public class OrderService {
 
     private final JavaMailSender mailSender;
+    private final CredentialManager credentialManager;
 
-    @Autowired
-    public OrderService(JavaMailSender mailSender) {
+    public OrderService(JavaMailSender mailSender, CredentialManager credentialManager) {
         this.mailSender = mailSender;
+        this.credentialManager = credentialManager;
     }
 
     public void sendOrderEmail(OrderRequest request) {
-        String to = "bratislav.2000@gmail.com";
+        String to = credentialManager.getNotificationRecipient();
         String subject = "Nova porudžbina od " + request.getIme() + " " + request.getPrezime();
         String body = generateEmailBody(request);
 
@@ -31,7 +31,7 @@ public class OrderService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
-            helper.setFrom("vladimir12934@gmail.com");
+            helper.setFrom(credentialManager.getMailUser());
             helper.setTo(to);
             helper.setSubject(subject);
             helper.setText(body, true);

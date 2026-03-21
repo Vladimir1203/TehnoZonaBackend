@@ -28,18 +28,21 @@ public class FeedRefreshService {
     private final VendorRepository vendorRepository;
     private final EmailService emailService;
     private final JdbcTemplate jdbcTemplate;
+    private final CredentialManager credentialManager;
     private final org.springframework.web.client.RestTemplate restTemplate;
 
     public FeedRefreshService(FeedSourceRepository feedSourceRepository,
             XmlFeedHistoryRepository historyRepository,
             VendorRepository vendorRepository,
             EmailService emailService,
-            JdbcTemplate jdbcTemplate) {
+            JdbcTemplate jdbcTemplate,
+            CredentialManager credentialManager) {
         this.feedSourceRepository = feedSourceRepository;
         this.historyRepository = historyRepository;
         this.vendorRepository = vendorRepository;
         this.emailService = emailService;
         this.jdbcTemplate = jdbcTemplate;
+        this.credentialManager = credentialManager;
 
         org.springframework.http.client.SimpleClientHttpRequestFactory factory = new org.springframework.http.client.SimpleClientHttpRequestFactory();
         factory.setConnectTimeout(30000);
@@ -86,11 +89,11 @@ public class FeedRefreshService {
         String connector = baseUrl.contains("?") ? "&" : "?";
 
         if (vendorName.contains("uspon")) {
-            return baseUrl + connector + CredentialManager.getUsponParams() + "&slike=1&opis=1";
+            return baseUrl + connector + credentialManager.getUsponParams() + "&slike=1&opis=1";
         } else if (vendorName.contains("linkom")) {
-            return baseUrl + connector + CredentialManager.getLinkomParams() + "&slike=1&opis=1&karakteristike=1";
+            return baseUrl + connector + credentialManager.getLinkomParams() + "&slike=1&opis=1&karakteristike=1";
         } else if (vendorName.contains("avtera")) {
-            return baseUrl + connector + CredentialManager.getAvteraParams() + "&slike=1&opis=1";
+            return baseUrl + connector + credentialManager.getAvteraParams() + "&slike=1&opis=1";
         }
 
         return baseUrl;

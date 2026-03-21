@@ -1,6 +1,7 @@
 package com.tehno.tehnozonaspring.controller;
 
 import com.tehno.tehnozonaspring.service.FeedRefreshService;
+import com.tehno.tehnozonaspring.util.CredentialManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,11 +11,14 @@ public class FeedController {
 
     private final FeedRefreshService feedRefreshService;
     private final com.tehno.tehnozonaspring.service.EmailService emailService;
+    private final CredentialManager credentialManager;
 
     public FeedController(FeedRefreshService feedRefreshService,
-            com.tehno.tehnozonaspring.service.EmailService emailService) {
+            com.tehno.tehnozonaspring.service.EmailService emailService,
+            CredentialManager credentialManager) {
         this.feedRefreshService = feedRefreshService;
         this.emailService = emailService;
+        this.credentialManager = credentialManager;
     }
 
     @PostMapping("/refresh/{vendorId}")
@@ -35,6 +39,6 @@ public class FeedController {
     @PostMapping("/test-alert")
     public ResponseEntity<String> testAlert() {
         emailService.sendErrorNotification("TEST VENDOR", "Ovo je testna poruka sistema za obaveštavanje.");
-        return ResponseEntity.ok("Test alert sent to vladimir12934@gmail.com");
+        return ResponseEntity.ok("Test alert sent to " + credentialManager.getMailUser());
     }
 }
