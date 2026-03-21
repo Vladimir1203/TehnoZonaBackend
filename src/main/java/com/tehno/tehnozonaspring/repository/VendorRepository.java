@@ -112,12 +112,25 @@ public interface VendorRepository extends JpaRepository<Vendor, Long> {
     @Transactional
     @Query(value = """
                 INSERT INTO vendor (id, name, xml_data)
-                VALUES (:id, :name, CAST(:xmlData AS xml))
-                ON CONFLICT (id) DO UPDATE SET
-                    name = EXCLUDED.name,
-                    xml_data = EXCLUDED.xml_data
+                VALUES (:id, :name, CAST('' AS xml))
+                ON CONFLICT (id) DO NOTHING
             """, nativeQuery = true)
-    void insertVendor(@Param("id") Long id, @Param("name") String name, @Param("xmlData") String xmlData);
+    void insertVendor(@Param("id") Long id, @Param("name") String name);
+
+    @Modifying
+    @Transactional
+    @Query(value = """
+                UPDATE vendor
+                SET xml_data = (
+                    SELECT xml_content
+                    FROM xml_feed_history
+                    WHERE vendor_id = :vendorId AND status = 'ACTIVE'
+                    ORDER BY created_at DESC
+                    LIMIT 1
+                )
+                WHERE id = :vendorId
+            """, nativeQuery = true)
+    void syncVendorXmlFromHistory(@Param("vendorId") Long vendorId);
 
     @Query(value = "SELECT id FROM vendor", nativeQuery = true)
     List<Long> vratiSveIdjeve();

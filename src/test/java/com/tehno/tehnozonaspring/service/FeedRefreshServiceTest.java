@@ -2,15 +2,14 @@ package com.tehno.tehnozonaspring.service;
 
 import com.tehno.tehnozonaspring.model.FeedSource;
 import com.tehno.tehnozonaspring.model.Vendor;
-import com.tehno.tehnozonaspring.model.XmlFeedHistory;
 import com.tehno.tehnozonaspring.repository.FeedSourceRepository;
 import com.tehno.tehnozonaspring.repository.VendorRepository;
 import com.tehno.tehnozonaspring.repository.XmlFeedHistoryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Optional;
 
@@ -21,70 +20,95 @@ class FeedRefreshServiceTest {
 
     private FeedRefreshService feedRefreshService;
 
-    @Mock
-    private FeedSourceRepository feedSourceRepository;
-    @Mock
-    private XmlFeedHistoryRepository historyRepository;
-    @Mock
-    private VendorRepository vendorRepository;
-    @Mock
-    private EmailService emailService;
+    @Mock private FeedSourceRepository feedSourceRepository;
+    @Mock private XmlFeedHistoryRepository historyRepository;
+    @Mock private VendorRepository vendorRepository;
+    @Mock private EmailService emailService;
+    @Mock private JdbcTemplate jdbcTemplate;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        feedRefreshService = new FeedRefreshService(feedSourceRepository, historyRepository, vendorRepository,
-                emailService);
+        feedRefreshService = new FeedRefreshService(
+                feedSourceRepository, historyRepository, vendorRepository, emailService, jdbcTemplate);
     }
 
     @Test
-    void testRefreshVendorFeed_Success() throws Exception {
-        // Arrange
+    void testRefreshVendorFeed_NoChangesDetected_WhenHashMatches() throws Exception {
         Long vendorId = 1L;
         FeedSource source = new FeedSource();
-        source.setVendor(new Vendor());
-        source.getVendor().setId(vendorId);
+        Vendor vendor = new Vendor();
+        vendor.setId(vendorId);
+        vendor.setName("uspon");
+        source.setVendor(vendor);
         source.setEndpointUrl("classpath:TehnoZona-uspon.txt");
-        source.setXsdPath("schemas/uspon.xsd");
+        source.setXsdPath(null);
 
         when(feedSourceRepository.findByVendorId(vendorId)).thenReturn(Optional.of(source));
-        when(historyRepository.findTopByVendorIdAndStatusOrderByCreatedAtDesc(vendorId, "ACTIVE"))
-                .thenReturn(Optional.empty());
-        when(vendorRepository.findById(vendorId)).thenReturn(Optional.of(new Vendor()));
 
-        // Act
-        feedRefreshService.refreshVendorFeed(vendorId);
+        // Calculate real hash of the classpath file so we can simulate "no change"
+        java.io.InputStream is = getClass().getClassLoader().getResourceAsStream("TehnoZona-uspon.txt");
+        assumeResourceExists(is);
+        java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
+        byte[] buffer = new byte[8192];
+        int read;
+        while ((read = is.read(buffer)) > 0) digest.update(buffer, 0, read);
+        String realHash = java.util.HexFormat.of().formatHex(digest.digest());
 
-        // Assert
-        verify(historyRepository).insertWithXml(eq(vendorId), anyString(), eq("ACTIVE"), anyString(), any());
-        verify(vendorRepository).insertVendor(eq(vendorId), eq("uspon"), anyString());
+        when(historyRepository.findLastHashByVendorId(vendorId)).thenReturn(realHash);
+
+        boolean result = feedRefreshService.refreshVendorFeed(vendorId);
+
+        assertFalse(result, "Should return false when feed has not changed");
+        verify(jdbcTemplate, never()).update(anyString(), any(), any(), any(), any(), any());
+        verify(vendorRepository, never()).syncVendorXmlFromHistory(any());
     }
 
     @Test
-    void testRefreshVendorFeed_NoChangesDetected() throws Exception {
-        // Arrange
+    void testRefreshVendorFeed_SavesAndActivates_WhenHashDiffers() throws Exception {
         Long vendorId = 1L;
         FeedSource source = new FeedSource();
+        Vendor vendor = new Vendor();
+        vendor.setId(vendorId);
+        vendor.setName("uspon");
+        source.setVendor(vendor);
         source.setEndpointUrl("classpath:TehnoZona-uspon.txt");
+        source.setXsdPath(null); // skip XSD validation
 
-        XmlFeedHistory lastActive = new XmlFeedHistory();
-        // Pre-calculating hash to match "classpath:TehnoZona-uspon.txt" content in mock
-        // Since we are reading the same file, the hashes will match
-        String expectedHash = "da6f7e8a93bc6726c0717466540f531d05903b7eb85e5050f22998a67035f259"; // Dummy but will be
-                                                                                                  // calculated
+        when(feedSourceRepository.findByVendorId(vendorId)).thenReturn(Optional.of(source));
+        when(historyRepository.findLastHashByVendorId(vendorId)).thenReturn("old-hash-that-wont-match");
+
+        boolean result = feedRefreshService.refreshVendorFeed(vendorId);
+
+        assertTrue(result, "Should return true when feed has changed");
+        verify(historyRepository).archiveCurrentActive(vendorId);
+        verify(jdbcTemplate).update(anyString(), eq(vendorId), any(), eq("ACTIVE"), anyString(), any());
+        verify(vendorRepository).syncVendorXmlFromHistory(vendorId);
+        verify(historyRepository).cleanupOldFeeds(vendorId);
+        verify(emailService).sendSuccessNotification(eq("uspon"), anyString());
+    }
+
+    @Test
+    void testRefreshVendorFeed_SendsErrorEmail_OnException() throws Exception {
+        Long vendorId = 1L;
+        FeedSource source = new FeedSource();
+        Vendor vendor = new Vendor();
+        vendor.setId(vendorId);
+        vendor.setName("uspon");
+        source.setVendor(vendor);
+        source.setEndpointUrl("classpath:nonexistent-file.xml");
+        source.setXsdPath(null);
 
         when(feedSourceRepository.findByVendorId(vendorId)).thenReturn(Optional.of(source));
 
-        // We'll let the real calculateHash run and return it as the mock value to
-        // simulate matching hashes
-        // For that we need to spy the service or just run it once to see what it
-        // produces.
-        // Let's just verify that if the hash matches, save is NOT called.
+        assertThrows(Exception.class, () -> feedRefreshService.refreshVendorFeed(vendorId));
+        verify(emailService).sendErrorNotification(eq("uspon"), anyString());
+    }
 
-        // First run to get hash (or simulate it)
-        when(historyRepository.findTopByVendorIdAndStatusOrderByCreatedAtDesc(vendorId, "ACTIVE"))
-                .thenReturn(Optional.empty());
-        // Since Optional.empty is returned, it will proceed.
-        // To test "No Changes", we need to return the CORRECT hash in the mock.
+    private void assumeResourceExists(java.io.InputStream is) {
+        if (is == null) {
+            // classpath resource not present - skip test gracefully
+            org.junit.jupiter.api.Assumptions.assumeTrue(false, "TehnoZona-uspon.txt not found in classpath, skipping");
+        }
     }
 }

@@ -123,7 +123,7 @@ public class DatabaseConfig {
                         (xpath('//ean1/text()', art_xml))[1]::text as barkod,
                         (xpath('//title/text()', art_xml))[1]::text as naziv,
                         (COALESCE(NULLIF((xpath('//b2cpricewotax/text()', art_xml))[1]::text, ''), '0')::numeric * 1.2) as mpcena,
-                        COALESCE(UPPER(TRIM(split_part((xpath('//classtitle/text()', art_xml))[1]::text, '\\\\', 2))), '') as nadgrupa,
+                        COALESCE(UPPER(TRIM(split_part((xpath('//classtitle/text()', art_xml))[1]::text, chr(92), 2))), '') as nadgrupa,
                         UPPER(TRIM(COALESCE((xpath('//classtitle/text()', art_xml))[1]::text, ''))) as grupa,
                         UPPER(TRIM(COALESCE((xpath('//articlebrand/text()', art_xml))[1]::text, ''))) as proizvodjac,
                         XMLELEMENT(NAME artikal,
@@ -132,7 +132,7 @@ public class DatabaseConfig {
                             XMLELEMENT(NAME barkod, (xpath('//ean1/text()', art_xml))[1]::text),
                             XMLELEMENT(NAME naziv, (xpath('//title/text()', art_xml))[1]::text),
                             XMLELEMENT(NAME pdv, 20),
-                            XMLELEMENT(NAME nadgrupa, (split_part((xpath('//classtitle/text()', art_xml))[1]::text, '\\\\', 2))),
+                            XMLELEMENT(NAME nadgrupa, (split_part((xpath('//classtitle/text()', art_xml))[1]::text, chr(92), 2))),
                             XMLELEMENT(NAME grupa, (xpath('//classtitle/text()', art_xml))[1]::text),
                             XMLELEMENT(NAME proizvodjac, (xpath('//articlebrand/text()', art_xml))[1]::text),
                             XMLELEMENT(NAME jedinica_mere, (xpath('//unit/text()', art_xml))[1]::text),
@@ -145,7 +145,11 @@ public class DatabaseConfig {
                             ),
                             XMLELEMENT(NAME slike,
                                 (SELECT xmlagg(XMLELEMENT(NAME slika, s)) FROM (
-                                    SELECT trim(both ' ' from replace(replace(replace(unnest(xpath('//slikaVelika/text() | //dodatneSlike//*/text()', art_xml))::text, '<![CDATA[', ''), ']]>', ''), ']]', '')) as s
+                                    SELECT trim(both ' ' from
+                                        replace(replace(replace(replace(replace(
+                                            unnest(xpath('//slikaVelika/text() | //dodatneSlike//*/text()', art_xml))::text,
+                                        '<![CDATA[', ''), '![CDATA[', ''), ']]>', ''), ']]', ''), '&amp;', '&')
+                                    ) as s
                                 ) sub)
                             )
                         )::text as original_xml
@@ -172,11 +176,13 @@ public class DatabaseConfig {
                             XMLELEMENT(NAME nadgrupa, trim(both ' ' from replace(replace(replace((xpath('//category/text()', art_xml))[1]::text, '<![CDATA[', ''), ']]>', ''), ']]', ''))),
                             XMLELEMENT(NAME grupa, trim(both ' ' from replace(replace(replace((xpath('//category/text()', art_xml))[1]::text, '<![CDATA[', ''), ']]>', ''), ']]', ''))),
                             XMLELEMENT(NAME proizvodjac, trim(both ' ' from replace(replace(replace((xpath('//manufacturer/text()', art_xml))[1]::text, '<![CDATA[', ''), ']]>', ''), ']]', ''))),
+                            XMLELEMENT(NAME model, trim(both ' ' from replace(replace(replace((xpath('//model/text()', art_xml))[1]::text, '<![CDATA[', ''), ']]>', ''), ']]', ''))),
                             XMLELEMENT(NAME jedinica_mere, 'KOM'),
                             XMLELEMENT(NAME kolicina, (xpath('//stock/text()', art_xml))[1]::text),
                             XMLELEMENT(NAME b2bcena, (xpath('//price/text()', art_xml))[1]::text),
                             XMLELEMENT(NAME valuta, (xpath('//currency/text()', art_xml))[1]::text),
                             XMLELEMENT(NAME mpcena, COALESCE(NULLIF(trim(both ' ' from replace(replace(replace((xpath('//price/text()', art_xml))[1]::text, '<![CDATA[', ''), ']]>', ''), ']]', '')), ''), '0')::numeric),
+                            XMLELEMENT(NAME deklaracija, trim(both ' ' from replace(replace(replace((xpath('//declaration/text()', art_xml))[1]::text, '<![CDATA[', ''), ']]>', ''), ']]', ''))),
                             XMLELEMENT(NAME opis,
                                 (SELECT xmlagg(n) FROM (SELECT unnest(xpath('//description/node()', art_xml)) as n) sub)
                             ),

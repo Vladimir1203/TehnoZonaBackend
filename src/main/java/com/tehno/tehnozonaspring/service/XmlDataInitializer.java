@@ -34,7 +34,7 @@ public class XmlDataInitializer implements CommandLineRunner {
 
     private void initVendor(Long id, String name, String url, String xsd, String cron) {
         if (!vendorRepository.existsById(id)) {
-            vendorRepository.insertVendor(id, name, "");
+            vendorRepository.insertVendor(id, name);
             System.out.println("Initialized Vendor: " + name);
         }
 
