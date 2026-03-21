@@ -29,6 +29,9 @@ public class XmlDataInitializer implements CommandLineRunner {
         // 3. AVTERA
         initVendor(3L, "avtera", "http://b2b.avtera.rs/src/export_xml_asr.php", "schemas/avtera.xsd", "0 0 5 * * *");
 
+        // 4. SPEKTAR
+        initVendor(4L, "spektar", "https://api.v2.spektar.rs/storage//exports/xml/tehno-zona-SPB1u8ERxpTRlaES4cvUlWmVAJjOSCYc.xml", null, "0 45 3 * * *");
+
         System.out.println("✅ Database initialization complete. All vendors synced.");
     }
 

@@ -66,6 +66,8 @@ public class DatabaseConfig {
                             )
                         )::text as original_xml
                     FROM (SELECT unnest(xpath('/artikli/artikal', xml_data)) as art_xml FROM vendor WHERE id = 1) t1
+                    WHERE COALESCE(NULLIF((xpath('//mpcena/text()', art_xml))[1]::text, ''), '0')::numeric > 0
+                       OR COALESCE(NULLIF((xpath('//cena/text()', art_xml))[1]::text, ''), '0')::numeric > 0
 
                     UNION ALL
 
@@ -113,6 +115,8 @@ public class DatabaseConfig {
                             )
                         )::text as original_xml
                     FROM (SELECT unnest(xpath('/artikli/artikal', xml_data)) as art_xml FROM vendor WHERE id = 2) t2
+                    WHERE COALESCE(NULLIF((xpath('//mpcena/text()', art_xml))[1]::text, ''), '0')::numeric > 0
+                       OR COALESCE(NULLIF((xpath('//cena/text()', art_xml))[1]::text, ''), '0')::numeric > 0
 
                     UNION ALL
 
@@ -154,6 +158,7 @@ public class DatabaseConfig {
                             )
                         )::text as original_xml
                     FROM (SELECT unnest(xpath('/xmlData/Article', xml_data)) as art_xml FROM vendor WHERE id = 3) t3
+                    WHERE COALESCE(NULLIF((xpath('//b2cpricewotax/text()', art_xml))[1]::text, ''), '0')::numeric > 0
 
                     UNION ALL
 
@@ -192,7 +197,8 @@ public class DatabaseConfig {
                                 ) sub)
                             )
                         )::text as original_xml
-                    FROM (SELECT unnest(xpath('/products/product', xml_data)) as art_xml FROM vendor WHERE id = 4) t4;
+                    FROM (SELECT unnest(xpath('/products/product', xml_data)) as art_xml FROM vendor WHERE id = 4) t4
+                    WHERE COALESCE(NULLIF(trim(both ' ' from replace(replace(replace((xpath('//price/text()', art_xml))[1]::text, '<![CDATA[', ''), ']]>', ''), ']]', '')), ''), '0')::numeric > 0;
                 """;
 
         try {
