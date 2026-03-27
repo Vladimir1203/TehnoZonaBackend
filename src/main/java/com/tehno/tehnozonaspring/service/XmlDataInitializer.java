@@ -42,6 +42,15 @@ public class XmlDataInitializer implements CommandLineRunner {
 
         System.out.println("✅ Database initialization complete. All vendors synced.");
 
+        // Ako artikal tabela ne postoji (migracija jos nije pokrenuta), preskoci import
+        boolean artikalTableExists = Boolean.TRUE.equals(jdbcTemplate.queryForObject(
+                "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'artikal')",
+                Boolean.class));
+        if (!artikalTableExists) {
+            System.err.println("IMPORT: artikal tabela ne postoji — pokrenite migration_v2.sql na bazi pre sledeceg restarta.");
+            return;
+        }
+
         // Ako je artikal tabela prazna (prvi start ili reset), importuj iz postojecih XML-ova
         Integer count = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM artikal", Integer.class);
         if (count == null || count == 0) {
