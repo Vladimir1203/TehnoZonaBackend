@@ -27,12 +27,14 @@ class FeedRefreshServiceTest {
     @Mock private EmailService emailService;
     @Mock private JdbcTemplate jdbcTemplate;
     @Mock private CredentialManager credentialManager;
+    @Mock private ArticalImportService artikalImportService;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         feedRefreshService = new FeedRefreshService(
-                feedSourceRepository, historyRepository, vendorRepository, emailService, jdbcTemplate, credentialManager);
+                feedSourceRepository, historyRepository, vendorRepository,
+                emailService, jdbcTemplate, credentialManager, artikalImportService);
     }
 
     @Test

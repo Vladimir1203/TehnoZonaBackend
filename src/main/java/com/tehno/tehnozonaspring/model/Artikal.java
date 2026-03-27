@@ -83,107 +83,84 @@ public class Artikal {
     @XmlElement(name = "filter_grupa")
     private List<FilterGrupa> filteri;
 
+    // Polje koje dolazi iz artikal tabele (ne postoji u XML-u)
+    private String glavnaGrupa;
+
     // GETTER I SETTER METODE
-    public Long getVendorId() {
-        return vendorId;
-    }
+    public Long getVendorId() { return vendorId; }
+    public void setVendorId(Long vendorId) { this.vendorId = vendorId; }
 
-    public void setVendorId(Long vendorId) {
-        this.vendorId = vendorId;
-    }
+    public String getSifra() { return sifra; }
+    public void setSifra(String sifra) { this.sifra = sifra; }
 
-    public String getSifra() {
-        return sifra;
-    }
+    public String getBarkod() { return barkod; }
+    public void setBarkod(String barkod) { this.barkod = barkod; }
 
-    public String getBarkod() {
-        return barkod;
-    }
+    public String getNaziv() { return naziv; }
+    public void setNaziv(String naziv) { this.naziv = naziv; }
 
-    public String getNaziv() {
-        return naziv;
-    }
+    public int getPdv() { return pdv; }
+    public void setPdv(int pdv) { this.pdv = pdv; }
 
-    public int getPdv() {
-        return pdv;
-    }
+    public String getNadgrupa() { return nadgrupa; }
+    public void setNadgrupa(String nadgrupa) { this.nadgrupa = nadgrupa; }
 
-    public String getNadgrupa() {
-        return nadgrupa;
-    }
+    public String getGrupa() { return grupa; }
+    public void setGrupa(String grupa) { this.grupa = grupa; }
 
-    public String getGrupa() {
-        return grupa;
-    }
+    public String getGlavnaGrupa() { return glavnaGrupa; }
+    public void setGlavnaGrupa(String glavnaGrupa) { this.glavnaGrupa = glavnaGrupa; }
 
-    public String getProizvodjac() {
-        return proizvodjac;
-    }
+    public String getProizvodjac() { return proizvodjac; }
+    public void setProizvodjac(String proizvodjac) { this.proizvodjac = proizvodjac; }
 
-    public String getJedinicaMere() {
-        return jedinicaMere;
-    }
+    public String getJedinicaMere() { return jedinicaMere; }
+    public void setJedinicaMere(String jedinicaMere) { this.jedinicaMere = jedinicaMere; }
 
-    public String getModel() {
-        return model;
-    }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
 
-    public String getKolicina() {
-        return kolicina;
-    }
+    public String getKolicina() { return kolicina; }
+    public void setKolicina(String kolicina) { this.kolicina = kolicina; }
 
-    public double getB2bcena() {
-        return b2bcena;
-    }
+    public double getB2bcena() { return b2bcena; }
+    public void setB2bcena(double b2bcena) { this.b2bcena = b2bcena; }
 
-    public String getValuta() {
-        return valuta;
-    }
+    public String getValuta() { return valuta; }
+    public void setValuta(String valuta) { this.valuta = valuta; }
 
-    public int getFlagAkcijskaCena() {
-        return flagAkcijskaCena;
-    }
+    public int getFlagAkcijskaCena() { return flagAkcijskaCena; }
+    public void setFlagAkcijskaCena(int flagAkcijskaCena) { this.flagAkcijskaCena = flagAkcijskaCena; }
 
-    public double getWebCena() {
-        return webCena;
-    }
+    public double getWebCena() { return webCena; }
+    public void setWebCena(double webCena) { this.webCena = webCena; }
 
-    public double getMpcena() {
-        return mpcena;
-    }
+    public double getMpcena() { return mpcena; }
+    public void setMpcena(double mpcena) { this.mpcena = mpcena; }
 
     // Helper: koristi mpcena, fallback na webCena, ako ni ona ne postoji vraca 0
-    public double getCena() {
-        return mpcena > 0 ? mpcena : webCena;
-    }
+    public double getCena() { return mpcena > 0 ? mpcena : webCena; }
 
-    public String getEnergetskaKlasa() {
-        return energetskaKlasa;
-    }
+    public String getEnergetskaKlasa() { return energetskaKlasa; }
+    public void setEnergetskaKlasa(String energetskaKlasa) { this.energetskaKlasa = energetskaKlasa; }
 
-    public String getEnergetskaKlasaLink() {
-        return energetskaKlasaLink;
-    }
+    public String getEnergetskaKlasaLink() { return energetskaKlasaLink; }
+    public void setEnergetskaKlasaLink(String energetskaKlasaLink) { this.energetskaKlasaLink = energetskaKlasaLink; }
 
-    public String getEnergetskaKlasaPdf() {
-        return energetskaKlasaPdf;
-    }
+    public String getEnergetskaKlasaPdf() { return energetskaKlasaPdf; }
+    public void setEnergetskaKlasaPdf(String energetskaKlasaPdf) { this.energetskaKlasaPdf = energetskaKlasaPdf; }
 
-    public String getDeklaracija() {
-        return deklaracija;
-    }
+    public String getDeklaracija() { return deklaracija; }
+    public void setDeklaracija(String deklaracija) { this.deklaracija = deklaracija; }
 
-    public String getOpis() {
-        return opis;
-    }
+    public String getOpis() { return opis; }
+    public void setOpis(String opis) { this.opis = opis; }
 
-    public List<String> getSlike() {
-        return slike;
-    }
+    public List<String> getSlike() { return slike; }
+    public void setSlike(List<String> slike) { this.slike = slike; }
 
-    public List<FilterGrupa> getFilteri() {
-        return filteri;
-    }
+    public List<FilterGrupa> getFilteri() { return filteri; }
+    public void setFilteri(List<FilterGrupa> filteri) { this.filteri = filteri; }
 
     @XmlRootElement(name = "filter_grupa")
     public static class FilterGrupa {

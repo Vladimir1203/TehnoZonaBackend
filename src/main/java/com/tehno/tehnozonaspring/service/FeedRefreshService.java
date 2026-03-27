@@ -29,6 +29,7 @@ public class FeedRefreshService {
     private final EmailService emailService;
     private final JdbcTemplate jdbcTemplate;
     private final CredentialManager credentialManager;
+    private final ArticalImportService artikalImportService;
     private final org.springframework.web.client.RestTemplate restTemplate;
 
     public FeedRefreshService(FeedSourceRepository feedSourceRepository,
@@ -36,13 +37,15 @@ public class FeedRefreshService {
             VendorRepository vendorRepository,
             EmailService emailService,
             JdbcTemplate jdbcTemplate,
-            CredentialManager credentialManager) {
+            CredentialManager credentialManager,
+            ArticalImportService artikalImportService) {
         this.feedSourceRepository = feedSourceRepository;
         this.historyRepository = historyRepository;
         this.vendorRepository = vendorRepository;
         this.emailService = emailService;
         this.jdbcTemplate = jdbcTemplate;
         this.credentialManager = credentialManager;
+        this.artikalImportService = artikalImportService;
 
         org.springframework.http.client.SimpleClientHttpRequestFactory factory = new org.springframework.http.client.SimpleClientHttpRequestFactory();
         factory.setConnectTimeout(30000);
@@ -189,5 +192,8 @@ public class FeedRefreshService {
         vendorRepository.syncVendorXmlFromHistory(vendorId);
 
         historyRepository.cleanupOldFeeds(vendorId);
+
+        // Faza 2: popuni normalizovanu artikal tabelu iz novog XML-a
+        artikalImportService.importFromVendor(vendorId);
     }
 }
