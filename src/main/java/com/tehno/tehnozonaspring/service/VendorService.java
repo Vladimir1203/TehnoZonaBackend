@@ -40,43 +40,47 @@ public class VendorService {
     private final CategoryImageService categoryImageService;
     private final Map<String, String> imagePathCache = new java.util.concurrent.ConcurrentHashMap<>();
 
-    private final Map<String, List<String>> groupMap = Map.of(
-            "BELA TEHNIKA I KUĆNI APARATI", List.of(
-                    "BELA TEHNIKA", "MALI KUĆNI APARATI", "GREJANJE", "HLADNJACI", "KUĆNA BELA TEHNIKA",
-                    "MALI KUHINJSKI APARATI", "KLIMATIZACIJA I GREJANJE", "ASPIRATORI"),
-            "TV, FOTO, AUDIO I VIDEO", List.of(
-                    "AUDIO, HI-FI", "TV, AUDIO, VIDEO", "FOTOAPARATI I KAMERE", "DIGITALNI SNIMAČI",
-                    "PROJEKTORI I OPREMA", "ZVUČNICI", "SLUŠALICE I MIKROFONI", "KAMERE", "TELEVIZORI", "COMMERCIAL TV",
-                    "HOTEL TV", "AUDIO-VIDEO", "SMART TV BOX"),
-            "RAČUNARI, KOMPONENTE I GAMING", List.of(
-                    "LAPTOP I TABLET RAČUNARI", "DESKTOP RAČUNARI", "SERVERI", "PROCESORI",
-                    "MATIČNE PLOČE", "MEMORIJE", "HARD DISKOVI", "HDD RACK", "GRAFIČKE KARTE",
-                    "GAMING", "RAČUNARI", "RAČUNARSKE KOMPONENTE", "RAČUNARSKE PERIFERIJE",
-                    "PC KOZMETIKA", "SOFTWARE", "MICROSOFT", "WIRELESS", "OPTIČKI UREĐAJI", "ČITAČI KARTICA",
-                    "REKOVI I OPREMA", "TASTATURE", "FIBER", "SSD DISKOVI", "HDD DISKOVI", "MONITORI", "PC DODACI",
-                    "GAMING DODACI", "KONZOLE ZA IGRANJE", "KONZOLE I DODATNA OPREMA"),
-            "TELEFONI, TABLETI I OPREMA", List.of(
-                    "MOBILNI I FIKSNI TELEFONI", "OPREMA ZA MOBILNE TELEFONE", "OPREMA ZA LAPTOPOVE",
-                    "OPREMA ZA TABLETE", "OPREMA ZA TV", "MEMORIJSKE KARTICE I ČITAČI",
-                    "USB FLASH I HDD", "USB KABLOVI", "USB ADAPTERI", "MREŽNA OPREMA", "FIKSNI TELEFONI", "USB FLASH",
-                    "MEMORIJSKA KARTICA", "MOBILE DODACI", "PAMETNI UREĐAJI", "EXTERNI SSD"),
-            "SIGURNOSNI I ALARMNI SISTEMI", List.of(
-                    "ALARMNI SISTEMI", "ALARMNI SISTEM PARADOX", "ALARMNI SISTEM ELDES",
-                    "VIDEO NADZOR I SIGURNOSNA OPREMA", "OPREMA ZA VIDEO NADZOR", "KUTIJE",
-                    "KANALICE", "UTIČNICE", "KONEKTORI I MODULI", "VIDEO NADZOR I  SIGURNOSNA OPREMA", "VIDEO NADZOR"),
-            "ALATI I OPREMA ZA DOM", List.of(
-                    "ALAT I BAŠTA", "BAŠTA", "LED RASVETA", "SVE ZA KUĆU", "BAŠTA I ALATI", "POSUĐE"),
-            "BATERIJE, PUNJAČI I KABLOVI", List.of(
-                    "BATERIJE I PUNJAČI", "KABLOVI", "KABLOVI I ADAPTERI", "PCI ADAPTERI", "PC KABLOVI", "ADAPTERI",
-                    "DODATNA OPREMA"),
-            "FITNESS I SPORT", List.of(
-                    "BICIKLE I FITNES", "NEGA LICA I TELA", "LEPOTA I ZDRAVLJE"),
-            "KANCELARIJSKI I ŠKOLSKI MATERIJAL", List.of(
-                    "KANCELARIJSKI MATERIJAL", "ŠKOLSKI PRIBOR", "ŠTAMPAČI", "TONERI",
-                    "KERTRIDŽ", "RIBONI", "MASTILA", "CD, DVD MEDIJI", "SKENERI I FOTOKOPIRI", "POTROŠNI MATERIJAL",
-                    "ŠTAMPAČ", "MULTIFUNKCIJSKI ŠTAMPAČ", "SKENER", "KOPIR", "BUBANJ", "REZERVNI DEO", "PR"),
-            "OSTALO I OUTLET", List.of(
-                    "OUTLET", "RAZNO", "REZERVNI DEO", "DODATNA", "POS OPREMA", "OSTALO"));
+    private final Map<String, List<String>> groupMap;
+
+    {
+        groupMap = new java.util.LinkedHashMap<>();
+        groupMap.put("BELA TEHNIKA I KUĆNI APARATI", List.of(
+                "BELA TEHNIKA", "MALI KUĆNI APARATI", "GREJANJE", "HLADNJACI", "KUĆNA BELA TEHNIKA",
+                "MALI KUHINJSKI APARATI", "KLIMATIZACIJA I GREJANJE", "ASPIRATORI"));
+        groupMap.put("TV, FOTO, AUDIO I VIDEO", List.of(
+                "AUDIO, HI-FI", "TV, AUDIO, VIDEO", "FOTOAPARATI I KAMERE", "DIGITALNI SNIMAČI",
+                "PROJEKTORI I OPREMA", "ZVUČNICI", "SLUŠALICE I MIKROFONI", "KAMERE", "TELEVIZORI", "COMMERCIAL TV",
+                "HOTEL TV", "AUDIO-VIDEO", "SMART TV BOX"));
+        groupMap.put("RAČUNARI, KOMPONENTE I GAMING", List.of(
+                "LAPTOP I TABLET RAČUNARI", "DESKTOP RAČUNARI", "SERVERI", "PROCESORI",
+                "MATIČNE PLOČE", "MEMORIJE", "HARD DISKOVI", "HDD RACK", "GRAFIČKE KARTE",
+                "GAMING", "RAČUNARI", "RAČUNARSKE KOMPONENTE", "RAČUNARSKE PERIFERIJE",
+                "PC KOZMETIKA", "SOFTWARE", "MICROSOFT", "WIRELESS", "OPTIČKI UREĐAJI", "ČITAČI KARTICA",
+                "REKOVI I OPREMA", "TASTATURE", "FIBER", "SSD DISKOVI", "HDD DISKOVI", "MONITORI", "PC DODACI",
+                "GAMING DODACI", "KONZOLE ZA IGRANJE", "KONZOLE I DODATNA OPREMA"));
+        groupMap.put("TELEFONI, TABLETI I OPREMA", List.of(
+                "MOBILNI I FIKSNI TELEFONI", "OPREMA ZA MOBILNE TELEFONE", "OPREMA ZA LAPTOPOVE",
+                "OPREMA ZA TABLETE", "OPREMA ZA TV", "MEMORIJSKE KARTICE I ČITAČI",
+                "USB FLASH I HDD", "USB KABLOVI", "USB ADAPTERI", "MREŽNA OPREMA", "FIKSNI TELEFONI", "USB FLASH",
+                "MEMORIJSKA KARTICA", "MOBILE DODACI", "PAMETNI UREĐAJI", "EXTERNI SSD"));
+        groupMap.put("SIGURNOSNI I ALARMNI SISTEMI", List.of(
+                "ALARMNI SISTEMI", "ALARMNI SISTEM PARADOX", "ALARMNI SISTEM ELDES",
+                "VIDEO NADZOR I SIGURNOSNA OPREMA", "OPREMA ZA VIDEO NADZOR", "KUTIJE",
+                "KANALICE", "UTIČNICE", "KONEKTORI I MODULI", "VIDEO NADZOR I  SIGURNOSNA OPREMA", "VIDEO NADZOR"));
+        groupMap.put("KANCELARIJSKI I ŠKOLSKI MATERIJAL", List.of(
+                "KANCELARIJSKI MATERIJAL", "ŠKOLSKI PRIBOR", "ŠTAMPAČI", "TONERI",
+                "KERTRIDŽ", "RIBONI", "MASTILA", "CD, DVD MEDIJI", "SKENERI I FOTOKOPIRI", "POTROŠNI MATERIJAL",
+                "ŠTAMPAČ", "MULTIFUNKCIJSKI ŠTAMPAČ", "SKENER", "KOPIR", "BUBANJ", "REZERVNI DEO", "PR"));
+        groupMap.put("BATERIJE, PUNJAČI I KABLOVI", List.of(
+                "BATERIJE I PUNJAČI", "KABLOVI", "KABLOVI I ADAPTERI", "PCI ADAPTERI", "PC KABLOVI", "ADAPTERI",
+                "DODATNA OPREMA"));
+        groupMap.put("ALATI I OPREMA ZA DOM", List.of(
+                "ALAT I BAŠTA", "BAŠTA", "LED RASVETA", "SVE ZA KUĆU", "BAŠTA I ALATI", "POSUĐE"));
+        groupMap.put("FITNESS I SPORT", List.of(
+                "BICIKLE I FITNES", "NEGA LICA I TELA", "LEPOTA I ZDRAVLJE"));
+        groupMap.put("OSTALO I OUTLET", List.of(
+                "OUTLET", "RAZNO", "REZERVNI DEO", "DODATNA", "POS OPREMA", "OSTALO"));
+    }
 
     private static final List<String> GLAVNI_PROIZVODJACI = List.of(
             "BEKO", "BOSCH", "GORENJE", "HISENSE",
