@@ -21,16 +21,18 @@ public class ArticalImportService {
     private final JdbcTemplate jdbcTemplate;
     private final EmailService emailService;
     private final ObjectMapper objectMapper;
+    private final CloudinaryService cloudinaryService;
 
-    // Velicina batch-a za bulk INSERT
     private static final int BATCH_SIZE = 500;
 
     public ArticalImportService(JdbcTemplate jdbcTemplate,
                                 EmailService emailService,
-                                ObjectMapper objectMapper) {
+                                ObjectMapper objectMapper,
+                                CloudinaryService cloudinaryService) {
         this.jdbcTemplate = jdbcTemplate;
         this.emailService = emailService;
         this.objectMapper = objectMapper;
+        this.cloudinaryService = cloudinaryService;
     }
 
     /**
@@ -277,7 +279,8 @@ public class ArticalImportService {
 
         StringBuilder slikeTag = new StringBuilder("<slike>");
         for (String url : urls) {
-            slikeTag.append("<slika>").append(escapeXml(url)).append("</slika>");
+            String finalUrl = cloudinaryService.uploadFromUrl(url);
+            slikeTag.append("<slika>").append(escapeXml(finalUrl)).append("</slika>");
         }
         slikeTag.append("</slike>");
 
@@ -393,7 +396,7 @@ public class ArticalImportService {
 
     /**
      * Linkom XML je isti format kao Uspon (<artikal> root) ali koristi <cena>
-     * umesto <mpcena>. Ako je mpcena=0 a cena>0, konvertujemo cena*1.2 u mpcena.
+     * umesto <mpcena>. Ako je mpcena=0 a cena>0, konvertujemo cena*2.0 u mpcena.
      */
     private String prepareLinkomXml(String xml) {
         java.util.regex.Matcher cenaMatcher = java.util.regex.Pattern
@@ -409,7 +412,7 @@ public class ArticalImportService {
                 double mpcena = Double.parseDouble(mpcenaMatcher.group(1).trim());
                 if (mpcena <= 0 && cena > 0) {
                     xml = xml.replace(mpcenaMatcher.group(0),
-                            "<mpcena>" + (cena * 1.2) + "</mpcena>");
+                            "<mpcena>" + (cena * 2.0) + "</mpcena>");
                 }
             } catch (NumberFormatException ignored) {}
         }
