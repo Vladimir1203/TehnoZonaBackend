@@ -42,50 +42,38 @@ public class ArticalImportService {
     @Transactional
     public void importFromVendor(Long vendorId) {
         try {
-            List<String> xmlStrings = fetchArtikalXmlStrings(vendorId);
-            if (xmlStrings.isEmpty()) {
-                System.out.println("IMPORT: Vendor " + vendorId + " — nema artikala u XML-u.");
-                return;
-            }
-
-            List<Artikal> artikli = parseArtikli(xmlStrings, vendorId);
-            System.out.println("IMPORT: Vendor " + vendorId + " — parsirano " + artikli.size() + " artikala.");
-
-            // Ucitaj sve poznate nadgrupe iz baze jednom
             Map<String, String> mappingCache = loadMappingCache();
-
-            // Skupi nepoznate nadgrupe za email alert
             List<String> nepoznateNadgrupe = new ArrayList<>();
 
-            // Obrisi stare artikle za ovog vendora i ubaci nove
             jdbcTemplate.update("DELETE FROM artikal WHERE vendor_id = ?", vendorId);
 
             List<Object[]> batch = new ArrayList<>();
-            for (Artikal a : artikli) {
-                // mpcena > webCena > b2bcena*1.2 (Linkom/Uspon koriste <cena> koji JAXB cita kao b2bcena)
+            int[] totalCount = {0};
+
+            streamArtikalXmlStrings(vendorId, rawXml -> {
+                String xml = fixDoubleEncodedEntities(rawXml);
+                Artikal a = parseSingleArtikal(xml, vendorId);
+                if (a == null) return;
+
                 double mpcena = a.getMpcena() > 0 ? a.getMpcena()
                               : a.getWebCena() > 0 ? a.getWebCena()
                               : a.getB2bcena() > 0 ? a.getB2bcena() * 1.2
                               : 0;
-                if (mpcena <= 0) continue; // preskoci bez cene
+                if (mpcena <= 0) return;
 
                 String sifra = nullIfBlank(a.getSifra());
-                if (sifra == null) continue; // preskoci bez sifre
+                if (sifra == null) return;
 
                 String nadgrupa = normalizeText(a.getNadgrupa());
                 String grupa = normalizeText(a.getGrupa());
-                // Ako nema nadgrupe (npr. Linkom), pokusaj fallback iz grupe
                 if (nadgrupa == null && grupa != null) {
                     String[] fallback = GRUPA_TO_NADGRUPA.get(grupa);
-                    if (fallback != null) {
-                        nadgrupa = fallback[0];
-                    }
+                    if (fallback != null) nadgrupa = fallback[0];
                 }
                 String glavnaGrupa = resolveGlavnaGrupa(nadgrupa, mappingCache, nepoznateNadgrupe);
 
                 String barkod = cleanBarkod(a.getBarkod());
                 boolean barkodValid = isValidEan(barkod);
-
                 String filteriJson = serializeFilteri(a.getFilteri());
                 String[] slikeArray = buildSlikeArray(a.getSlike());
 
@@ -115,19 +103,20 @@ public class ArticalImportService {
                         slikeArray,
                         filteriJson
                 });
+                totalCount[0]++;
 
                 if (batch.size() >= BATCH_SIZE) {
                     executeBatch(batch);
                     batch.clear();
                 }
-            }
+            });
+
             if (!batch.isEmpty()) {
                 executeBatch(batch);
             }
 
-            System.out.println("IMPORT: Vendor " + vendorId + " — import zavrsен uspesno.");
+            System.out.println("IMPORT: Vendor " + vendorId + " — import zavrsен uspesno. Ukupno: " + totalCount[0]);
 
-            // Posalji email za nepoznate nadgrupe (deduplicirano)
             if (!nepoznateNadgrupe.isEmpty()) {
                 List<String> unique = nepoznateNadgrupe.stream().distinct().sorted().toList();
                 alertNepoznateNadgrupe(vendorId, unique);
@@ -143,10 +132,43 @@ public class ArticalImportService {
     // Pomocne metode
     // ------------------------------------------------------------------
 
+    private void streamArtikalXmlStrings(Long vendorId, java.util.function.Consumer<String> consumer) {
+        String xpathExpr = switch (vendorId.intValue()) {
+            case 1, 2 -> "/artikli/artikal";
+            case 3    -> "/xmlData/Article";
+            case 4    -> "/products/product";
+            default   -> "/artikli/artikal";
+        };
+        String sql = """
+                SELECT unnest(xpath(?, xml_data))::text
+                FROM vendor
+                WHERE id = ?
+                """;
+        jdbcTemplate.query(sql, rs -> {
+            consumer.accept(rs.getString(1));
+        }, xpathExpr, vendorId);
+    }
+
+    private static final JAXBContext JAXB_CTX;
+    static {
+        try { JAXB_CTX = JAXBContext.newInstance(Artikal.class); }
+        catch (Exception e) { throw new RuntimeException(e); }
+    }
+
+    private Artikal parseSingleArtikal(String xml, Long vendorId) {
+        try {
+            String prepared = prepareXmlForVendor(xml, vendorId);
+            Unmarshaller u = JAXB_CTX.createUnmarshaller();
+            Artikal a = (Artikal) u.unmarshal(new StringReader(prepared));
+            a.setVendorId(vendorId);
+            return a;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     /**
-     * Vraca listu XML stringova za svaki artikal iz vendor.xml_data.
-     * Koristi isti XPath pristup kao unified_artikli view, ali na Java strani.
-     * Cisti dvostruko kodirane HTML entitete (npr. &amp;#382; → ž) pre vracanja.
+     * @deprecated Zamenjeno sa streamArtikalXmlStrings + parseSingleArtikal
      */
     private List<String> fetchArtikalXmlStrings(Long vendorId) {
         String xpathExpr = switch (vendorId.intValue()) {
@@ -180,6 +202,18 @@ public class ArticalImportService {
     /**
      * Parsira listu XML stringova u Artikal objekte koristeci JAXB.
      * Za Avteru (vendor 3) prilagodava classtitle pre parsiranja.
+     */
+    private String prepareXmlForVendor(String xml, Long vendorId) {
+        return switch (vendorId.intValue()) {
+            case 2 -> prepareLinkomXml(xml);
+            case 3 -> prepareAvteraXml(xml);
+            case 4 -> prepareSpektarXml(xml);
+            default -> xml;
+        };
+    }
+
+    /**
+     * @deprecated Zamenjeno sa streamArtikalXmlStrings + parseSingleArtikal
      */
     private List<Artikal> parseArtikli(List<String> xmlStrings, Long vendorId) throws Exception {
         JAXBContext ctx = JAXBContext.newInstance(Artikal.class);
