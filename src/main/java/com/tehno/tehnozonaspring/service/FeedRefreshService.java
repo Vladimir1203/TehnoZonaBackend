@@ -71,7 +71,7 @@ public class FeedRefreshService {
                 }
 
                 validateXml(tempFile, source.getXsdPath());
-                saveAndActivate(vendorId, tempFile, currentHash);
+                saveAndImport(vendorId, tempFile, currentHash);
                 emailService.sendSuccessNotification(source.getVendor().getName(), currentHash);
                 return true;
             } finally {
@@ -176,24 +176,19 @@ public class FeedRefreshService {
     protected void saveAndActivate(Long vendorId, File file, String hash) throws Exception {
         historyRepository.archiveCurrentActive(vendorId);
 
-        // Use PGobject to pass XML to JDBC without triple-copying through String + Hibernate
-        // File is read once, wrapped in PGobject, sent to DB, then eligible for GC
         String content = Files.readString(file.toPath(), StandardCharsets.UTF_8);
-        org.postgresql.util.PGobject xmlObj = new org.postgresql.util.PGobject();
-        xmlObj.setType("xml");
-        xmlObj.setValue(content);
-
         jdbcTemplate.update(
-                "INSERT INTO xml_feed_history (vendor_id, xml_content, status, hash_sum, created_at) VALUES (?, ?, ?, ?, ?)",
-                vendorId, xmlObj, "ACTIVE", hash, LocalDateTime.now());
+                "INSERT INTO xml_feed_history (vendor_id, xml_content, status, hash_sum, created_at) VALUES (?, ?::xml, ?, ?, ?)",
+                vendorId, content, "ACTIVE", hash, LocalDateTime.now());
+        content = null; // hint GC to reclaim ~200MB before import phase
 
-        // content String is no longer referenced after this point - eligible for GC
-        // Copy XML from history to vendor entirely within DB - zero additional Java heap
         vendorRepository.syncVendorXmlFromHistory(vendorId);
 
         historyRepository.cleanupOldFeeds(vendorId);
+    }
 
-        // Faza 2: popuni normalizovanu artikal tabelu iz novog XML-a
+    public void saveAndImport(Long vendorId, File file, String hash) throws Exception {
+        saveAndActivate(vendorId, file, hash);
         artikalImportService.importFromVendor(vendorId);
     }
 }
