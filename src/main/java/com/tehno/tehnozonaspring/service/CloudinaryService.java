@@ -28,12 +28,20 @@ public class CloudinaryService {
         ));
     }
 
-    /**
-     * Uploaduje sliku sa URL-a na Cloudinary i vraca https URL.
-     * Ako upload ne uspe, vraca originalni URL.
-     * Koristi public_id baziran na originalnom URL-u da bi se izbeglo
-     * dupliranje iste slike pri ponovnom importu.
-     */
+    public String uploadFile(byte[] bytes, String folder) {
+        try {
+            Map<?, ?> result = cloudinary.uploader().upload(bytes, ObjectUtils.asMap(
+                    "folder", folder,
+                    "resource_type", "image"
+            ));
+            String secureUrl = (String) result.get("secure_url");
+            if (secureUrl != null) return secureUrl;
+            throw new RuntimeException("Cloudinary nije vratio URL");
+        } catch (Exception e) {
+            throw new RuntimeException("Upload na Cloudinary nije uspeo: " + e.getMessage(), e);
+        }
+    }
+
     public String uploadFromUrl(String imageUrl) {
         if (imageUrl == null || imageUrl.isBlank()) return imageUrl;
         try {

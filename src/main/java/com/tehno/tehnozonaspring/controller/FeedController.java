@@ -1,11 +1,13 @@
 package com.tehno.tehnozonaspring.controller;
 
 import com.tehno.tehnozonaspring.service.ArticalImportService;
+import com.tehno.tehnozonaspring.service.CloudinaryService;
 import com.tehno.tehnozonaspring.service.FeedRefreshService;
 import com.tehno.tehnozonaspring.util.CredentialManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -19,17 +21,20 @@ public class FeedController {
     private final com.tehno.tehnozonaspring.service.EmailService emailService;
     private final CredentialManager credentialManager;
     private final JdbcTemplate jdbcTemplate;
+    private final CloudinaryService cloudinaryService;
 
     public FeedController(FeedRefreshService feedRefreshService,
             ArticalImportService artikalImportService,
             com.tehno.tehnozonaspring.service.EmailService emailService,
             CredentialManager credentialManager,
-            JdbcTemplate jdbcTemplate) {
+            JdbcTemplate jdbcTemplate,
+            CloudinaryService cloudinaryService) {
         this.feedRefreshService = feedRefreshService;
         this.artikalImportService = artikalImportService;
         this.emailService = emailService;
         this.credentialManager = credentialManager;
         this.jdbcTemplate = jdbcTemplate;
+        this.cloudinaryService = cloudinaryService;
     }
 
     @PostMapping("/refresh/{vendorId}")
@@ -79,5 +84,18 @@ public class FeedController {
                     m.get("glavnaGrupa"), m.get("nadgrupa"));
         }
         return ResponseEntity.ok("Sačuvano " + mappings.size() + " mapiranja.");
+    }
+
+    @PostMapping("/upload-image")
+    public ResponseEntity<Map<String, String>> uploadImage(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam(value = "folder", defaultValue = "admin-banners") String folder) {
+        try {
+            String url = cloudinaryService.uploadFile(file.getBytes(), folder);
+            return ResponseEntity.ok(Map.of("url", url));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError()
+                    .body(Map.of("error", "Upload nije uspeo: " + e.getMessage()));
+        }
     }
 }
