@@ -4,23 +4,20 @@ import com.tehno.tehnozonaspring.dto.AppliedFiltersDTO;
 import com.tehno.tehnozonaspring.dto.ListResponseDTO;
 import com.tehno.tehnozonaspring.dto.SortEnum;
 import com.tehno.tehnozonaspring.model.Artikal;
-import com.tehno.tehnozonaspring.repository.VendorRepository;
+import com.tehno.tehnozonaspring.repository.ArtikalQueryRepository;
 import com.tehno.tehnozonaspring.util.QueryParserHelper;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Unmarshaller;
 import org.springframework.stereotype.Service;
 
-import java.io.StringReader;
 import java.math.BigDecimal;
 import java.util.*;
 
 @Service
 public class SearchService {
 
-    private final VendorRepository vendorRepository;
+    private final ArtikalQueryRepository artikalQueryRepository;
 
-    public SearchService(VendorRepository vendorRepository) {
-        this.vendorRepository = vendorRepository;
+    public SearchService(ArtikalQueryRepository artikalQueryRepository) {
+        this.artikalQueryRepository = artikalQueryRepository;
     }
 
     public ListResponseDTO<Artikal> search(Long vendorId,
@@ -58,13 +55,10 @@ public class SearchService {
                     appliedFilters);
         }
 
-        // 1. Vendor scope — fetch and parse all artikli
-        List<Artikal> allArtikli = fetchArtikliForVendor(vendorId);
+        // 1. Fetch matching artikli from DB (with Cloudinary URLs)
+        List<Artikal> searchResults = fetchByQuery(vendorId, sanitizedQ);
 
-        // 2. Search filter
-        List<Artikal> searchResults = applySearchFilter(allArtikli, sanitizedQ);
-
-        // 3. Price filter
+        // 2. Price filter
         List<Artikal> afterPriceFilter = applyPriceFilter(searchResults, minCena, maxCena);
 
         // 4. Compute minPrice / maxPrice from results after q filter (before
@@ -102,71 +96,21 @@ public class SearchService {
 
     // ─── Helper methods ───────────────────────────────────────────────
 
-    private List<Artikal> fetchArtikliForVendor(Long vendorId) {
-        List<String> xmlList;
+    private List<Artikal> fetchByQuery(Long vendorId, String query) {
         if (vendorId == 0) {
-            // Unified search across all vendors with lowest price deduplication
-            xmlList = vendorRepository.findUnifiedArtikliXml();
+            List<Artikal> results = artikalQueryRepository.search(query);
+            if (results.isEmpty()) {
+                results = artikalQueryRepository.searchIlike(query);
+            }
+            return results;
         } else {
-            xmlList = vendorRepository.findAllArtikliXmlByVendorId(vendorId);
+            // Vendor-specific: filter artikal table in memory (vendor datasets are smaller)
+            String lowerQuery = query.toLowerCase();
+            return artikalQueryRepository.findByVendorId(vendorId).stream()
+                    .filter(a -> (a.getNaziv() != null && a.getNaziv().toLowerCase().contains(lowerQuery))
+                            || (a.getProizvodjac() != null && a.getProizvodjac().toLowerCase().contains(lowerQuery)))
+                    .toList();
         }
-
-        if (xmlList == null || xmlList.isEmpty()) {
-            return Collections.emptyList();
-        }
-
-        List<Artikal> artikli = new ArrayList<>();
-        try {
-            JAXBContext context = JAXBContext.newInstance(Artikal.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            for (String xml : xmlList) {
-                if (xml == null || xml.trim().isEmpty()) {
-                    continue;
-                }
-                try {
-                    Artikal artikal = (Artikal) unmarshaller.unmarshal(new StringReader(xml));
-                    artikli.add(artikal);
-                } catch (Exception ignored) {
-                    // skip invalid XML entries
-                }
-            }
-        } catch (Exception e) {
-            return Collections.emptyList();
-        }
-        return artikli;
-    }
-
-    private List<Artikal> applySearchFilter(List<Artikal> artikli, String query) {
-        String lowerQuery = query.toLowerCase();
-        boolean isNumeric = query.matches("\\d+");
-
-        List<Artikal> exactMatches = new ArrayList<>();
-        List<Artikal> containsMatches = new ArrayList<>();
-
-        for (Artikal a : artikli) {
-            // If query is numeric → check exact match on sifra or barkod first
-            if (isNumeric) {
-                String sifra = a.getSifra() != null ? a.getSifra().trim() : "";
-                String barkod = a.getBarkod() != null ? a.getBarkod().trim() : "";
-                if (sifra.equals(query) || barkod.equals(query)) {
-                    exactMatches.add(a);
-                    continue;
-                }
-            }
-
-            // Case-insensitive contains on naziv and proizvodjac
-            String naziv = a.getNaziv() != null ? a.getNaziv().toLowerCase() : "";
-            String proizvodjac = a.getProizvodjac() != null ? a.getProizvodjac().toLowerCase() : "";
-
-            if (naziv.contains(lowerQuery) || proizvodjac.contains(lowerQuery)) {
-                containsMatches.add(a);
-            }
-        }
-
-        // Exact matches first, then contains matches
-        List<Artikal> result = new ArrayList<>(exactMatches);
-        result.addAll(containsMatches);
-        return result;
     }
 
     private List<Artikal> applyPriceFilter(List<Artikal> artikli, BigDecimal minCena, BigDecimal maxCena) {
