@@ -354,7 +354,7 @@ public class ArticalImportService {
         String grupa = "";
 
         if (m.find()) {
-            String classtitle = m.group(1).trim();
+            String classtitle = decodeXmlEntities(m.group(1).trim());
             String[] parts = classtitle.split("\\\\");
 
             if (parts.length >= 3) {
@@ -557,8 +557,23 @@ public class ArticalImportService {
         return s.trim();
     }
 
-    private String escapeXml(String s) {
-        return s.replace("&", "&amp;")
+    private String decodeXmlEntities(String s) {
+        if (s == null) return null;
+        // Decode numeric XML entities: &#NNN; and &#xHHH;
+        s = s.replaceAll("&#(\\d+);", m2 -> {
+            try { return String.valueOf((char) Integer.parseInt(m2.group(1))); }
+            catch (Exception e) { return m2.group(0); }
+        });
+        s = s.replaceAll("&#x([0-9a-fA-F]+);", m2 -> {
+            try { return String.valueOf((char) Integer.parseInt(m2.group(1), 16)); }
+            catch (Exception e) { return m2.group(0); }
+        });
+        // Decode named entities
+        return s.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+                .replace("&quot;", "\"").replace("&apos;", "'");
+    }
+
+    private String escapeXml(String s) {        return s.replace("&", "&amp;")
                 .replace("<", "&lt;")
                 .replace(">", "&gt;")
                 .replace("\"", "&quot;")

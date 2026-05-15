@@ -10,9 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -112,40 +109,43 @@ public class FeedRefreshService {
             }
         } else {
             restTemplate.execute(urlString, org.springframework.http.HttpMethod.GET, null, response -> {
-                // Detect charset from Content-Type header, default to UTF-8
-                org.springframework.http.MediaType contentType = response.getHeaders().getContentType();
-                Charset sourceCharset = (contentType != null && contentType.getCharset() != null)
-                        ? contentType.getCharset()
-                        : StandardCharsets.UTF_8;
+                // Read raw bytes first, then detect charset from XML declaration or Content-Type header
+                byte[] rawBytes = response.getBody().readAllBytes();
+
+                // Try to detect encoding from XML declaration (most reliable)
+                Charset sourceCharset = detectXmlCharset(rawBytes);
+                if (sourceCharset == null) {
+                    // Fall back to Content-Type header
+                    org.springframework.http.MediaType contentType = response.getHeaders().getContentType();
+                    sourceCharset = (contentType != null && contentType.getCharset() != null)
+                            ? contentType.getCharset()
+                            : StandardCharsets.UTF_8;
+                }
 
                 if (sourceCharset.equals(StandardCharsets.UTF_8)) {
-                    // No conversion needed
-                    Files.copy(response.getBody(), temp.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                    Files.write(temp.toPath(), rawBytes);
                 } else {
                     // Re-encode to UTF-8 and fix XML declaration
-                    try (BufferedReader reader = new BufferedReader(new InputStreamReader(response.getBody(), sourceCharset));
-                         PrintWriter writer = new PrintWriter(Files.newBufferedWriter(temp.toPath(), StandardCharsets.UTF_8))) {
-                        String line;
-                        boolean firstLine = true;
-                        while ((line = reader.readLine()) != null) {
-                            if (firstLine) {
-                                // Replace or inject UTF-8 XML declaration
-                                if (line.startsWith("<?xml")) {
-                                    line = line.replaceAll("encoding=['\"][^'\"]*['\"]", "encoding=\"UTF-8\"");
-                                    if (!line.contains("encoding=")) {
-                                        line = line.replace("?>", " encoding=\"UTF-8\"?>");
-                                    }
-                                }
-                                firstLine = false;
-                            }
-                            writer.println(line);
-                        }
-                    }
+                    String content = new String(rawBytes, sourceCharset);
+                    content = content.replaceFirst("encoding=['\"][^'\"]*['\"]", "encoding=\"UTF-8\"");
+                    Files.write(temp.toPath(), content.getBytes(StandardCharsets.UTF_8));
                 }
                 return temp;
             });
         }
         return temp;
+    }
+
+    private Charset detectXmlCharset(byte[] rawBytes) {
+        // Read first 200 bytes as ASCII to find <?xml encoding="..."?>
+        String header = new String(rawBytes, 0, Math.min(200, rawBytes.length), StandardCharsets.US_ASCII);
+        java.util.regex.Matcher m = java.util.regex.Pattern
+                .compile("encoding=['\"]([^'\"]+)['\"]", java.util.regex.Pattern.CASE_INSENSITIVE)
+                .matcher(header);
+        if (m.find()) {
+            try { return Charset.forName(m.group(1)); } catch (Exception ignored) {}
+        }
+        return null;
     }
 
     private String calculateHash(File file) throws Exception {
