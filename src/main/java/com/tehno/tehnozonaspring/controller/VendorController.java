@@ -849,4 +849,26 @@ public class VendorController {
         }
     }
 
+    @org.springframework.web.bind.annotation.DeleteMapping("/homepage-items/{id}")
+    public ResponseEntity<Void> deleteHomepageItem(@PathVariable Long id) {
+        try {
+            vendorService.deleteHomepageItem(id);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @org.springframework.web.bind.annotation.PutMapping("/homepage-items/{id}")
+    public ResponseEntity<com.tehno.tehnozonaspring.model.HomepageItem> updateHomepageItem(
+            @PathVariable Long id,
+            @RequestBody com.tehno.tehnozonaspring.dto.HomepageItemRequest request) {
+        try {
+            com.tehno.tehnozonaspring.model.HomepageItem item = vendorService.updateHomepageItem(id, request);
+            return ResponseEntity.ok(item);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

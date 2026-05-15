@@ -615,4 +615,32 @@ public class VendorService {
                 + responses.size());
         return responses;
     }
+
+    public void deleteHomepageItem(Long id) {
+        homepageItemRepository.deleteById(id);
+    }
+
+    public com.tehno.tehnozonaspring.model.HomepageItem updateHomepageItem(Long id,
+            com.tehno.tehnozonaspring.dto.HomepageItemRequest request) {
+        com.tehno.tehnozonaspring.model.HomepageItem item = homepageItemRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("HomepageItem not found: " + id));
+
+        item.setItemType(request.getItemType());
+        item.setSection(request.getSection());
+        if (request.getPriority() != null) item.setPriority(request.getPriority());
+        if (request.getValidFrom() != null) item.setValidFrom(request.getValidFrom());
+        if (request.getValidTo() != null) item.setValidTo(request.getValidTo());
+        item.setBarcode(request.getBarcode());
+        item.setGlavnaGrupa(request.getGlavnaGrupa());
+        item.setNadgrupa(request.getNadgrupa());
+        item.setGrupa(request.getGrupa());
+        item.setBrandName(request.getBrandName());
+        item.setCustomName(request.getCustomName());
+        item.setCustomImageUrl(request.getCustomImageUrl());
+        item.setSubtitle(request.getSubtitle());
+        item.setButtonText(request.getButtonText());
+        item.setButtonRoute(request.getButtonRoute());
+
+        return homepageItemRepository.save(item);
+    }
 }
