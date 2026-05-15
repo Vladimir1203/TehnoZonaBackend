@@ -29,7 +29,8 @@ public class AdminAuthFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(@NonNull HttpServletRequest request) {
-        return !request.getRequestURI().startsWith("/api/admin/");
+        return !request.getRequestURI().startsWith("/api/admin/")
+                || "OPTIONS".equalsIgnoreCase(request.getMethod());
     }
 
     @Override
