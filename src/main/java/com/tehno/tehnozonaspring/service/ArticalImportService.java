@@ -559,16 +559,14 @@ public class ArticalImportService {
 
     private String decodeXmlEntities(String s) {
         if (s == null) return null;
-        // Decode numeric XML entities: &#NNN; and &#xHHH;
-        s = s.replaceAll("&#(\\d+);", m2 -> {
-            try { return String.valueOf((char) Integer.parseInt(m2.group(1))); }
-            catch (Exception e) { return m2.group(0); }
+        s = java.util.regex.Pattern.compile("&#(\\d+);").matcher(s).replaceAll(m2 -> {
+            try { return java.util.regex.Matcher.quoteReplacement(String.valueOf((char) Integer.parseInt(m2.group(1)))); }
+            catch (Exception e) { return java.util.regex.Matcher.quoteReplacement(m2.group(0)); }
         });
-        s = s.replaceAll("&#x([0-9a-fA-F]+);", m2 -> {
-            try { return String.valueOf((char) Integer.parseInt(m2.group(1), 16)); }
-            catch (Exception e) { return m2.group(0); }
+        s = java.util.regex.Pattern.compile("&#x([0-9a-fA-F]+);").matcher(s).replaceAll(m2 -> {
+            try { return java.util.regex.Matcher.quoteReplacement(String.valueOf((char) Integer.parseInt(m2.group(1), 16))); }
+            catch (Exception e) { return java.util.regex.Matcher.quoteReplacement(m2.group(0)); }
         });
-        // Decode named entities
         return s.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
                 .replace("&quot;", "\"").replace("&apos;", "'");
     }
