@@ -137,7 +137,7 @@ public class ArtikalQueryRepository {
         return jdbc.query(
                 "SELECT " + SELECT_COLS + " FROM artikal_dedup" +
                 " WHERE to_tsvector('simple', COALESCE(naziv,'') || ' ' || COALESCE(proizvodjac,'') || ' ' || COALESCE(model,''))" +
-                "       @@ to_tsquery('simple', unaccent(?))" +
+                "       @@ to_tsquery('simple', ?)" +
                 " ORDER BY mpcena ASC",
                 rowMapper(), tsQuery);
     }

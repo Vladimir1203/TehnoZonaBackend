@@ -98,11 +98,15 @@ public class SearchService {
 
     private List<Artikal> fetchByQuery(Long vendorId, String query) {
         if (vendorId == 0) {
-            List<Artikal> results = artikalQueryRepository.search(query);
-            if (results.isEmpty()) {
-                results = artikalQueryRepository.searchIlike(query);
+            try {
+                List<Artikal> results = artikalQueryRepository.search(query);
+                if (results.isEmpty()) {
+                    results = artikalQueryRepository.searchIlike(query);
+                }
+                return results;
+            } catch (Exception e) {
+                return artikalQueryRepository.searchIlike(query);
             }
-            return results;
         } else {
             // Vendor-specific: filter artikal table in memory (vendor datasets are smaller)
             String lowerQuery = query.toLowerCase();
