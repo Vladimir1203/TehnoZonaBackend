@@ -342,6 +342,53 @@ public class ArticalImportService {
         return s.isBlank() || !s.startsWith("http") ? null : s;
     }
 
+    // Avtera XML sends the 3-char sequence "ďż˝" (&#x10F;&#x17C;&#x2DD;) in place of
+    // various Serbian accented characters. Since the same sequence maps to different
+    // chars depending on word context, we use a word-level correction map.
+    // Longer keys must be matched before shorter overlapping ones (e.g. "sudomašina" before "mašina").
+    private static final Map<String, String> AVTERA_WORD_FIX = Map.ofEntries(
+        Map.entry("ďż˝tampaďż˝", "štampač"),
+        Map.entry("ďż˝tampa", "štampač"),        Map.entry("ďż˝zvucnici", "zvučnici"),   // bluetooth zvučnici (misplaced entity)
+        Map.entry("ďż˝poret", "šporet"),
+        Map.entry("friďż˝ider", "frižider"),
+        Map.entry("sudomaďż˝ina", "sudomašina"),
+        Map.entry("maďż˝ina", "mašina"),
+        Map.entry("suďż˝enje", "sušenje"),
+        Map.entry("veďż˝ maďż˝ina", "veš mašina"),
+        Map.entry("veďż˝", "veš"),
+        Map.entry("zamrzivaďż˝", "zamrzivač"),
+        Map.entry("sluďż˝alice", "slušalice"),
+        Map.entry("miďż˝evi", "miševi"),
+        Map.entry("zvuďż˝nici", "zvučnici"),
+        Map.entry("punjaďż˝", "punjač"),
+        Map.entry("peraďż˝", "perač"),
+        Map.entry("usisivaďż˝e", "usisivače"),
+        Map.entry("usisivaďż˝", "usisivač"),
+        Map.entry("dďż˝ezve", "džezve"),
+        Map.entry("ďż˝erpe", "šerpe"),
+        Map.entry("ďż˝inije", "činije"),
+        Map.entry("potroďż˝ni", "potrošni"),
+        Map.entry("baďż˝ta", "bašta")
+    );
+
+    private String fixAvteraClasstitle(String decoded) {
+        if (decoded == null || !decoded.contains("ďż˝")) return decoded;
+        String lower = decoded.toLowerCase(java.util.Locale.ROOT);
+        // Sort entries by key length descending so longer patterns match first
+        List<Map.Entry<String, String>> entries = new ArrayList<>(AVTERA_WORD_FIX.entrySet());
+        entries.sort((a, b) -> b.getKey().length() - a.getKey().length());
+        for (Map.Entry<String, String> e : entries) {
+            int idx = lower.indexOf(e.getKey());
+            if (idx >= 0) {
+                decoded = decoded.substring(0, idx) + e.getValue() + decoded.substring(idx + e.getKey().length());
+                lower = decoded.toLowerCase(java.util.Locale.ROOT);
+            }
+        }
+        // Fallback: drop any remaining ďż˝ sequences
+        decoded = decoded.replace("ďż˝", "");
+        return decoded;
+    }
+
     /**
      * Format: "BREND\NADGRUPA\GRUPA" ili "NADGRUPA\GRUPA"
      */
@@ -354,7 +401,7 @@ public class ArticalImportService {
         String grupa = "";
 
         if (m.find()) {
-            String classtitle = decodeXmlEntities(m.group(1).trim());
+            String classtitle = fixAvteraClasstitle(decodeXmlEntities(m.group(1).trim()));
             String[] parts = classtitle.split("\\\\");
 
             if (parts.length >= 3) {
