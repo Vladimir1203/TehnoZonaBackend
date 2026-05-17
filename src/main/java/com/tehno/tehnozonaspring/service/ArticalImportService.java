@@ -342,51 +342,47 @@ public class ArticalImportService {
         return s.isBlank() || !s.startsWith("http") ? null : s;
     }
 
-    // Avtera XML sends the 3-char sequence "ďż˝" (&#x10F;&#x17C;&#x2DD;) in place of
-    // various Serbian accented characters. Since the same sequence maps to different
-    // chars depending on word context, we use a word-level correction map.
-    // Longer keys must be matched before shorter overlapping ones (e.g. "sudomašina" before "mašina").
-    private static final Map<String, String> AVTERA_WORD_FIX = Map.ofEntries(
-        Map.entry("ďż˝tampaďż˝", "štampač"),
-        Map.entry("ďż˝tampa", "štampač"),        Map.entry("ďż˝zvucnici", "zvučnici"),   // bluetooth zvučnici (misplaced entity)
-        Map.entry("ďż˝poret", "šporet"),
-        Map.entry("friďż˝ider", "frižider"),
-        Map.entry("sudomaďż˝ina", "sudomašina"),
-        Map.entry("maďż˝ina", "mašina"),
-        Map.entry("suďż˝enje", "sušenje"),
-        Map.entry("veďż˝ maďż˝ina", "veš mašina"),
-        Map.entry("veďż˝", "veš"),
-        Map.entry("zamrzivaďż˝", "zamrzivač"),
-        Map.entry("sluďż˝alice", "slušalice"),
-        Map.entry("miďż˝evi", "miševi"),
-        Map.entry("zvuďż˝nici", "zvučnici"),
-        Map.entry("punjaďż˝", "punjač"),
-        Map.entry("peraďż˝", "perač"),
-        Map.entry("usisivaďż˝e", "usisivače"),
-        Map.entry("usisivaďż˝", "usisivač"),
-        Map.entry("dďż˝ezve", "džezve"),
-        Map.entry("ďż˝erpe", "šerpe"),
-        Map.entry("ďż˝inije", "činije"),
-        Map.entry("potroďż˝ni", "potrošni"),
-        Map.entry("baďż˝ta", "bašta")
-    );
-
-    private String fixAvteraClasstitle(String decoded) {
-        if (decoded == null || !decoded.contains("ďż˝")) return decoded;
-        String lower = decoded.toLowerCase(java.util.Locale.ROOT);
-        // Sort entries by key length descending so longer patterns match first
-        List<Map.Entry<String, String>> entries = new ArrayList<>(AVTERA_WORD_FIX.entrySet());
-        entries.sort((a, b) -> b.getKey().length() - a.getKey().length());
-        for (Map.Entry<String, String> e : entries) {
-            int idx = lower.indexOf(e.getKey());
-            if (idx >= 0) {
-                decoded = decoded.substring(0, idx) + e.getValue() + decoded.substring(idx + e.getKey().length());
-                lower = decoded.toLowerCase(java.util.Locale.ROOT);
-            }
+    // Avtera XML encodes Serbian accented chars as the 3-char sequence "ďż˝" (U+010F U+017C U+02DD).
+    // The correct replacement depends on the surrounding characters (before + after the sequence).
+    // Derived empirically from a full Avtera XML export — works for any future words too.
+    private String fixAvteraClasstitle(String s) {
+        if (s == null || !s.contains("ďż˝")) return s;
+        String G = "ďż˝";
+        int gl = G.length();
+        StringBuilder sb = new StringBuilder();
+        String lower = s.toLowerCase(java.util.Locale.ROOT);
+        int i = 0;
+        while (i < s.length()) {
+            int gi = lower.indexOf(G, i);
+            if (gi < 0) { sb.append(s, i, s.length()); break; }
+            sb.append(s, i, gi);
+            char before = gi > 0 ? lower.charAt(gi - 1) : '^';
+            char after  = (gi + gl) < lower.length() ? lower.charAt(gi + gl) : '$';
+            char after2 = (gi + gl + 1) < lower.length() ? lower.charAt(gi + gl + 1) : '$';
+            String rep;
+            if      (before == 'i' && after == 'i') rep = "ž";
+            else if (before == 'i' && after == 'e') rep = "š";
+            else if (before == 'u' && after == 'a') rep = "š";
+            else if (before == 'u' && after == 'e') rep = "š";
+            else if (before == 'u' && after == 'n') rep = "č";
+            else if (before == 'o' && after == 'n') rep = "š";
+            else if (before == 'a' && after == 'e') rep = "č";
+            else if (before == 'a' && after == 't') rep = "š";
+            else if (before == 'a' && after == 'i' && after2 == 'n') rep = "š"; // Mašina, Sudomašina
+            else if (before == 'a' && after == 'i') rep = "č";                  // Punjači, Perači
+            else if (before == 'a' && after == '$') rep = "č";                  // Zamrzivač
+            else if (before == 'e' && (after == ' ' || after == 'a' || after == '$')) rep = "š";
+            else if (before == 'd' && after == 'e') rep = "ž";                  // Džezve (D+ž)
+            else if ((before == '^' || before == ' ' || before == '.') && after == 't') rep = "Š"; // Štampač
+            else if ((before == '^' || before == ' ') && after == 'p') rep = "Š"; // Šporet
+            else if ((before == '^' || before == ' ') && after == 'e') rep = "Š"; // Šerpe
+            else if ((before == '^' || before == ' ') && after == 'i') rep = "Č"; // Činije
+            else if (before == ' ' && after >= 'A' && after <= 'Z') rep = "";   // misplaced entity (Bluetooth Zvucnici)
+            else rep = "";  // fallback: drop
+            sb.append(rep);
+            i = gi + gl;
         }
-        // Fallback: drop any remaining ďż˝ sequences
-        decoded = decoded.replace("ďż˝", "");
-        return decoded;
+        return sb.toString();
     }
 
     /**
